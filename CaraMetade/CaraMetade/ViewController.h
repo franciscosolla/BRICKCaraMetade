@@ -11,6 +11,8 @@
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *label2;
 
+@property (weak, nonatomic) IBOutlet UIButton *BUtton;
+
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
