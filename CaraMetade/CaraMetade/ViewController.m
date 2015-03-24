@@ -59,47 +59,50 @@
     [self.session startRunning];
 }
 
-- (IBAction)takePhotto:(id)sender
-{
-    AVCaptureConnection *videoConnection = nil;
-    
-    for (AVCaptureConnection *connection in self.stillImageOutput.connections)
-    {
-        for (AVCaptureInputPort *port in [connection inputPorts])
-        {
-            if ([[port mediaType] isEqual:AVMediaTypeVideo])
-            {
-                videoConnection = connection;
-                break;
-            }
-        }
-        if (videoConnection)
-        {
-            break;
-        }
-    }
-    
-    [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^(CMSampleBufferRef imageDataSamplerBuffer, NSError *error) {
-        if (imageDataSamplerBuffer != NULL)
-        {
-            NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSamplerBuffer];
-            UIImage *image = [UIImage imageWithData: imageData];
-            self.image = image;
-        }
-    }];
-    
-    [self performSegueWithIdentifier:@"ShowImageView" sender:self];
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    ImageViewController * destination = segue.destinationViewController;
-    destination.image = self.image;
-}
-
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Segue
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	ImageViewController * destination = segue.destinationViewController;
+	destination.image = self.image;
+}
+
+#pragma mark - Camera Buttons
+
+- (IBAction)takePhotto:(id)sender
+{
+	AVCaptureConnection *videoConnection = nil;
+	
+	for (AVCaptureConnection *connection in self.stillImageOutput.connections)
+	{
+		for (AVCaptureInputPort *port in [connection inputPorts])
+		{
+			if ([[port mediaType] isEqual:AVMediaTypeVideo])
+			{
+				videoConnection = connection;
+				break;
+			}
+		}
+		if (videoConnection)
+		{
+			break;
+		}
+	}
+	
+	[self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^(CMSampleBufferRef imageDataSamplerBuffer, NSError *error) {
+		if (imageDataSamplerBuffer != NULL)
+		{
+			NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSamplerBuffer];
+			self.image = [[UIImage alloc] initWithData:imageData];
+			[self performSegueWithIdentifier:@"ShowImageView" sender:self];
+		}
+	}];
+	
 }
 
 @end
