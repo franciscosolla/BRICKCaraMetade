@@ -72,27 +72,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKQ-Td-9M5" userLabel="ImageViewFrame">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CUA-lC-lWn">
+                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                            </slider>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKQ-Td-9M5" userLabel="ImageViewFrame">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
-                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="CUA-lC-lWn" secondAttribute="centerX" id="5Pn-qG-zZM"/>
+                            <constraint firstAttribute="width" secondItem="gKQ-Td-9M5" secondAttribute="width" id="CQ3-BK-rnY"/>
+                            <constraint firstAttribute="height" secondItem="gKQ-Td-9M5" secondAttribute="height" id="IOA-0y-zkd"/>
+                            <constraint firstAttribute="centerX" secondItem="gKQ-Td-9M5" secondAttribute="centerX" id="O68-qN-tJq"/>
+                            <constraint firstItem="U14-hh-s5Y" firstAttribute="top" secondItem="CUA-lC-lWn" secondAttribute="bottom" constant="30" id="e5q-Si-5T5"/>
+                            <constraint firstAttribute="centerY" secondItem="gKQ-Td-9M5" secondAttribute="centerY" id="gPd-aE-kMD"/>
+                            <constraint firstAttribute="width" secondItem="CUA-lC-lWn" secondAttribute="width" id="pEO-WN-ZUv"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="CUA-lC-lWn"/>
                                 <exclude reference="gKQ-Td-9M5"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="CQ3-BK-rnY"/>
+                                <exclude reference="IOA-0y-zkd"/>
+                                <exclude reference="O68-qN-tJq"/>
+                                <exclude reference="gPd-aE-kMD"/>
+                                <exclude reference="5Pn-qG-zZM"/>
+                                <exclude reference="pEO-WN-ZUv"/>
+                                <exclude reference="e5q-Si-5T5"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="CUA-lC-lWn"/>
                                 <include reference="gKQ-Td-9M5"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="CQ3-BK-rnY"/>
+                                <include reference="IOA-0y-zkd"/>
+                                <include reference="O68-qN-tJq"/>
+                                <include reference="gPd-aE-kMD"/>
+                                <include reference="5Pn-qG-zZM"/>
+                                <include reference="pEO-WN-ZUv"/>
+                                <include reference="e5q-Si-5T5"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="gKQ-Td-9M5" id="3GG-ys-nqE"/>
+                        <outlet property="sliderLine" destination="CUA-lC-lWn" id="c0l-bE-qKF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dns-pc-Y5g" userLabel="First Responder" sceneMemberID="firstResponder"/>

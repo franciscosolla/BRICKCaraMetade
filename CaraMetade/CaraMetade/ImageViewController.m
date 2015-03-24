@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+@property (weak, nonatomic) IBOutlet UISlider *sliderLine;
+
 @end
 
 @implementation ImageViewController
