@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *cameraView;
+
 @end
 
 @implementation ViewController
@@ -27,3 +29,4 @@
 
 
 @end
+s
