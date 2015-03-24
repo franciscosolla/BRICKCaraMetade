@@ -44,7 +44,7 @@
     [previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
     CALayer *rootLayer = [[self frameForCapture] layer];
     [rootLayer setMasksToBounds:YES];
-    CGRect frame = self.frameForCapture.frame;
+    CGRect frame = self.view.frame;
     
     [previewLayer setFrame:frame];
     
