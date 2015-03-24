@@ -7,14 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "ImageViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface ViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *frameForCapture;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) AVCaptureStillImageOutput *stillImageOutput;
 @property (strong, nonatomic) AVCaptureSession *session;
+@property (strong, nonatomic) UIImage *image;
 
 @end
 
@@ -83,9 +84,17 @@
         {
             NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSamplerBuffer];
             UIImage *image = [UIImage imageWithData: imageData];
-            self.imageView.image = image;
+            self.image = image;
         }
     }];
+    
+    [self performSegueWithIdentifier:@"ShowImageView" sender:self];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    ImageViewController * destination = segue.destinationViewController;
+    destination.image = self.image;
 }
 
 - (void)didReceiveMemoryWarning {
