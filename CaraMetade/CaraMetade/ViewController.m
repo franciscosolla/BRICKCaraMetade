@@ -13,8 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *frameForCapture;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (strong, nonatomic) AVCaptureSession *session;
 @property (strong, nonatomic) AVCaptureStillImageOutput *stillImageOutput;
+@property (strong, nonatomic) AVCaptureSession *session;
 
 @end
 
@@ -33,7 +33,7 @@
     AVCaptureDevice *inputDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     NSError *error;
     AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:inputDevice error:&error];
-    
+	
     if ([self.session canAddInput:deviceInput])
     {
         [self.session addInput:deviceInput];
@@ -78,11 +78,11 @@
         }
     }
     
-    [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:ˆ(CMSampleBufferRef imageDataSamplerBuffer, NSError *error) {
-        if (imageDataSampleBuffer != NULL)
+    [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^(CMSampleBufferRef imageDataSamplerBuffer, NSError *error) {
+        if (imageDataSamplerBuffer != NULL)
         {
-            NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
-            UIImage *image = [UIImage imageWithData: ImageData];
+            NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSamplerBuffer];
+            UIImage *image = [UIImage imageWithData: imageData];
             self.imageView.image = image;
         }
     }];
