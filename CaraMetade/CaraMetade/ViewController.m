@@ -41,7 +41,7 @@
     
     AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
     [previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
-    CALayer *rootLayer = [[self view] layer];
+    CALayer *rootLayer = [[self frameForCapture] layer];
     [rootLayer setMasksToBounds:YES];
     CGRect frame = self.frameForCapture.frame;
     
