@@ -23,21 +23,21 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" title=" "/>
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="333" height="402"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="333" height="422"/>
                                         </variation>
                                         <connections>
                                             <action selector="takePhotto:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ei8-7x-fxZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="ckC-LM-7aT"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="34" y="28" width="333" height="402"/>
+                                    <rect key="frame" x="16" y="28" width="333" height="422"/>
                                     <mask key="subviews">
                                         <include reference="ckC-LM-7aT"/>
                                     </mask>
@@ -46,7 +46,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKQ-Td-9M5">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="75" y="518" width="240" height="210"/>
+                                    <rect key="frame" x="16" y="448" width="333" height="245"/>
                                 </variation>
                             </imageView>
                         </subviews>

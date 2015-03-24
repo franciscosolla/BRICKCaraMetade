@@ -58,12 +58,39 @@
     [self.session startRunning];
 }
 
+- (IBAction)takePhotto:(id)sender
+{
+    AVCaptureConnection *videoConnection = nil;
+    
+    for (AVCaptureConnection *connection in self.stillImageOutput.connections)
+    {
+        for (AVCaptureInputPort *port in [connection inputPorts])
+        {
+            if ([[port mediaType] isEqual:AVMediaTypeVideo])
+            {
+                videoConnection = connection;
+                break;
+            }
+        }
+        if (videoConnection)
+        {
+            break;
+        }
+    }
+    
+    [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:ˆ(CMSampleBufferRef imageDataSamplerBuffer, NSError *error) {
+        if (imageDataSampleBuffer != NULL)
+        {
+            NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+            UIImage *image = [UIImage imageWithData: ImageData];
+            self.imageView.image = image;
+        }
+    }];
+}
+
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
-}
-
-- (IBAction)takePhotto:(id)sender {
 }
 
 @end
