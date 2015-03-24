@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44D137321AC1D3F600A4ABA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D137311AC1D3F600A4ABA7 /* AVFoundation.framework */; };
 		A0FE4C871AC0A69700A74099 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4C861AC0A69700A74099 /* main.m */; };
 		A0FE4C8A1AC0A69700A74099 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4C891AC0A69700A74099 /* AppDelegate.m */; };
 		A0FE4C8D1AC0A69700A74099 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4C8C1AC0A69700A74099 /* ViewController.m */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44D137311AC1D3F600A4ABA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A0FE4C811AC0A69700A74099 /* CaraMetade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaraMetade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FE4C851AC0A69700A74099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0FE4C861AC0A69700A74099 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44D137321AC1D3F600A4ABA7 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		A0FE4C781AC0A69700A74099 = {
 			isa = PBXGroup;
 			children = (
+				44D137311AC1D3F600A4ABA7 /* AVFoundation.framework */,
 				A0FE4C831AC0A69700A74099 /* CaraMetade */,
 				A0FE4C9D1AC0A69800A74099 /* CaraMetadeTests */,
 				A0FE4C821AC0A69700A74099 /* Products */,
@@ -412,6 +416,7 @@
 				A0FE4CA61AC0A69800A74099 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0FE4CA71AC0A69800A74099 /* Build configuration list for PBXNativeTarget "CaraMetadeTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +425,7 @@
 				A0FE4CA91AC0A69800A74099 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

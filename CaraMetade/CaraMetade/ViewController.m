@@ -7,12 +7,14 @@
 //
 
 #import "ViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property BOOL newMedia;
-
-@property (strong, nonatomic) IBOutlet UIImageView *cameraView;
+@property (weak, nonatomic) IBOutlet UIView *frameForCapture;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) AVCaptureSession *session;
+@property (strong, nonatomic) AVCaptureStillImageOutput *stillImageOutput;
 
 @end
 
@@ -21,6 +23,39 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.session = [[AVCaptureSession alloc] init];
+    [self.session setSessionPreset:AVCaptureSessionPresetPhoto];
+    
+    AVCaptureDevice *inputDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    NSError *error;
+    AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:inputDevice error:&error];
+    
+    if ([self.session canAddInput:deviceInput])
+    {
+        [self.session addInput:deviceInput];
+    }
+    
+    AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
+    [previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
+    CALayer *rootLayer = [[self view] layer];
+    [rootLayer setMasksToBounds:YES];
+    CGRect frame = self.frameForCapture.frame;
+    
+    [previewLayer setFrame:frame];
+    
+    [rootLayer insertSublayer:previewLayer atIndex:0];
+    
+    self.stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
+    NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys:AVVideoCodecJPEG, AVVideoCodecKey, nil];
+    [self.stillImageOutput setOutputSettings:outputSettings];
+    
+    [self.session addOutput:self.stillImageOutput];
+    
+    [self.session startRunning];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,68 +63,7 @@
 	// Dispose of any resources that can be recreated.
 }
 
-- (IBAction) useCamera:(id)sender
-{
-	if ([UIImagePickerController isSourceTypeAvailable:
-		 UIImagePickerControllerSourceTypeCamera])
-	{
-		UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-		imagePicker.delegate = self;
-		imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-		imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
-		imagePicker.allowsEditing = NO;
-		[self presentViewController:imagePicker animated:YES completion:nil];
-		_newMedia = YES;
-	}
-}
-
-- (IBAction) useCameraRoll:(id)sender
-{
-	if ([UIImagePickerController isSourceTypeAvailable:
-		 UIImagePickerControllerSourceTypeSavedPhotosAlbum])
-	{
-		UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-		imagePicker.delegate = self;
-		imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-		imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
-		imagePicker.allowsEditing = NO;
-		[self presentViewController:imagePicker animated:YES completion:nil];
-		_newMedia = NO;
-	}
-}
-
-#pragma mark - UIImagePickerControllerDelegate
-
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-	NSString *mediaType = info[UIImagePickerControllerMediaType];
-	
-	[self dismissViewControllerAnimated:YES completion:nil];
-	
-	if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
-		UIImage *image = info[UIImagePickerControllerOriginalImage];
-		
-		_cameraView.image = image;
-		if (_newMedia)
-			UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:finishedSavingWithError:contextInfo:), nil);
-	}
-	else if ([mediaType isEqualToString:(NSString *)kUTTypeMovie])
-	{
-		// Code here to support video if enabled
-	}
-}
-
--(void)image:(UIImage *)image finishedSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
-{
-	if (error) {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Save failed" message: @"Failed to save image" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-		[alert show];
-	}
-}
-
--(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-	[self dismissViewControllerAnimated:YES completion:nil];
+- (IBAction)takePhotto:(id)sender {
 }
 
 @end
