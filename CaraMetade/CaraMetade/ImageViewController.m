@@ -7,6 +7,8 @@
 //
 
 #import "ImageViewController.h"
+#import <AVFoundation/AVFoundation.h>
+
 
 @interface ImageViewController ()
 
@@ -21,13 +23,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.imageView.image = self.image;
+	// Loads the image on the ImageView..
+	self.imageView.image = self.image;
+	// Draws the divisor line.
+	[self.sliderLine maximumValueImageRectForBounds:self.view.bounds];
+	[self.sliderLine setThumbImage:[UIImage imageNamed:@"line.jpg"] forState:UIControlStateNormal];
+	[self.sliderLine setMinimumTrackImage:[UIImage alloc] forState:UIControlStateNormal];
+	[self.sliderLine setMaximumTrackImage:[UIImage alloc] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
  #pragma mark - Navigation

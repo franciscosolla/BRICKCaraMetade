@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--CameraViewController-->
@@ -72,51 +73,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CUA-lC-lWn">
-                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                            </slider>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKQ-Td-9M5" userLabel="ImageViewFrame">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CUA-lC-lWn" userLabel="LineSetter">
+                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCL-Mo-vhq">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="pzd-vm-Evb"/>
+                                    <constraint firstAttribute="height" constant="50" id="reF-ao-W9q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Pronto">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pzd-vm-Evb"/>
+                                        <exclude reference="reF-ao-W9q"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="pzd-vm-Evb"/>
+                                        <include reference="reF-ao-W9q"/>
+                                    </mask>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="CUA-lC-lWn" secondAttribute="centerX" id="5Pn-qG-zZM"/>
+                            <constraint firstAttribute="width" secondItem="CUA-lC-lWn" secondAttribute="width" id="6Fb-WV-KJW"/>
+                            <constraint firstAttribute="centerY" secondItem="CUA-lC-lWn" secondAttribute="centerY" id="9on-CK-8db"/>
+                            <constraint firstItem="gKQ-Td-9M5" firstAttribute="top" secondItem="4xg-R9-hKN" secondAttribute="topMargin" id="BQO-Hi-5Gq"/>
                             <constraint firstAttribute="width" secondItem="gKQ-Td-9M5" secondAttribute="width" id="CQ3-BK-rnY"/>
-                            <constraint firstAttribute="height" secondItem="gKQ-Td-9M5" secondAttribute="height" id="IOA-0y-zkd"/>
                             <constraint firstAttribute="centerX" secondItem="gKQ-Td-9M5" secondAttribute="centerX" id="O68-qN-tJq"/>
-                            <constraint firstItem="U14-hh-s5Y" firstAttribute="top" secondItem="CUA-lC-lWn" secondAttribute="bottom" constant="30" id="e5q-Si-5T5"/>
-                            <constraint firstAttribute="centerY" secondItem="gKQ-Td-9M5" secondAttribute="centerY" id="gPd-aE-kMD"/>
-                            <constraint firstAttribute="width" secondItem="CUA-lC-lWn" secondAttribute="width" id="pEO-WN-ZUv"/>
+                            <constraint firstAttribute="centerX" secondItem="bCL-Mo-vhq" secondAttribute="centerX" id="OOL-Ln-HQg"/>
+                            <constraint firstAttribute="centerX" secondItem="CUA-lC-lWn" secondAttribute="centerX" id="dss-wm-77C"/>
+                            <constraint firstItem="U14-hh-s5Y" firstAttribute="top" secondItem="bCL-Mo-vhq" secondAttribute="bottom" constant="20" id="hMs-02-XeJ"/>
+                            <constraint firstAttribute="height" secondItem="gKQ-Td-9M5" secondAttribute="height" id="xX1-xN-EwH"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="CUA-lC-lWn"/>
                                 <exclude reference="gKQ-Td-9M5"/>
+                                <exclude reference="CUA-lC-lWn"/>
+                                <exclude reference="bCL-Mo-vhq"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="e5q-Si-5T5"/>
-                                <exclude reference="5Pn-qG-zZM"/>
-                                <exclude reference="pEO-WN-ZUv"/>
+                                <exclude reference="BQO-Hi-5Gq"/>
                                 <exclude reference="CQ3-BK-rnY"/>
-                                <exclude reference="IOA-0y-zkd"/>
                                 <exclude reference="O68-qN-tJq"/>
-                                <exclude reference="gPd-aE-kMD"/>
+                                <exclude reference="xX1-xN-EwH"/>
+                                <exclude reference="6Fb-WV-KJW"/>
+                                <exclude reference="9on-CK-8db"/>
+                                <exclude reference="dss-wm-77C"/>
+                                <exclude reference="OOL-Ln-HQg"/>
+                                <exclude reference="hMs-02-XeJ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="CUA-lC-lWn"/>
                                 <include reference="gKQ-Td-9M5"/>
+                                <include reference="CUA-lC-lWn"/>
+                                <include reference="bCL-Mo-vhq"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="e5q-Si-5T5"/>
-                                <include reference="5Pn-qG-zZM"/>
-                                <include reference="pEO-WN-ZUv"/>
+                                <include reference="BQO-Hi-5Gq"/>
                                 <include reference="CQ3-BK-rnY"/>
-                                <include reference="IOA-0y-zkd"/>
                                 <include reference="O68-qN-tJq"/>
-                                <include reference="gPd-aE-kMD"/>
+                                <include reference="xX1-xN-EwH"/>
+                                <include reference="6Fb-WV-KJW"/>
+                                <include reference="9on-CK-8db"/>
+                                <include reference="dss-wm-77C"/>
+                                <include reference="OOL-Ln-HQg"/>
+                                <include reference="hMs-02-XeJ"/>
                             </mask>
                         </variation>
                     </view>
