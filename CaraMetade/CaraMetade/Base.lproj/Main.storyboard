@@ -95,13 +95,13 @@
                                 <exclude reference="gKQ-Td-9M5"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="e5q-Si-5T5"/>
+                                <exclude reference="5Pn-qG-zZM"/>
+                                <exclude reference="pEO-WN-ZUv"/>
                                 <exclude reference="CQ3-BK-rnY"/>
                                 <exclude reference="IOA-0y-zkd"/>
                                 <exclude reference="O68-qN-tJq"/>
                                 <exclude reference="gPd-aE-kMD"/>
-                                <exclude reference="5Pn-qG-zZM"/>
-                                <exclude reference="pEO-WN-ZUv"/>
-                                <exclude reference="e5q-Si-5T5"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -110,13 +110,13 @@
                                 <include reference="gKQ-Td-9M5"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="e5q-Si-5T5"/>
+                                <include reference="5Pn-qG-zZM"/>
+                                <include reference="pEO-WN-ZUv"/>
                                 <include reference="CQ3-BK-rnY"/>
                                 <include reference="IOA-0y-zkd"/>
                                 <include reference="O68-qN-tJq"/>
                                 <include reference="gPd-aE-kMD"/>
-                                <include reference="5Pn-qG-zZM"/>
-                                <include reference="pEO-WN-ZUv"/>
-                                <include reference="e5q-Si-5T5"/>
                             </mask>
                         </variation>
                     </view>
