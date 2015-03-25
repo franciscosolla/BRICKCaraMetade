@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) NSNumber *sliderStatus;
 
+@property (strong, nonatomic) UIImage *finalImage;
+
 @end

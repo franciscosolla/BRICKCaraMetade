@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		44D137321AC1D3F600A4ABA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D137311AC1D3F600A4ABA7 /* AVFoundation.framework */; };
 		44D137381AC1E7D500A4ABA7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D137371AC1E7D500A4ABA7 /* ImageViewController.m */; };
+		44D2DDF91AC3450B003828FF /* FinalImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D2DDF81AC3450B003828FF /* FinalImageViewController.m */; };
 		A0D1D7CE1AC2EE670043B484 /* line.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0D1D7CD1AC2EE670043B484 /* line.jpg */; };
 		A0D1D7D11AC2F45A0043B484 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D1D7D01AC2F45A0043B484 /* ResultViewController.m */; };
 		A0FE4C871AC0A69700A74099 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4C861AC0A69700A74099 /* main.m */; };
 		A0FE4C8A1AC0A69700A74099 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4C891AC0A69700A74099 /* AppDelegate.m */; };
-		A0FE4C8D1AC0A69700A74099 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4C8C1AC0A69700A74099 /* ViewController.m */; };
+		A0FE4C8D1AC0A69700A74099 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4C8C1AC0A69700A74099 /* CameraViewController.m */; };
 		A0FE4C901AC0A69700A74099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FE4C8E1AC0A69700A74099 /* Main.storyboard */; };
 		A0FE4C921AC0A69700A74099 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FE4C911AC0A69700A74099 /* Images.xcassets */; };
 		A0FE4C951AC0A69700A74099 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FE4C931AC0A69700A74099 /* LaunchScreen.xib */; };
@@ -34,6 +35,8 @@
 		44D137311AC1D3F600A4ABA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		44D137361AC1E7D500A4ABA7 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		44D137371AC1E7D500A4ABA7 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		44D2DDF71AC3450B003828FF /* FinalImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinalImageViewController.h; sourceTree = "<group>"; };
+		44D2DDF81AC3450B003828FF /* FinalImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinalImageViewController.m; sourceTree = "<group>"; };
 		A0D1D7CD1AC2EE670043B484 /* line.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = line.jpg; sourceTree = "<group>"; };
 		A0D1D7CF1AC2F45A0043B484 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		A0D1D7D01AC2F45A0043B484 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
@@ -42,8 +45,8 @@
 		A0FE4C861AC0A69700A74099 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0FE4C881AC0A69700A74099 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0FE4C891AC0A69700A74099 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A0FE4C8B1AC0A69700A74099 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A0FE4C8C1AC0A69700A74099 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A0FE4C8B1AC0A69700A74099 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		A0FE4C8C1AC0A69700A74099 /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		A0FE4C8F1AC0A69700A74099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0FE4C911AC0A69700A74099 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0FE4C941AC0A69700A74099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -95,13 +98,15 @@
 			children = (
 				A0FE4C881AC0A69700A74099 /* AppDelegate.h */,
 				A0FE4C891AC0A69700A74099 /* AppDelegate.m */,
-				A0FE4C8B1AC0A69700A74099 /* ViewController.h */,
-				A0FE4C8C1AC0A69700A74099 /* ViewController.m */,
+				A0FE4C8B1AC0A69700A74099 /* CameraViewController.h */,
+				A0FE4C8C1AC0A69700A74099 /* CameraViewController.m */,
 				A0FE4C8E1AC0A69700A74099 /* Main.storyboard */,
 				44D137361AC1E7D500A4ABA7 /* ImageViewController.h */,
 				44D137371AC1E7D500A4ABA7 /* ImageViewController.m */,
 				A0D1D7CF1AC2F45A0043B484 /* ResultViewController.h */,
 				A0D1D7D01AC2F45A0043B484 /* ResultViewController.m */,
+				44D2DDF71AC3450B003828FF /* FinalImageViewController.h */,
+				44D2DDF81AC3450B003828FF /* FinalImageViewController.m */,
 				A0FE4C911AC0A69700A74099 /* Images.xcassets */,
 				A0FE4C931AC0A69700A74099 /* LaunchScreen.xib */,
 				A0FE4C841AC0A69700A74099 /* Supporting Files */,
@@ -237,7 +242,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0FE4C8D1AC0A69700A74099 /* ViewController.m in Sources */,
+				A0FE4C8D1AC0A69700A74099 /* CameraViewController.m in Sources */,
+				44D2DDF91AC3450B003828FF /* FinalImageViewController.m in Sources */,
 				A0FE4C8A1AC0A69700A74099 /* AppDelegate.m in Sources */,
 				44D137381AC1E7D500A4ABA7 /* ImageViewController.m in Sources */,
 				A0D1D7D11AC2F45A0043B484 /* ResultViewController.m in Sources */,

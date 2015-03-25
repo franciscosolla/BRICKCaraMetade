@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Lucas M. Juviniano. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CameraViewController.h"
 #import "ImageViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface ViewController ()
+@interface CameraViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *frameForCapture;
 @property (strong, nonatomic) AVCaptureStillImageOutput *stillImageOutput;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation ViewController
+@implementation CameraViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
