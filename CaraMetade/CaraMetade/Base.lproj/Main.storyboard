@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -125,15 +126,15 @@
                                 <exclude reference="bCL-Mo-vhq"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="BQO-Hi-5Gq"/>
-                                <exclude reference="CQ3-BK-rnY"/>
-                                <exclude reference="O68-qN-tJq"/>
-                                <exclude reference="xX1-xN-EwH"/>
+                                <exclude reference="hMs-02-XeJ"/>
                                 <exclude reference="6Fb-WV-KJW"/>
                                 <exclude reference="9on-CK-8db"/>
                                 <exclude reference="dss-wm-77C"/>
                                 <exclude reference="OOL-Ln-HQg"/>
-                                <exclude reference="hMs-02-XeJ"/>
+                                <exclude reference="BQO-Hi-5Gq"/>
+                                <exclude reference="CQ3-BK-rnY"/>
+                                <exclude reference="O68-qN-tJq"/>
+                                <exclude reference="xX1-xN-EwH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -143,15 +144,15 @@
                                 <include reference="bCL-Mo-vhq"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="BQO-Hi-5Gq"/>
-                                <include reference="CQ3-BK-rnY"/>
-                                <include reference="O68-qN-tJq"/>
-                                <include reference="xX1-xN-EwH"/>
+                                <include reference="hMs-02-XeJ"/>
                                 <include reference="6Fb-WV-KJW"/>
                                 <include reference="9on-CK-8db"/>
                                 <include reference="dss-wm-77C"/>
                                 <include reference="OOL-Ln-HQg"/>
-                                <include reference="hMs-02-XeJ"/>
+                                <include reference="BQO-Hi-5Gq"/>
+                                <include reference="CQ3-BK-rnY"/>
+                                <include reference="O68-qN-tJq"/>
+                                <include reference="xX1-xN-EwH"/>
                             </mask>
                         </variation>
                     </view>
@@ -174,6 +175,7 @@
                         <viewControllerLayoutGuide type="bottom" id="eUv-Uh-NUW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eI3-5V-t7p" userLabel="ResultView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uVu-11-6RM" userLabel="Right Image View">
@@ -205,6 +207,7 @@
                                 <exclude reference="H7J-ib-Chr"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="z9p-eR-VfV"/>
                                 <exclude reference="0V3-Gs-36N"/>
                                 <exclude reference="9PX-4i-S5H"/>
                                 <exclude reference="Jkr-Ho-184"/>
@@ -215,7 +218,6 @@
                                 <exclude reference="wO1-pT-crc"/>
                                 <exclude reference="xfU-t0-txJ"/>
                                 <exclude reference="ybP-HQ-UJB"/>
-                                <exclude reference="z9p-eR-VfV"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -224,6 +226,7 @@
                                 <include reference="H7J-ib-Chr"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="z9p-eR-VfV"/>
                                 <include reference="0V3-Gs-36N"/>
                                 <include reference="9PX-4i-S5H"/>
                                 <include reference="Jkr-Ho-184"/>
@@ -234,7 +237,6 @@
                                 <include reference="wO1-pT-crc"/>
                                 <include reference="xfU-t0-txJ"/>
                                 <include reference="ybP-HQ-UJB"/>
-                                <include reference="z9p-eR-VfV"/>
                             </mask>
                         </variation>
                     </view>

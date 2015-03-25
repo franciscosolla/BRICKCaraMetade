@@ -32,9 +32,10 @@
     [self.session setSessionPreset:AVCaptureSessionPresetPhoto];
     
     AVCaptureDevice *inputDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    
     NSError *error;
     AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:inputDevice error:&error];
-	
+    
     if ([self.session canAddInput:deviceInput])
     {
         [self.session addInput:deviceInput];
@@ -55,7 +56,7 @@
     [self.stillImageOutput setOutputSettings:outputSettings];
     
     [self.session addOutput:self.stillImageOutput];
-    
+        
     [self.session startRunning];
 }
 
