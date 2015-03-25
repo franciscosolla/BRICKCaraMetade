@@ -10,7 +10,7 @@
 #import "ImageViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface ViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *frameForCapture;
 @property (strong, nonatomic) AVCaptureStillImageOutput *stillImageOutput;
@@ -96,6 +96,9 @@
 			break;
 		}
 	}
+	
+	if (videoConnection.supportsVideoOrientation)
+		videoConnection.videoOrientation = AVCaptureVideoOrientationPortrait;
 	
 	[self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^(CMSampleBufferRef imageDataSamplerBuffer, NSError *error) {
 		if (imageDataSamplerBuffer != NULL)

@@ -21,9 +21,11 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
-	// Loads the image on the ImageView..
-	self.leftSideImage.image = self.face;
-	self.rightSideImage.image = self.face;
+	// Loads the image ad splits in half and displays in right and left view.
+	CGImageRef leftImage = CGImageCreateWithImageInRect(self.face.CGImage, CGRectMake(0, 0, (self.face.size.width * [self.sliderStatus doubleValue]), self.face.size.height));
+	CGImageRef rightImage = CGImageCreateWithImageInRect(self.face.CGImage, CGRectMake((self.face.size.width * [self.sliderStatus doubleValue]), 0.0f, (self.face.size.width * (1.0f - [self.sliderStatus doubleValue])), self.face.size.height));
+	self.leftSideImage.image = [UIImage imageWithCGImage:leftImage];
+	self.rightSideImage.image = [UIImage imageWithCGImage:rightImage];
 }
 
 - (void)didReceiveMemoryWarning {
