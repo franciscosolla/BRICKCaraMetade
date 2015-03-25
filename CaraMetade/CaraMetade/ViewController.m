@@ -68,8 +68,11 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	ImageViewController * destination = segue.destinationViewController;
-	destination.image = self.image;
+	if ([segue.identifier isEqualToString:@"ShowImageView"])
+	{
+		ImageViewController * destination = segue.destinationViewController;
+		destination.image = self.image;
+	}
 }
 
 #pragma mark - Camera Buttons

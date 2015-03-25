@@ -101,6 +101,9 @@
                                         <include reference="reF-ao-W9q"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="readyButton:" destination="N6s-N6-f7R" eventType="touchUpInside" id="2l3-qP-piS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -155,11 +158,94 @@
                     <connections>
                         <outlet property="imageView" destination="gKQ-Td-9M5" id="3GG-ys-nqE"/>
                         <outlet property="sliderLine" destination="CUA-lC-lWn" id="c0l-bE-qKF"/>
+                        <segue destination="n29-gb-hHb" kind="show" identifier="ResultView" id="OaJ-H7-4Md"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dns-pc-Y5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1359" y="432"/>
+            <point key="canvasLocation" x="1470" y="428.25"/>
+        </scene>
+        <!--ResultViewController-->
+        <scene sceneID="dkJ-3T-rPq">
+            <objects>
+                <viewController id="n29-gb-hHb" userLabel="ResultViewController" customClass="ResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pxk-WO-1w0"/>
+                        <viewControllerLayoutGuide type="bottom" id="eUv-Uh-NUW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eI3-5V-t7p" userLabel="ResultView">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uVu-11-6RM" userLabel="Right Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H7J-ib-Chr" userLabel="Left Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H7J-ib-Chr" firstAttribute="leading" secondItem="eI3-5V-t7p" secondAttribute="leadingMargin" id="0V3-Gs-36N"/>
+                            <constraint firstAttribute="centerX" secondItem="H7J-ib-Chr" secondAttribute="centerX" id="9PX-4i-S5H"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H7J-ib-Chr" secondAttribute="trailing" id="Jkr-Ho-184"/>
+                            <constraint firstItem="H7J-ib-Chr" firstAttribute="top" secondItem="Pxk-WO-1w0" secondAttribute="bottom" constant="15" id="TXb-N4-4bp"/>
+                            <constraint firstItem="H7J-ib-Chr" firstAttribute="height" secondItem="uVu-11-6RM" secondAttribute="height" id="epd-cm-kem"/>
+                            <constraint firstItem="H7J-ib-Chr" firstAttribute="width" secondItem="uVu-11-6RM" secondAttribute="width" id="gJr-8Z-X5z"/>
+                            <constraint firstItem="uVu-11-6RM" firstAttribute="leading" secondItem="eI3-5V-t7p" secondAttribute="leadingMargin" id="umd-nE-WX5"/>
+                            <constraint firstAttribute="centerX" secondItem="uVu-11-6RM" secondAttribute="centerX" id="wO1-pT-crc"/>
+                            <constraint firstItem="uVu-11-6RM" firstAttribute="top" secondItem="H7J-ib-Chr" secondAttribute="bottom" constant="40" id="xfU-t0-txJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uVu-11-6RM" secondAttribute="trailing" constant="10" id="ybP-HQ-UJB">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="eUv-Uh-NUW" firstAttribute="top" secondItem="uVu-11-6RM" secondAttribute="bottom" constant="15" id="z9p-eR-VfV"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="uVu-11-6RM"/>
+                                <exclude reference="H7J-ib-Chr"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0V3-Gs-36N"/>
+                                <exclude reference="9PX-4i-S5H"/>
+                                <exclude reference="Jkr-Ho-184"/>
+                                <exclude reference="TXb-N4-4bp"/>
+                                <exclude reference="epd-cm-kem"/>
+                                <exclude reference="gJr-8Z-X5z"/>
+                                <exclude reference="umd-nE-WX5"/>
+                                <exclude reference="wO1-pT-crc"/>
+                                <exclude reference="xfU-t0-txJ"/>
+                                <exclude reference="ybP-HQ-UJB"/>
+                                <exclude reference="z9p-eR-VfV"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="uVu-11-6RM"/>
+                                <include reference="H7J-ib-Chr"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0V3-Gs-36N"/>
+                                <include reference="9PX-4i-S5H"/>
+                                <include reference="Jkr-Ho-184"/>
+                                <include reference="TXb-N4-4bp"/>
+                                <include reference="epd-cm-kem"/>
+                                <include reference="gJr-8Z-X5z"/>
+                                <include reference="umd-nE-WX5"/>
+                                <include reference="wO1-pT-crc"/>
+                                <include reference="xfU-t0-txJ"/>
+                                <include reference="ybP-HQ-UJB"/>
+                                <include reference="z9p-eR-VfV"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="leftSideImage" destination="H7J-ib-Chr" id="B3k-PP-I8u"/>
+                        <outlet property="rightSideImage" destination="uVu-11-6RM" id="6Vx-1D-CGj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HV9-AQ-uvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2500.5" y="428.25"/>
         </scene>
     </scenes>
 </document>

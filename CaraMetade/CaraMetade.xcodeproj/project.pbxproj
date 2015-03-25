@@ -10,6 +10,7 @@
 		44D137321AC1D3F600A4ABA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D137311AC1D3F600A4ABA7 /* AVFoundation.framework */; };
 		44D137381AC1E7D500A4ABA7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D137371AC1E7D500A4ABA7 /* ImageViewController.m */; };
 		A0D1D7CE1AC2EE670043B484 /* line.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0D1D7CD1AC2EE670043B484 /* line.jpg */; };
+		A0D1D7D11AC2F45A0043B484 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D1D7D01AC2F45A0043B484 /* ResultViewController.m */; };
 		A0FE4C871AC0A69700A74099 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4C861AC0A69700A74099 /* main.m */; };
 		A0FE4C8A1AC0A69700A74099 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4C891AC0A69700A74099 /* AppDelegate.m */; };
 		A0FE4C8D1AC0A69700A74099 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4C8C1AC0A69700A74099 /* ViewController.m */; };
@@ -34,6 +35,8 @@
 		44D137361AC1E7D500A4ABA7 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		44D137371AC1E7D500A4ABA7 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		A0D1D7CD1AC2EE670043B484 /* line.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = line.jpg; sourceTree = "<group>"; };
+		A0D1D7CF1AC2F45A0043B484 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		A0D1D7D01AC2F45A0043B484 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		A0FE4C811AC0A69700A74099 /* CaraMetade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaraMetade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FE4C851AC0A69700A74099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0FE4C861AC0A69700A74099 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 				A0FE4C8E1AC0A69700A74099 /* Main.storyboard */,
 				44D137361AC1E7D500A4ABA7 /* ImageViewController.h */,
 				44D137371AC1E7D500A4ABA7 /* ImageViewController.m */,
+				A0D1D7CF1AC2F45A0043B484 /* ResultViewController.h */,
+				A0D1D7D01AC2F45A0043B484 /* ResultViewController.m */,
 				A0FE4C911AC0A69700A74099 /* Images.xcassets */,
 				A0FE4C931AC0A69700A74099 /* LaunchScreen.xib */,
 				A0FE4C841AC0A69700A74099 /* Supporting Files */,
@@ -235,6 +240,7 @@
 				A0FE4C8D1AC0A69700A74099 /* ViewController.m in Sources */,
 				A0FE4C8A1AC0A69700A74099 /* AppDelegate.m in Sources */,
 				44D137381AC1E7D500A4ABA7 /* ImageViewController.m in Sources */,
+				A0D1D7D11AC2F45A0043B484 /* ResultViewController.m in Sources */,
 				A0FE4C871AC0A69700A74099 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
