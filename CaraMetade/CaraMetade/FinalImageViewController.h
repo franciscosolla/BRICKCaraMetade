@@ -14,5 +14,4 @@
 
 @property (nonatomic) BOOL frontCamera;
 
-
 @end
