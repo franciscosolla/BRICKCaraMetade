@@ -192,7 +192,7 @@
                                     <constraint firstAttribute="height" constant="50" id="reF-ao-W9q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Pronto">
+                                <state key="normal" title="Ready">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -479,9 +479,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jym-3e-CwT">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="399" placeholderIntrinsicHeight="800" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aij-Ux-1Vd">
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="399" placeholderIntrinsicHeight="800" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aij-Ux-1Vd">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title=" ">
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -491,14 +493,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jym-3e-CwT" firstAttribute="centerX" secondItem="Aij-Ux-1Vd" secondAttribute="centerX" constant="-5.5" id="2zZ-lB-KAv"/>
-                            <constraint firstAttribute="centerY" secondItem="jym-3e-CwT" secondAttribute="centerY" id="AA0-KW-fVY"/>
-                            <constraint firstItem="jym-3e-CwT" firstAttribute="top" secondItem="z1n-KP-6ne" secondAttribute="bottom" constant="-20" id="GIc-00-JKu"/>
-                            <constraint firstAttribute="centerX" secondItem="jym-3e-CwT" secondAttribute="centerX" id="aJN-1u-SKI"/>
-                            <constraint firstItem="Aij-Ux-1Vd" firstAttribute="leading" secondItem="xB4-70-QAS" secondAttribute="leadingMargin" constant="-10" id="fKP-ud-cQC"/>
-                            <constraint firstItem="jym-3e-CwT" firstAttribute="centerY" secondItem="Aij-Ux-1Vd" secondAttribute="centerY" id="jya-ql-BnT"/>
-                            <constraint firstItem="jym-3e-CwT" firstAttribute="leading" secondItem="xB4-70-QAS" secondAttribute="leadingMargin" constant="-16" id="nAx-iS-6MG"/>
-                            <constraint firstItem="Aij-Ux-1Vd" firstAttribute="top" secondItem="z1n-KP-6ne" secondAttribute="bottom" constant="-20" id="yLT-rh-ekq"/>
+                            <constraint firstItem="Aij-Ux-1Vd" firstAttribute="width" secondItem="xB4-70-QAS" secondAttribute="width" id="6ZT-Sc-pcW"/>
+                            <constraint firstItem="Aij-Ux-1Vd" firstAttribute="top" secondItem="xB4-70-QAS" secondAttribute="topMargin" constant="10" id="QF8-Rz-580">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="jym-3e-CwT" secondAttribute="centerX" id="RLB-lg-vLy"/>
+                            <constraint firstItem="jym-3e-CwT" firstAttribute="top" secondItem="xB4-70-QAS" secondAttribute="topMargin" constant="20" id="Y83-up-m3X"/>
+                            <constraint firstItem="jym-3e-CwT" firstAttribute="width" secondItem="xB4-70-QAS" secondAttribute="width" id="dgO-sk-tWg"/>
+                            <constraint firstItem="Ej8-vg-3Vm" firstAttribute="top" secondItem="jym-3e-CwT" secondAttribute="bottom" id="ifd-aE-tF8"/>
+                            <constraint firstAttribute="centerX" secondItem="Aij-Ux-1Vd" secondAttribute="centerX" id="pcb-v9-U2G"/>
+                            <constraint firstItem="Ej8-vg-3Vm" firstAttribute="top" secondItem="Aij-Ux-1Vd" secondAttribute="bottom" id="sIy-Rv-rvT"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -506,14 +510,14 @@
                                 <exclude reference="Aij-Ux-1Vd"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="fKP-ud-cQC"/>
-                                <exclude reference="yLT-rh-ekq"/>
-                                <exclude reference="2zZ-lB-KAv"/>
-                                <exclude reference="AA0-KW-fVY"/>
-                                <exclude reference="GIc-00-JKu"/>
-                                <exclude reference="aJN-1u-SKI"/>
-                                <exclude reference="jya-ql-BnT"/>
-                                <exclude reference="nAx-iS-6MG"/>
+                                <exclude reference="6ZT-Sc-pcW"/>
+                                <exclude reference="QF8-Rz-580"/>
+                                <exclude reference="pcb-v9-U2G"/>
+                                <exclude reference="RLB-lg-vLy"/>
+                                <exclude reference="Y83-up-m3X"/>
+                                <exclude reference="dgO-sk-tWg"/>
+                                <exclude reference="ifd-aE-tF8"/>
+                                <exclude reference="sIy-Rv-rvT"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -522,14 +526,14 @@
                                 <include reference="Aij-Ux-1Vd"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="fKP-ud-cQC"/>
-                                <include reference="yLT-rh-ekq"/>
-                                <include reference="2zZ-lB-KAv"/>
-                                <include reference="AA0-KW-fVY"/>
-                                <include reference="GIc-00-JKu"/>
-                                <include reference="aJN-1u-SKI"/>
-                                <include reference="jya-ql-BnT"/>
-                                <include reference="nAx-iS-6MG"/>
+                                <include reference="6ZT-Sc-pcW"/>
+                                <include reference="QF8-Rz-580"/>
+                                <include reference="pcb-v9-U2G"/>
+                                <include reference="RLB-lg-vLy"/>
+                                <include reference="Y83-up-m3X"/>
+                                <include reference="dgO-sk-tWg"/>
+                                <include reference="ifd-aE-tF8"/>
+                                <include reference="sIy-Rv-rvT"/>
                             </mask>
                         </variation>
                     </view>
@@ -547,8 +551,8 @@
         <image name="CameraRotate.png" width="90" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bta-0x-fZl"/>
-        <segue reference="fAY-hc-7LQ"/>
+        <segue reference="bEs-O8-ltF"/>
+        <segue reference="D4v-jr-gLc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

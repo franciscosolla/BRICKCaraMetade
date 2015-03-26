@@ -20,6 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.finalImageView.image = self.finalImage;
+	UIImageWriteToSavedPhotosAlbum(self.finalImage, nil, nil, nil);
+
 }
 
 - (IBAction)takeAnotherImage:(id)sender
