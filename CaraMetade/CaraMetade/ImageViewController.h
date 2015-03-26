@@ -13,4 +13,6 @@
 
 @property (strong, nonatomic) UIImage *image;
 
+@property (strong, nonatomic) 
+
 @end
