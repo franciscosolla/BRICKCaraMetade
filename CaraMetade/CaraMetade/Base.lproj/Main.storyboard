@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -381,9 +381,6 @@
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="163" y="756" width="75" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="acceptImage:" destination="n29-gb-hHb" eventType="touchUpInside" id="wmA-hx-h24"/>
                                 </connections>
@@ -394,9 +391,6 @@
                                 <state key="normal" title="Edit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="301" y="756" width="54" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="editImage:" destination="n29-gb-hHb" eventType="touchUpInside" id="Wyg-hU-Sfn"/>
                                 </connections>
@@ -445,6 +439,15 @@
                                 <exclude reference="fyF-JO-RPS"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="OKe-wW-pwm"/>
+                                <exclude reference="z9p-eR-VfV"/>
+                                <exclude reference="3QU-Er-cBN"/>
+                                <exclude reference="3gc-4Y-DAV"/>
+                                <exclude reference="OWt-un-nCe"/>
+                                <exclude reference="jAe-mA-21M"/>
+                                <exclude reference="zrp-kU-0ge"/>
+                                <exclude reference="GEg-51-DBL"/>
+                                <exclude reference="ij8-Rh-YfV"/>
                                 <exclude reference="0V3-Gs-36N"/>
                                 <exclude reference="9PX-4i-S5H"/>
                                 <exclude reference="Jkr-Ho-184"/>
@@ -455,15 +458,6 @@
                                 <exclude reference="wO1-pT-crc"/>
                                 <exclude reference="xfU-t0-txJ"/>
                                 <exclude reference="ybP-HQ-UJB"/>
-                                <exclude reference="3QU-Er-cBN"/>
-                                <exclude reference="3gc-4Y-DAV"/>
-                                <exclude reference="OWt-un-nCe"/>
-                                <exclude reference="jAe-mA-21M"/>
-                                <exclude reference="zrp-kU-0ge"/>
-                                <exclude reference="ij8-Rh-YfV"/>
-                                <exclude reference="OKe-wW-pwm"/>
-                                <exclude reference="z9p-eR-VfV"/>
-                                <exclude reference="GEg-51-DBL"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -475,6 +469,15 @@
                                 <include reference="fyF-JO-RPS"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="OKe-wW-pwm"/>
+                                <include reference="z9p-eR-VfV"/>
+                                <include reference="3QU-Er-cBN"/>
+                                <include reference="3gc-4Y-DAV"/>
+                                <include reference="OWt-un-nCe"/>
+                                <exclude reference="jAe-mA-21M"/>
+                                <include reference="zrp-kU-0ge"/>
+                                <include reference="GEg-51-DBL"/>
+                                <include reference="ij8-Rh-YfV"/>
                                 <include reference="0V3-Gs-36N"/>
                                 <include reference="9PX-4i-S5H"/>
                                 <include reference="Jkr-Ho-184"/>
@@ -485,15 +488,6 @@
                                 <include reference="wO1-pT-crc"/>
                                 <include reference="xfU-t0-txJ"/>
                                 <include reference="ybP-HQ-UJB"/>
-                                <include reference="3QU-Er-cBN"/>
-                                <include reference="3gc-4Y-DAV"/>
-                                <include reference="OWt-un-nCe"/>
-                                <exclude reference="jAe-mA-21M"/>
-                                <include reference="zrp-kU-0ge"/>
-                                <include reference="ij8-Rh-YfV"/>
-                                <include reference="OKe-wW-pwm"/>
-                                <include reference="z9p-eR-VfV"/>
-                                <include reference="GEg-51-DBL"/>
                             </mask>
                         </variation>
                     </view>
@@ -523,14 +517,23 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jym-3e-CwT">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <gestureRecognizers/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="20" width="400" height="780"/>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="UYo-g4-T93" appends="YES" id="0VV-L2-KN0"/>
+                                </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="399" placeholderIntrinsicHeight="800" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aij-Ux-1Vd">
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="399" placeholderIntrinsicHeight="800" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aij-Ux-1Vd">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="CameraRotate.png">
+                                    <color key="titleColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="16" y="738" width="55" height="54"/>
+                                </variation>
                                 <connections>
                                     <action selector="takeAnotherImage:" destination="zPY-Ep-DLg" eventType="touchUpInside" id="4ki-cS-VLV"/>
                                 </connections>
@@ -573,10 +576,10 @@
                             <mask key="constraints">
                                 <include reference="ifd-aE-tF8"/>
                                 <include reference="sIy-Rv-rvT"/>
-                                <include reference="6ZT-Sc-pcW"/>
-                                <include reference="QF8-Rz-580"/>
-                                <include reference="pcb-v9-U2G"/>
-                                <include reference="RLB-lg-vLy"/>
+                                <exclude reference="6ZT-Sc-pcW"/>
+                                <exclude reference="QF8-Rz-580"/>
+                                <exclude reference="pcb-v9-U2G"/>
+                                <exclude reference="RLB-lg-vLy"/>
                                 <include reference="Y83-up-m3X"/>
                                 <include reference="dgO-sk-tWg"/>
                             </mask>
@@ -584,10 +587,17 @@
                     </view>
                     <connections>
                         <outlet property="finalImageView" destination="jym-3e-CwT" id="4as-VZ-i4e"/>
+                        <outlet property="pinch" destination="UYo-g4-T93" id="3dQ-cm-Ul8"/>
+                        <outlet property="pinchReconizer" destination="UYo-g4-T93" id="nIv-v8-09q"/>
                         <segue destination="vXZ-lx-hvc" kind="show" identifier="CameraView" id="D4v-jr-gLc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lom-1I-bWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="UYo-g4-T93">
+                    <connections>
+                        <outlet property="delegate" destination="zPY-Ep-DLg" id="V4A-aV-AQS"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3378" y="436.5"/>
         </scene>
@@ -597,7 +607,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bEs-O8-ltF"/>
-        <segue reference="fAY-hc-7LQ"/>
+        <segue reference="D4v-jr-gLc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

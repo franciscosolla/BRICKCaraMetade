@@ -9,9 +9,13 @@
 #import "FinalImageViewController.h"
 #import "CameraViewController.h"
 
-@interface FinalImageViewController ()
+@interface FinalImageViewController () <UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *finalImageView;
+
+@property (strong, nonatomic) IBOutlet UIPinchGestureRecognizer *pinchReconizer;
+
+@property (nonatomic) double lastScale;
 
 @end
 
@@ -22,7 +26,11 @@
     // Do any additional setup after loading the view.
     self.finalImageView.image = self.finalImage;
 	UIImageWriteToSavedPhotosAlbum(self.finalImage, nil, nil, nil);
-
+    
+    //UIPinchGestureRecognizer *pinchReconizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchReconizer)];
+    //pinchReconizer.delegate = self;
+    //[self.finalImageView addGestureRecognizer:pinchReconizer];
+    //self.lastScale = 1.0;
 }
 
 #pragma mark - Segue
@@ -57,5 +65,22 @@
     // Pass the selected object to the new view controller.
 }
 */
+/*
+#pragma mark - Zoom
+
+- (void)pinchReconizer:(UIPinchGestureRecognizer*) reconizer
+{
+    CGFloat scale = self.lastScale *reconizer.scale;
+    
+    CGAffineTransform tr = CGAffineTransformScale(self.finalImageView.transform, scale, scale);
+    self.finalImageView.transform =tr;
+    
+    if(reconizer.state == UIGestureRecognizerStateBegan)
+    {
+        _lastScale = scale;
+        return;
+    }
+}*/
+    
 
 @end
