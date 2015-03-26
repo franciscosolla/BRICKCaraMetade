@@ -17,4 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UISlider *sliderLine;
 
+@property (nonatomic) double sliderStatus;
+
 @end

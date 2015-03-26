@@ -94,6 +94,7 @@
 		ImageViewController * destination = segue.destinationViewController;
 		destination.image = self.image;
 		destination.frontCamera = self.frontCameraActive;
+        destination.sliderStatus = 0.5;
 	}
 }
 

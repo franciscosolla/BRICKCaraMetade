@@ -28,6 +28,7 @@
 	[self.sliderLine setThumbImage:[UIImage imageNamed:@"line.jpg"] forState:UIControlStateNormal];
 	[self.sliderLine setMinimumTrackImage:[UIImage alloc] forState:UIControlStateNormal];
 	[self.sliderLine setMaximumTrackImage:[UIImage alloc] forState:UIControlStateNormal];
+    [self.sliderLine setValue:self.sliderStatus];
 }
 
 - (void)didReceiveMemoryWarning {

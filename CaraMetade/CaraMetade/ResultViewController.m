@@ -124,7 +124,7 @@
     {
         ImageViewController * destination = segue.destinationViewController;
         destination.image = self.face;
-        [destination.sliderLine setValue:self.sliderStatus];
+        destination.sliderStatus = self.sliderStatus;
     }
 	else if ([segue.identifier isEqualToString:@"CameraView"])
 	{
