@@ -13,6 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *finalImageView;
 
+@property (nonatomic) BOOL frontCamera;
+
 @end
 
 @implementation FinalImageViewController
