@@ -47,10 +47,10 @@
 		destination.face = self.image;
 		destination.sliderStatus = [[NSNumber alloc] initWithFloat:self.sliderLine.value];
 	}
-	else if ([segue.indentifier isEqualToString:@"RetakePhoto"])
+	else if ([segue.identifier isEqualToString:@"RetakePhoto"])
 	{
 		CameraViewController *destination = segue.destinationViewController;
-		destination.frontCameraActive = 
+		destination.frontCameraActive = self.frontCamera;
 	}
 }
 
