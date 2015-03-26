@@ -15,4 +15,6 @@
 
 @property (nonatomic) BOOL frontCamera;
 
+@property (weak, nonatomic) IBOutlet UISlider *sliderLine;
+
 @end

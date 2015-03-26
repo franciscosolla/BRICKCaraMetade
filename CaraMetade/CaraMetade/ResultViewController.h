@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) UIImage *face;
 
-@property (strong, nonatomic) NSNumber *sliderStatus;
+@property (nonatomic) double sliderStatus;
 
 @property (strong, nonatomic) UIImage *finalImage;
 

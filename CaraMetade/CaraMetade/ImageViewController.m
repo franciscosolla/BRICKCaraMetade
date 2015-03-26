@@ -14,8 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
-@property (weak, nonatomic) IBOutlet UISlider *sliderLine;
-
 @end
 
 @implementation ImageViewController
@@ -45,7 +43,7 @@
 	{
 		ResultViewController *destination = segue.destinationViewController;
 		destination.face = self.image;
-		destination.sliderStatus = [[NSNumber alloc] initWithFloat:self.sliderLine.value];
+		destination.sliderStatus = self.sliderLine.value;
 	}
 	else if ([segue.identifier isEqualToString:@"RetakePhoto"])
 	{
