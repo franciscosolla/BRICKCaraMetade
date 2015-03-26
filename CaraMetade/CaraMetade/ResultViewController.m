@@ -29,8 +29,35 @@
     
     CGImageRef leftImage, rightImage;
     
-    leftImage = CGImageCreateWithImageInRect(self.face.CGImage, CGRectMake(0, 0, self.face.size.height, (self.face.size.width * ( 1.0 -self.sliderStatus))));
-    rightImage = CGImageCreateWithImageInRect(self.face.CGImage, CGRectMake(0, (self.face.size.width * (1.0-self.sliderStatus)), self.face.size.height, (self.face.size.width*self.sliderStatus)));
+    if (self.sliderStatus >= 0.5)
+    {
+        leftImage = CGImageCreateWithImageInRect(self.face.CGImage,
+                                                 CGRectMake(0,
+                                                            0,
+                                                            self.face.size.height,
+                                                            self.face.size.width * self.cropperStatus));
+        
+        rightImage = CGImageCreateWithImageInRect(self.face.CGImage,
+                                                  CGRectMake(0,
+                                                             (self.cropperStatus * self.face.size.width),
+                                                             self.face.size.height,
+                                                             self.face.size.width * self.cropperStatus));
+    }
+    else
+    {
+        leftImage = CGImageCreateWithImageInRect(self.face.CGImage,
+                                                 CGRectMake(0,
+                                                            self.face.size.width - (2 * self.cropperStatus * self.face.size.width),
+                                                            self.face.size.height,
+                                                            self.face.size.width * self.cropperStatus));
+        
+        rightImage = CGImageCreateWithImageInRect(self.face.CGImage,
+                                                  CGRectMake(0,
+                                                             self.face.size.width - (self.cropperStatus * self.face.size.width),
+                                                             self.face.size.height,
+                                                             self.face.size.width * self.cropperStatus));
+    }
+    
     
     self.leftSideImage.image = [UIImage imageWithCGImage:leftImage scale:1 orientation:self.face.imageOrientation];
 	self.rightSideImage.image = [UIImage imageWithCGImage:rightImage scale:1 orientation:self.face.imageOrientation];
@@ -128,6 +155,7 @@
         ImageViewController * destination = segue.destinationViewController;
         destination.image = self.face;
         destination.sliderStatus = self.sliderStatus;
+        destination.cropperStatus = self.cropperStatus;
     }
 	else if ([segue.identifier isEqualToString:@"CameraView"])
 	{
