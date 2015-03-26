@@ -132,9 +132,6 @@
 			NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSamplerBuffer];
 			self.image = [[UIImage alloc] initWithData:imageData];
             
-            if (self.frontCameraActive)
-                self.image = [[UIImage alloc] initWithCGImage:self.image.CGImage scale:1 orientation:UIImageOrientationLeftMirrored];
-            
 			[self performSegueWithIdentifier:@"ShowImageView" sender:self];
 		}
 	}];

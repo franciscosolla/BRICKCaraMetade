@@ -30,8 +30,14 @@
 	
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
-	CGContextSetRGBFillColor(context, 255.0, 128.0, 0, 1.0);
-	
+	CGContextSetRGBFillColor(context, 1.0, 0.5, 0, 1.0);
+    
+    CGRect rect = CGRectMake(0, 0, 3.0f, self.viewWithAllImageObjects.frame.size.height);
+    
+    CGContextFillRect(context, rect);
+    
+    CGContextStrokeRect(context, rect);
+    
 	UIImage *line = UIGraphicsGetImageFromCurrentImageContext();
 	
 	UIGraphicsEndImageContext();
@@ -39,7 +45,7 @@
 	[self.sliderLine setThumbImage:line forState:UIControlStateNormal];
 	[self.sliderLine setMinimumTrackImage:[UIImage alloc] forState:UIControlStateNormal];
 	[self.sliderLine setMaximumTrackImage:[UIImage alloc] forState:UIControlStateNormal];
-	[self.sliderLine setValue:self.sliderStatus animated:YES];
+	[self.sliderLine setValue:self.sliderStatus];
 }
 
 - (void)didReceiveMemoryWarning {

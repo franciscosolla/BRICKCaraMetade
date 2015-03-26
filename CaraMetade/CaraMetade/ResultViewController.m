@@ -29,17 +29,8 @@
     
     CGImageRef leftImage, rightImage;
     
-    if (self.frontCamera)
-    {
-        leftImage = CGImageCreateWithImageInRect(self.face.CGImage, CGRectMake(0, 0, self.face.size.height, (self.face.size.width * ( 1.0 -self.sliderStatus))));
-        rightImage = CGImageCreateWithImageInRect(self.face.CGImage, CGRectMake(0, (self.face.size.width * (1.0-self.sliderStatus)), self.face.size.height, (self.face.size.width*self.sliderStatus)));
-    }
-    else
-    {
-        leftImage = CGImageCreateWithImageInRect(self.face.CGImage, CGRectMake(0, 0, self.face.size.height, (self.face.size.width * ( 1.0 -self.sliderStatus))));
-        rightImage = CGImageCreateWithImageInRect(self.face.CGImage, CGRectMake(0, (self.face.size.width * (1.0-self.sliderStatus)), self.face.size.height, (self.face.size.width*self.sliderStatus)));
-    }
-    
+    leftImage = CGImageCreateWithImageInRect(self.face.CGImage, CGRectMake(0, 0, self.face.size.height, (self.face.size.width * ( 1.0 -self.sliderStatus))));
+    rightImage = CGImageCreateWithImageInRect(self.face.CGImage, CGRectMake(0, (self.face.size.width * (1.0-self.sliderStatus)), self.face.size.height, (self.face.size.width*self.sliderStatus)));
     
     self.leftSideImage.image = [UIImage imageWithCGImage:leftImage scale:1 orientation:self.face.imageOrientation];
 	self.rightSideImage.image = [UIImage imageWithCGImage:rightImage scale:1 orientation:self.face.imageOrientation];
@@ -73,7 +64,6 @@
         pointImg2 = CGPointMake(self.rightSideImage.image.size.width,0);
         [[[UIImage alloc] initWithCGImage:rightImage scale:1 orientation:UIImageOrientationLeftMirrored] drawAtPoint: pointImg2];
     
-        
         result = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
