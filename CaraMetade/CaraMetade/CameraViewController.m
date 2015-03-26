@@ -95,7 +95,6 @@
 		destination.image = self.image;
 		destination.frontCamera = self.frontCameraActive;
         destination.sliderStatus = 0.5;
-        destination.cropperStatus = 0.5;
 	}
 }
 

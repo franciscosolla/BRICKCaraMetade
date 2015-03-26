@@ -15,8 +15,8 @@
 
 @property (nonatomic) BOOL frontCamera;
 
-@property (nonatomic) double sliderStatus;
+@property (weak, nonatomic) IBOutlet UISlider *sliderLine;
 
-@property (nonatomic) double cropperStatus;
+@property (nonatomic) double sliderStatus;
 
 @end
