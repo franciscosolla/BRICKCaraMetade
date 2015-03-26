@@ -13,6 +13,6 @@
 
 @property (strong, nonatomic) UIImage *image;
 
-@property (strong, nonatomic) 
+@property (nonatomic) BOOL frontCamera;
 
 @end

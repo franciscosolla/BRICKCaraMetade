@@ -55,11 +55,12 @@
 	self.backCamera = [AVCaptureDeviceInput deviceInputWithDevice:back error:&error];
 	self.frontCamera = [AVCaptureDeviceInput deviceInputWithDevice:front error:&error];
     
-    if ([self.session canAddInput:self.backCamera])
-    {
+    if ([self.session canAddInput:self.backCamera] && self.frontCameraActive == NO)
         [self.session addInput:self.backCamera];
-    }
-    
+	else if ([self.session canAddInput:self.backCamera])
+		[self.session addInput:self.frontCamera];
+
+	
     AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
     [previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
     CALayer *rootLayer = [[self frameForCapture] layer];
@@ -92,6 +93,7 @@
 	{
 		ImageViewController * destination = segue.destinationViewController;
 		destination.image = self.image;
+		destination.frontCamera = self.frontCameraActive;
 	}
 }
 
@@ -140,11 +142,13 @@
 	{
 		[self.session removeInput:self.backCamera];
 		[self.session addInput:self.frontCamera];
+		self.frontCameraActive = YES;
 	}
 	else
 	{
 		[self.session removeInput:self.frontCamera];
 		[self.session addInput:self.backCamera];
+		self.frontCameraActive = NO;
 	}
 }
 

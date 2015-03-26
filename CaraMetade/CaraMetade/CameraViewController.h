@@ -11,5 +11,7 @@
 
 @interface CameraViewController : UIViewController
 
+@property (nonatomic) BOOL frontCameraActive;
+
 @end
 

@@ -8,6 +8,7 @@
 
 #import "ImageViewController.h"
 #import "ResultViewController.h"
+#import "CameraViewController.h"
 
 @interface ImageViewController ()
 
@@ -42,9 +43,14 @@
 {
 	if ([segue.identifier isEqualToString:@"ResultView"])
 	{
-		ResultViewController * destination = segue.destinationViewController;
+		ResultViewController *destination = segue.destinationViewController;
 		destination.face = self.image;
 		destination.sliderStatus = [[NSNumber alloc] initWithFloat:self.sliderLine.value];
+	}
+	else if ([segue.indentifier isEqualToString:@"RetakePhoto"])
+	{
+		CameraViewController *destination = segue.destinationViewController;
+		destination.frontCameraActive = 
 	}
 }
 
