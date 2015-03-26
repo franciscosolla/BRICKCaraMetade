@@ -9,6 +9,7 @@
 #import "ResultViewController.h"
 #import "FinalImageViewController.h"
 #import "ImageViewController.h"
+#import "CameraViewController.h"
 
 @interface ResultViewController()
 
@@ -121,6 +122,11 @@
         destination.image = self.face;
         [destination.sliderLine setValue:self.sliderStatus];
     }
+	else if ([segue.identifier isEqualToString:@"CameraView"])
+	{
+		CameraViewController *destination = segue.destinationViewController;
+		destination.frontCameraActive = self.frontCamera;
+	}
 }
 
 

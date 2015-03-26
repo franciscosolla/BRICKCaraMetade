@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *finalImageView;
 
+@property (nonatomic) BOOL frontCamera;
+
 @end
 
 @implementation FinalImageViewController
@@ -23,6 +25,10 @@
 	UIImageWriteToSavedPhotosAlbum(self.finalImage, nil, nil, nil);
 
 }
+
+#pragma mark - Segue
+
+#pragma mark - Back Button
 
 - (IBAction)takeAnotherImage:(id)sender
 {

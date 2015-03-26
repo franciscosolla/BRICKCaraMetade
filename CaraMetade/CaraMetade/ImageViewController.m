@@ -44,6 +44,7 @@
 		ResultViewController *destination = segue.destinationViewController;
 		destination.face = self.image;
 		destination.sliderStatus = self.sliderLine.value;
+		destination.frontCamera = self.frontCamera;
 	}
 	else if ([segue.identifier isEqualToString:@"RetakePhoto"])
 	{

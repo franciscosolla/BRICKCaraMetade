@@ -123,17 +123,17 @@
                                 <exclude reference="7AU-NX-qtA"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1eT-Ha-10d"/>
-                                <exclude reference="8kt-bH-dAu"/>
-                                <exclude reference="Dtb-wp-x3F"/>
-                                <exclude reference="xQX-HM-lJA"/>
+                                <exclude reference="OUj-c0-FTO"/>
                                 <exclude reference="jJg-rL-Y2t"/>
                                 <exclude reference="p77-b0-UFO"/>
                                 <exclude reference="qZT-ts-yKp"/>
                                 <exclude reference="xsD-Dc-muU"/>
                                 <exclude reference="FoG-hp-qzR"/>
                                 <exclude reference="Gf7-49-4tV"/>
-                                <exclude reference="OUj-c0-FTO"/>
+                                <exclude reference="1eT-Ha-10d"/>
+                                <exclude reference="8kt-bH-dAu"/>
+                                <exclude reference="Dtb-wp-x3F"/>
+                                <exclude reference="xQX-HM-lJA"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -143,17 +143,17 @@
                                 <include reference="7AU-NX-qtA"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="1eT-Ha-10d"/>
-                                <include reference="8kt-bH-dAu"/>
-                                <include reference="Dtb-wp-x3F"/>
-                                <include reference="xQX-HM-lJA"/>
+                                <include reference="OUj-c0-FTO"/>
                                 <include reference="jJg-rL-Y2t"/>
                                 <include reference="p77-b0-UFO"/>
                                 <include reference="qZT-ts-yKp"/>
                                 <include reference="xsD-Dc-muU"/>
                                 <include reference="FoG-hp-qzR"/>
                                 <include reference="Gf7-49-4tV"/>
-                                <include reference="OUj-c0-FTO"/>
+                                <include reference="1eT-Ha-10d"/>
+                                <include reference="8kt-bH-dAu"/>
+                                <include reference="Dtb-wp-x3F"/>
+                                <include reference="xQX-HM-lJA"/>
                             </mask>
                         </variation>
                     </view>
@@ -267,18 +267,18 @@
                                 <exclude reference="4K0-gk-WMx"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="BQO-Hi-5Gq"/>
-                                <exclude reference="CQ3-BK-rnY"/>
-                                <exclude reference="O68-qN-tJq"/>
-                                <exclude reference="xX1-xN-EwH"/>
+                                <exclude reference="17S-6a-Qmq"/>
+                                <exclude reference="hMs-02-XeJ"/>
                                 <exclude reference="6Fb-WV-KJW"/>
                                 <exclude reference="9on-CK-8db"/>
                                 <exclude reference="dss-wm-77C"/>
                                 <exclude reference="Ubc-k7-KjT"/>
                                 <exclude reference="Ec2-3T-sXe"/>
                                 <exclude reference="OOL-Ln-HQg"/>
-                                <exclude reference="17S-6a-Qmq"/>
-                                <exclude reference="hMs-02-XeJ"/>
+                                <exclude reference="BQO-Hi-5Gq"/>
+                                <exclude reference="CQ3-BK-rnY"/>
+                                <exclude reference="O68-qN-tJq"/>
+                                <exclude reference="xX1-xN-EwH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -289,18 +289,18 @@
                                 <include reference="4K0-gk-WMx"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="BQO-Hi-5Gq"/>
-                                <include reference="CQ3-BK-rnY"/>
-                                <include reference="O68-qN-tJq"/>
-                                <include reference="xX1-xN-EwH"/>
+                                <include reference="17S-6a-Qmq"/>
+                                <include reference="hMs-02-XeJ"/>
                                 <include reference="6Fb-WV-KJW"/>
                                 <include reference="9on-CK-8db"/>
                                 <include reference="dss-wm-77C"/>
                                 <include reference="Ubc-k7-KjT"/>
                                 <include reference="Ec2-3T-sXe"/>
                                 <exclude reference="OOL-Ln-HQg"/>
-                                <include reference="17S-6a-Qmq"/>
-                                <include reference="hMs-02-XeJ"/>
+                                <include reference="BQO-Hi-5Gq"/>
+                                <include reference="CQ3-BK-rnY"/>
+                                <include reference="O68-qN-tJq"/>
+                                <include reference="xX1-xN-EwH"/>
                             </mask>
                         </variation>
                     </view>
@@ -510,14 +510,14 @@
                                 <exclude reference="Aij-Ux-1Vd"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="ifd-aE-tF8"/>
+                                <exclude reference="sIy-Rv-rvT"/>
                                 <exclude reference="6ZT-Sc-pcW"/>
                                 <exclude reference="QF8-Rz-580"/>
                                 <exclude reference="pcb-v9-U2G"/>
                                 <exclude reference="RLB-lg-vLy"/>
                                 <exclude reference="Y83-up-m3X"/>
                                 <exclude reference="dgO-sk-tWg"/>
-                                <exclude reference="ifd-aE-tF8"/>
-                                <exclude reference="sIy-Rv-rvT"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -526,14 +526,14 @@
                                 <include reference="Aij-Ux-1Vd"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="ifd-aE-tF8"/>
+                                <include reference="sIy-Rv-rvT"/>
                                 <include reference="6ZT-Sc-pcW"/>
                                 <include reference="QF8-Rz-580"/>
                                 <include reference="pcb-v9-U2G"/>
                                 <include reference="RLB-lg-vLy"/>
                                 <include reference="Y83-up-m3X"/>
                                 <include reference="dgO-sk-tWg"/>
-                                <include reference="ifd-aE-tF8"/>
-                                <include reference="sIy-Rv-rvT"/>
                             </mask>
                         </variation>
                     </view>
@@ -551,8 +551,8 @@
         <image name="CameraRotate.png" width="90" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bta-0x-fZl"/>
-        <segue reference="fAY-hc-7LQ"/>
+        <segue reference="bEs-O8-ltF"/>
+        <segue reference="D4v-jr-gLc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

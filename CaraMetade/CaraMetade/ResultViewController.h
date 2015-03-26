@@ -16,4 +16,6 @@
 
 @property (strong, nonatomic) UIImage *finalImage;
 
+@property (nonatomic) BOOL frontCamera;
+
 @end
