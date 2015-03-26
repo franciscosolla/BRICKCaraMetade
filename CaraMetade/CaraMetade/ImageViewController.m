@@ -53,6 +53,10 @@
 	[self performSegueWithIdentifier:@"ResultView" sender:self];
 }
 
+- (IBAction)retakeButton:(id)sender {
+	[self performSegueWithIdentifier:@"RetakePhoto" sender:self];
+}
+
 /*
  #pragma mark - Navigation
  

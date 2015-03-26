@@ -13,8 +13,15 @@
 @interface CameraViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *frameForCapture;
+
 @property (strong, nonatomic) AVCaptureStillImageOutput *stillImageOutput;
+
 @property (strong, nonatomic) AVCaptureSession *session;
+
+@property (strong, nonatomic) AVCaptureInput *frontCamera;
+
+@property (strong, nonatomic) AVCaptureInput *backCamera;
+
 @property (strong, nonatomic) UIImage *image;
 
 @end
@@ -24,21 +31,33 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    }
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
     self.session = [[AVCaptureSession alloc] init];
     [self.session setSessionPreset:AVCaptureSessionPresetPhoto];
-    
-    AVCaptureDevice *inputDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+	NSArray *devices = [AVCaptureDevice devices];
+	AVCaptureDevice *front;
+	AVCaptureDevice *back;
+	
+	for (AVCaptureDevice *device in devices)
+		if ([device hasMediaType:AVMediaTypeVideo])
+			{
+			if ([device position] == AVCaptureDevicePositionBack)
+				back = device;
+			else if ([device position] == AVCaptureDevicePositionFront)
+				front = device;
+			}
     
     NSError *error;
-    AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:inputDevice error:&error];
+	
+	self.backCamera = [AVCaptureDeviceInput deviceInputWithDevice:back error:&error];
+	self.frontCamera = [AVCaptureDeviceInput deviceInputWithDevice:front error:&error];
     
-    if ([self.session canAddInput:deviceInput])
+    if ([self.session canAddInput:self.backCamera])
     {
-        [self.session addInput:deviceInput];
+        [self.session addInput:self.backCamera];
     }
     
     AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
@@ -78,6 +97,7 @@
 
 #pragma mark - Camera Buttons
 
+/// Takes a photo.
 - (IBAction)takePhotto:(id)sender
 {
 	AVCaptureConnection *videoConnection = nil;
@@ -101,6 +121,8 @@
 	if (videoConnection.supportsVideoOrientation)
 		videoConnection.videoOrientation = AVCaptureVideoOrientationPortrait;
 	
+//	self.stillImageOutput.automaticallyEnablesStillImageStabilizationWhenAvailable = YES;
+	
 	[self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^(CMSampleBufferRef imageDataSamplerBuffer, NSError *error) {
 		if (imageDataSamplerBuffer != NULL)
 		{
@@ -110,6 +132,20 @@
 		}
 	}];
 	
+}
+
+/// Rotate the camera.
+- (IBAction)cameraRotate:(id)sender {
+	if (self.session.inputs[0] == self.backCamera)
+	{
+		[self.session removeInput:self.backCamera];
+		[self.session addInput:self.frontCamera];
+	}
+	else
+	{
+		[self.session removeInput:self.frontCamera];
+		[self.session addInput:self.backCamera];
+	}
 }
 
 @end

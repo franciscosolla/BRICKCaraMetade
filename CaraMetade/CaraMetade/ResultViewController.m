@@ -45,7 +45,7 @@
         UIGraphicsEndImageContext();
         
         self.leftSideImage.image = result;
-    
+	
     // ********************************
     
     // build the final right side image
@@ -67,6 +67,8 @@
     
     // ********************************
 }
+
+#pragma mark - Prepare Segue
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
