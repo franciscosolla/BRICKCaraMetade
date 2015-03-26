@@ -7,6 +7,7 @@
 //
 
 #import "FinalImageViewController.h"
+#import "CameraViewController.h"
 
 @interface FinalImageViewController ()
 
@@ -27,6 +28,15 @@
 }
 
 #pragma mark - Segue
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"CameraView"])
+	{
+		CameraViewController *destination = segue.destinationViewController;
+		destination.frontCameraActive = self.frontCamera;
+	}
+}
 
 #pragma mark - Back Button
 
