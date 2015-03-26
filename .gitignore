@@ -6,3 +6,7 @@
 *.xcscheme
 
 *.plist
+
+*.xcbkptlist
+
+*.xcuserstate
