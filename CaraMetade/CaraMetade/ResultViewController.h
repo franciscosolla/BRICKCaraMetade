@@ -14,6 +14,8 @@
 
 @property (nonatomic) double sliderStatus;
 
+@property (nonatomic) double cropperStatus;
+
 @property (strong, nonatomic) UIImage *finalImage;
 
 @property (nonatomic) BOOL frontCamera;
