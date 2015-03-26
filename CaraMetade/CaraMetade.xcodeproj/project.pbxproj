@@ -11,7 +11,6 @@
 		44D137381AC1E7D500A4ABA7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D137371AC1E7D500A4ABA7 /* ImageViewController.m */; };
 		44D2DDF91AC3450B003828FF /* FinalImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D2DDF81AC3450B003828FF /* FinalImageViewController.m */; };
 		A0D0CE3C1AC42597005569D6 /* CameraRotate.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D0CE3B1AC42597005569D6 /* CameraRotate.png */; };
-		A0D1D7CE1AC2EE670043B484 /* line.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0D1D7CD1AC2EE670043B484 /* line.jpg */; };
 		A0D1D7D11AC2F45A0043B484 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D1D7D01AC2F45A0043B484 /* ResultViewController.m */; };
 		A0FE4C871AC0A69700A74099 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4C861AC0A69700A74099 /* main.m */; };
 		A0FE4C8A1AC0A69700A74099 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4C891AC0A69700A74099 /* AppDelegate.m */; };
@@ -39,7 +38,6 @@
 		44D2DDF71AC3450B003828FF /* FinalImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinalImageViewController.h; sourceTree = "<group>"; };
 		44D2DDF81AC3450B003828FF /* FinalImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinalImageViewController.m; sourceTree = "<group>"; };
 		A0D0CE3B1AC42597005569D6 /* CameraRotate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CameraRotate.png; sourceTree = "<group>"; };
-		A0D1D7CD1AC2EE670043B484 /* line.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = line.jpg; sourceTree = "<group>"; };
 		A0D1D7CF1AC2F45A0043B484 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		A0D1D7D01AC2F45A0043B484 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		A0FE4C811AC0A69700A74099 /* CaraMetade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaraMetade.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				A0D0CE3B1AC42597005569D6 /* CameraRotate.png */,
-				A0D1D7CD1AC2EE670043B484 /* line.jpg */,
 				A0FE4C851AC0A69700A74099 /* Info.plist */,
 				A0FE4C861AC0A69700A74099 /* main.m */,
 			);
@@ -228,7 +225,6 @@
 				A0D0CE3C1AC42597005569D6 /* CameraRotate.png in Resources */,
 				A0FE4C951AC0A69700A74099 /* LaunchScreen.xib in Resources */,
 				A0FE4C921AC0A69700A74099 /* Images.xcassets in Resources */,
-				A0D1D7CE1AC2EE670043B484 /* line.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

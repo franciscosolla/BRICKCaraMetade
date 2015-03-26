@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+@property (weak, nonatomic) IBOutlet UIView *viewWithAllImageObjects;
+
 @end
 
 @implementation ImageViewController
@@ -24,11 +26,20 @@
 	// Loads the image on the ImageView..
 	self.imageView.image = self.image;
 	// Draws the divisor line.
-	[self.sliderLine maximumValueImageRectForBounds:self.view.bounds];
-	[self.sliderLine setThumbImage:[UIImage imageNamed:@"line.jpg"] forState:UIControlStateNormal];
+	UIGraphicsBeginImageContext(CGSizeMake(3.0f, self.viewWithAllImageObjects.frame.size.height));
+	
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	
+	CGContextSetRGBFillColor(context, 255.0, 128.0, 0, 1.0);
+	
+	UIImage *line = UIGraphicsGetImageFromCurrentImageContext();
+	
+	UIGraphicsEndImageContext();
+	
+	[self.sliderLine setThumbImage:line forState:UIControlStateNormal];
 	[self.sliderLine setMinimumTrackImage:[UIImage alloc] forState:UIControlStateNormal];
 	[self.sliderLine setMaximumTrackImage:[UIImage alloc] forState:UIControlStateNormal];
-    [self.sliderLine setValue:self.sliderStatus];
+	[self.sliderLine setValue:self.sliderStatus animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
