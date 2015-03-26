@@ -76,7 +76,11 @@
     if ([segue.identifier isEqualToString:@"FinalImageView"])
     {
         FinalImageViewController * destination = segue.destinationViewController;
-    
+		
+		// Pass the camera side.
+		
+		destination.frontCamera = self.frontCamera;
+		
         // build the FINAL image
         
         float width, height;
