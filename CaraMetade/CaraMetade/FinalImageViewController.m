@@ -13,10 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *finalImageView;
 
-@property (weak, nonatomic) IBOutlet UIPinchGestureRecognizer *pinchReconizer;
-
-@property (nonatomic) double lastScale;
-
 @end
 
 @implementation FinalImageViewController
@@ -26,9 +22,6 @@
     // Do any additional setup after loading the view.
     self.finalImageView.image = self.finalImage;
 	UIImageWriteToSavedPhotosAlbum(self.finalImage, nil, nil, nil);
-    
-    //[self.finalImageView addGestureRecognizer:self.pinchReconizer];
-    self.lastScale = 1.0;
 }
 
 #pragma mark - Segue
@@ -44,16 +37,15 @@
 
 - (IBAction)pinchRecognizer:(UIPinchGestureRecognizer*)sender
 {
-    CGFloat scale = self.lastScale *sender.scale;
-    
-    CGAffineTransform tr = CGAffineTransformScale(self.finalImageView.transform, scale, scale);
+    CGAffineTransform tr = CGAffineTransformScale(self.finalImageView.transform, sender.scale, sender.scale);
     self.finalImageView.transform = tr;
-    
-    if(sender.state == UIGestureRecognizerStateBegan)
-    {
-        self.lastScale = scale;
-        return;
-    }
+}
+
+- (IBAction)panRecognizer:(UIPanGestureRecognizer*)sender
+{
+    CGPoint translation = [sender translationInView:self.view];
+    CGAffineTransform tr = CGAffineTransformTranslate(self.finalImageView.transform, translation.x*0.06, translation.y*0.06);
+    self.finalImageView.transform = tr;
 }
 
 #pragma mark - Back Button

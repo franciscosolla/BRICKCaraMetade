@@ -184,33 +184,21 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKQ-Td-9M5" userLabel="ImageViewFrame">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="510"/>
-                                        </variation>
                                     </imageView>
                                     <slider opaque="NO" tag="1" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="g7z-e1-X1A" userLabel="RightCropper">
                                         <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="-2" y="240" width="604" height="31"/>
-                                        </variation>
                                         <connections>
                                             <action selector="rightCropperValueChanged:" destination="N6s-N6-f7R" eventType="valueChanged" id="VOE-L5-1ew"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bwm-e2-gjU" userLabel="LeftCropper">
                                         <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="-2" y="240" width="604" height="31"/>
-                                        </variation>
                                         <connections>
                                             <action selector="leftCropperValueChanged:" destination="N6s-N6-f7R" eventType="valueChanged" id="9Fx-Dj-wUu"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CUA-lC-lWn" userLabel="LineSetter">
                                         <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="-2" y="240" width="604" height="31"/>
-                                        </variation>
                                         <connections>
                                             <action selector="sliderLineValueChanged:" destination="N6s-N6-f7R" eventType="valueChanged" id="jaB-3I-u88"/>
                                         </connections>
@@ -255,8 +243,7 @@
                                         <exclude reference="xjz-jJ-FxR"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="20" width="600" height="510"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="gKQ-Td-9M5"/>
                                         <include reference="g7z-e1-X1A"/>
@@ -296,8 +283,7 @@
                                         <exclude reference="reF-ao-W9q"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="434" y="530" width="150" height="50"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="pzd-vm-Evb"/>
                                         <include reference="reF-ao-W9q"/>
@@ -327,8 +313,7 @@
                                         <exclude reference="yYI-PE-Jsy"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="530" width="150" height="50"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="Aaf-ei-N7D"/>
                                         <include reference="I0E-Vr-Th2"/>
@@ -415,15 +400,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uVu-11-6RM" userLabel="Right Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="288" width="568" height="252"/>
-                                </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H7J-ib-Chr" userLabel="Left Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="25" width="568" height="253"/>
-                                </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1v-AZ-aaw">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -431,9 +410,6 @@
                                 <state key="normal" title="Retake">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="44" y="555" width="71" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="retakeImage:" destination="n29-gb-hHb" eventType="touchUpInside" id="gKu-rW-hbq"/>
                                 </connections>
@@ -444,9 +420,6 @@
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="163" y="555" width="75" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="acceptImage:" destination="n29-gb-hHb" eventType="touchUpInside" id="wmA-hx-h24"/>
                                 </connections>
@@ -457,9 +430,6 @@
                                 <state key="normal" title="Edit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="301" y="555" width="54" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="editImage:" destination="n29-gb-hHb" eventType="touchUpInside" id="Wyg-hU-Sfn"/>
                                 </connections>
@@ -652,22 +622,27 @@
                             </mask>
                         </variation>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="UYo-g4-T93" appends="YES" id="kgp-sm-XeW"/>
+                            <outletCollection property="gestureRecognizers" destination="65s-Ef-Udw" appends="YES" id="SrG-Mk-mhq"/>
                         </connections>
                     </view>
                     <connections>
                         <outlet property="finalImageView" destination="jym-3e-CwT" id="4as-VZ-i4e"/>
-                        <outlet property="pinchReconizer" destination="UYo-g4-T93" id="nIv-v8-09q"/>
                         <segue destination="vXZ-lx-hvc" kind="show" identifier="CameraView" id="D4v-jr-gLc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lom-1I-bWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer delaysTouchesBegan="YES" id="UYo-g4-T93">
+                <pinchGestureRecognizer delaysTouchesEnded="NO" scale="0.10000000000000001" id="UYo-g4-T93">
                     <connections>
                         <action selector="pinchRecognizer:" destination="zPY-Ep-DLg" id="7yg-gU-f5h"/>
                         <outlet property="delegate" destination="zPY-Ep-DLg" id="Dm8-yD-6He"/>
                     </connections>
                 </pinchGestureRecognizer>
+                <panGestureRecognizer delaysTouchesEnded="NO" minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="65s-Ef-Udw">
+                    <connections>
+                        <action selector="panRecognizer:" destination="zPY-Ep-DLg" id="Ual-9c-JMb"/>
+                        <outlet property="delegate" destination="zPY-Ep-DLg" id="Od1-Z6-BcJ"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3378" y="436.5"/>
         </scene>
