@@ -13,6 +13,10 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *finalImageView;
 
+@property (nonatomic) double finalImageScale;
+
+@property (nonatomic) CGPoint finalImageTranslation;
+
 @end
 
 @implementation FinalImageViewController
@@ -22,6 +26,9 @@
     // Do any additional setup after loading the view.
     self.finalImageView.image = self.finalImage;
 	UIImageWriteToSavedPhotosAlbum(self.finalImage, nil, nil, nil);
+    
+    self.finalImageScale = 1.0;
+    self.finalImageTranslation = CGPointMake(0, 0);
 }
 
 #pragma mark - Segue
@@ -37,15 +44,35 @@
 
 - (IBAction)pinchRecognizer:(UIPinchGestureRecognizer*)sender
 {
-    CGAffineTransform tr = CGAffineTransformScale(self.finalImageView.transform, sender.scale, sender.scale);
-    self.finalImageView.transform = tr;
+    if (sender.state == UIGestureRecognizerStateEnded || sender.state == UIGestureRecognizerStateCancelled)
+    {
+        self.finalImageScale *= sender.scale;
+    }
+    else
+    {
+        self.finalImageView.transform = CGAffineTransformMakeScale(self.finalImageScale * sender.scale,
+                                                                         self.finalImageScale * sender.scale);
+    }
 }
 
 - (IBAction)panRecognizer:(UIPanGestureRecognizer*)sender
 {
     CGPoint translation = [sender translationInView:self.view];
-    CGAffineTransform tr = CGAffineTransformTranslate(self.finalImageView.transform, translation.x*0.06, translation.y*0.06);
-    self.finalImageView.transform = tr;
+    
+    if (sender.state == UIGestureRecognizerStateEnded || sender.state == UIGestureRecognizerStateCancelled)
+    {
+        self.finalImageTranslation = CGPointMake(self.finalImageTranslation.x + translation.x,
+                                                 self.finalImageTranslation.y + translation.y);
+    }
+    else
+    {
+        self.finalImageView.transform = CGAffineTransformMakeTranslation(self.finalImageTranslation.x + translation.x,
+                                                                     self.finalImageTranslation.y + translation.y);
+    }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    return YES;
 }
 
 #pragma mark - Back Button

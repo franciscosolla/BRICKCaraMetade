@@ -327,6 +327,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="U14-hh-s5Y" firstAttribute="top" secondItem="4K0-gk-WMx" secondAttribute="bottom" constant="20" id="17S-6a-Qmq"/>
                             <constraint firstItem="4K0-gk-WMx" firstAttribute="top" secondItem="aE9-A2-Kg9" secondAttribute="bottom" id="46m-w9-tgj"/>
@@ -371,6 +372,9 @@
                                 <include reference="RHY-lX-Irz"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="JTB-7A-IJc" appends="YES" id="Yps-fn-pMH"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="gKQ-Td-9M5" id="3GG-ys-nqE"/>
@@ -383,6 +387,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dns-pc-Y5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <rotationGestureRecognizer id="JTB-7A-IJc">
+                    <connections>
+                        <action selector="rotationRecognizer:" destination="N6s-N6-f7R" id="imq-vz-9F9"/>
+                        <outlet property="delegate" destination="N6s-N6-f7R" id="7Vp-bi-fOd"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1470" y="428.25"/>
         </scene>
@@ -623,6 +633,7 @@
                         </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="65s-Ef-Udw" appends="YES" id="SrG-Mk-mhq"/>
+                            <outletCollection property="gestureRecognizers" destination="UYo-g4-T93" appends="YES" id="qql-Oi-jEo"/>
                         </connections>
                     </view>
                     <connections>
@@ -631,18 +642,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lom-1I-bWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer delaysTouchesEnded="NO" minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="65s-Ef-Udw">
+                    <connections>
+                        <action selector="panRecognizer:" destination="zPY-Ep-DLg" id="Ual-9c-JMb"/>
+                        <outlet property="delegate" destination="zPY-Ep-DLg" id="Bxo-ZF-3sj"/>
+                    </connections>
+                </panGestureRecognizer>
                 <pinchGestureRecognizer delaysTouchesEnded="NO" scale="0.10000000000000001" id="UYo-g4-T93">
                     <connections>
                         <action selector="pinchRecognizer:" destination="zPY-Ep-DLg" id="7yg-gU-f5h"/>
                         <outlet property="delegate" destination="zPY-Ep-DLg" id="Dm8-yD-6He"/>
                     </connections>
                 </pinchGestureRecognizer>
-                <panGestureRecognizer delaysTouchesEnded="NO" minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="65s-Ef-Udw">
-                    <connections>
-                        <action selector="panRecognizer:" destination="zPY-Ep-DLg" id="Ual-9c-JMb"/>
-                        <outlet property="delegate" destination="zPY-Ep-DLg" id="Od1-Z6-BcJ"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3378" y="436.5"/>
         </scene>
@@ -651,7 +662,7 @@
         <image name="CameraRotate.png" width="90" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="D4v-jr-gLc"/>
+        <segue reference="fAY-hc-7LQ"/>
         <segue reference="bEs-O8-ltF"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

@@ -10,7 +10,7 @@
 #import "ResultViewController.h"
 #import "CameraViewController.h"
 
-@interface ImageViewController ()
+@interface ImageViewController () <UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
@@ -22,6 +22,8 @@
 
 @property (weak, nonatomic) IBOutlet UISlider *leftCropper;
 
+@property (nonatomic) double imageViewRotation;
+
 @end
 
 @implementation ImageViewController
@@ -30,6 +32,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	
+    self.imageViewRotation = 0;
+    
     // Loads the image on the ImageView..
 	self.imageView.image = self.image;
     
@@ -40,13 +44,11 @@
         CGContextRef context = UIGraphicsGetCurrentContext();
         
         CGContextSetRGBFillColor(context, 1.0, 0.5, 0, 1.0);
-        
+    
         CGRect rect = CGRectMake(0, 0, 3.0f, self.viewWithAllImageObjects.frame.size.height);
         
         CGContextFillRect(context, rect);
-        
-        CGContextStrokeRect(context, rect);
-        
+    
         UIImage *line = UIGraphicsGetImageFromCurrentImageContext();
         
         UIGraphicsEndImageContext();
@@ -64,13 +66,11 @@
     
     context = UIGraphicsGetCurrentContext();
     
-    CGContextSetRGBFillColor(context, 1.0, 0.5, 0, 1.0);
+    CGContextSetRGBFillColor(context, 0.5, 0.5, 0.5, 1.0);
     
     rect = CGRectMake(0, 0, 3.0f, self.viewWithAllImageObjects.frame.size.height);
     
     CGContextFillRect(context, rect);
-    
-    CGContextStrokeRect(context, rect);
     
     UIImage *rightLine = UIGraphicsGetImageFromCurrentImageContext();
     
@@ -89,13 +89,11 @@
     
     context = UIGraphicsGetCurrentContext();
     
-    CGContextSetRGBFillColor(context, 1.0, 0.5, 0, 1.0);
+    CGContextSetRGBFillColor(context, 0.5, 0.5, 0.5, 1.0);
     
     rect = CGRectMake(0, 0, 3.0f, self.viewWithAllImageObjects.frame.size.height);
     
     CGContextFillRect(context, rect);
-    
-    CGContextStrokeRect(context, rect);
     
     UIImage *leftLine = UIGraphicsGetImageFromCurrentImageContext();
     
@@ -164,6 +162,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)rotationRecognizer:(UIRotationGestureRecognizer*)sender
+{
+    if (sender.state == UIGestureRecognizerStateEnded || sender.state == UIGestureRecognizerStateCancelled)
+        self.imageViewRotation += sender.rotation;
+    else
+        self.imageView.transform = CGAffineTransformMakeRotation(self.imageViewRotation + sender.rotation);
+    
+    //image doesn`t really rotate, just it`s vizualization, study the code in the url: http://stackoverflow.com/questions/10544887/rotating-a-cgimage to fix it
+}
+
 #pragma mark - Segue
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -171,7 +179,7 @@
 	if ([segue.identifier isEqualToString:@"ResultView"])
 	{
 		ResultViewController *destination = segue.destinationViewController;
-		destination.face = self.image;
+		destination.face = self.imageView.image;
 		destination.sliderStatus = self.sliderLine.value;
 		destination.frontCamera = self.frontCamera;
         destination.cropperStatus = self.rightCropper.value - self.sliderLine.value;
