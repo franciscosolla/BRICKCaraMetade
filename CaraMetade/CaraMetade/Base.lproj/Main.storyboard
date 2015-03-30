@@ -564,14 +564,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jym-3e-CwT">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <gestureRecognizers/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="399" placeholderIntrinsicHeight="800" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aij-Ux-1Vd">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="ObX-Fc-awF"/>
+                                    <constraint firstAttribute="height" constant="90" id="ObX-Fc-awF">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="59"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="90" id="R2s-fX-7Dp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" backgroundImage="CameraRotate.png">
+                                <state key="normal" backgroundImage="camera.png">
                                     <color key="titleColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -590,16 +596,14 @@
                                     <action selector="takeAnotherImage:" destination="zPY-Ep-DLg" eventType="touchUpInside" id="4ki-cS-VLV"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jym-3e-CwT">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <gestureRecognizers/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Aij-Ux-1Vd" firstAttribute="leading" secondItem="xB4-70-QAS" secondAttribute="leadingMargin" id="2fS-dp-aX6"/>
-                            <constraint firstItem="Ej8-vg-3Vm" firstAttribute="top" secondItem="Aij-Ux-1Vd" secondAttribute="bottom" id="EUl-oJ-IqX"/>
+                            <constraint firstItem="Ej8-vg-3Vm" firstAttribute="top" secondItem="Aij-Ux-1Vd" secondAttribute="bottom" id="EUl-oJ-IqX">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="jym-3e-CwT" firstAttribute="width" secondItem="xB4-70-QAS" secondAttribute="width" id="X8N-b1-kKe"/>
                             <constraint firstItem="jym-3e-CwT" firstAttribute="height" secondItem="xB4-70-QAS" secondAttribute="height" id="YP5-UL-kdn"/>
                             <constraint firstAttribute="centerX" secondItem="jym-3e-CwT" secondAttribute="centerX" id="iyh-xr-Hz0"/>
@@ -607,8 +611,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="Aij-Ux-1Vd"/>
                                 <exclude reference="jym-3e-CwT"/>
+                                <exclude reference="Aij-Ux-1Vd"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="X8N-b1-kKe"/>
@@ -621,8 +625,8 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="Aij-Ux-1Vd"/>
                                 <include reference="jym-3e-CwT"/>
+                                <include reference="Aij-Ux-1Vd"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="X8N-b1-kKe"/>
@@ -662,6 +666,7 @@
     </scenes>
     <resources>
         <image name="CameraRotate.png" width="90" height="90"/>
+        <image name="camera.png" width="580" height="383"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bEs-O8-ltF"/>

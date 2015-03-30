@@ -26,7 +26,6 @@
 	// Do any additional setup after loading the view.
 	// Loads the image ad splits in half and displays in right and left view.
 	
-    
     CGImageRef leftImage, rightImage;
     
     if (self.sliderStatus >= 0.5)
@@ -95,7 +94,7 @@
         UIGraphicsEndImageContext();
         
         self.rightSideImage.image = result;
-    
+	
     // ********************************
 }
 
