@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -564,71 +564,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jym-3e-CwT">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <gestureRecognizers/>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
-                                    <rect key="frame" x="0.0" y="20" width="400" height="780"/>
-                                </variation>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="399" placeholderIntrinsicHeight="800" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aij-Ux-1Vd">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="ObX-Fc-awF"/>
+                                    <constraint firstAttribute="width" constant="90" id="R2s-fX-7Dp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" backgroundImage="CameraRotate.png">
                                     <color key="titleColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="16" y="738" width="55" height="54"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ObX-Fc-awF"/>
+                                        <exclude reference="R2s-fX-7Dp"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="ObX-Fc-awF"/>
+                                        <include reference="R2s-fX-7Dp"/>
+                                    </mask>
                                 </variation>
                                 <connections>
                                     <action selector="takeAnotherImage:" destination="zPY-Ep-DLg" eventType="touchUpInside" id="4ki-cS-VLV"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jym-3e-CwT">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <gestureRecognizers/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Aij-Ux-1Vd" firstAttribute="width" secondItem="xB4-70-QAS" secondAttribute="width" id="6ZT-Sc-pcW"/>
-                            <constraint firstItem="Aij-Ux-1Vd" firstAttribute="top" secondItem="xB4-70-QAS" secondAttribute="topMargin" constant="10" id="QF8-Rz-580">
-                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
-                            </constraint>
-                            <constraint firstAttribute="centerX" secondItem="jym-3e-CwT" secondAttribute="centerX" id="RLB-lg-vLy"/>
-                            <constraint firstItem="jym-3e-CwT" firstAttribute="top" secondItem="xB4-70-QAS" secondAttribute="topMargin" constant="20" id="Y83-up-m3X"/>
-                            <constraint firstItem="jym-3e-CwT" firstAttribute="width" secondItem="xB4-70-QAS" secondAttribute="width" id="dgO-sk-tWg"/>
-                            <constraint firstItem="Ej8-vg-3Vm" firstAttribute="top" secondItem="jym-3e-CwT" secondAttribute="bottom" id="ifd-aE-tF8"/>
-                            <constraint firstAttribute="centerX" secondItem="Aij-Ux-1Vd" secondAttribute="centerX" id="pcb-v9-U2G"/>
-                            <constraint firstItem="Ej8-vg-3Vm" firstAttribute="top" secondItem="Aij-Ux-1Vd" secondAttribute="bottom" id="sIy-Rv-rvT"/>
+                            <constraint firstItem="Aij-Ux-1Vd" firstAttribute="leading" secondItem="xB4-70-QAS" secondAttribute="leadingMargin" id="2fS-dp-aX6"/>
+                            <constraint firstItem="Ej8-vg-3Vm" firstAttribute="top" secondItem="Aij-Ux-1Vd" secondAttribute="bottom" id="EUl-oJ-IqX"/>
+                            <constraint firstItem="jym-3e-CwT" firstAttribute="width" secondItem="xB4-70-QAS" secondAttribute="width" id="X8N-b1-kKe"/>
+                            <constraint firstItem="jym-3e-CwT" firstAttribute="height" secondItem="xB4-70-QAS" secondAttribute="height" id="YP5-UL-kdn"/>
+                            <constraint firstAttribute="centerX" secondItem="jym-3e-CwT" secondAttribute="centerX" id="iyh-xr-Hz0"/>
+                            <constraint firstAttribute="centerY" secondItem="jym-3e-CwT" secondAttribute="centerY" id="mzR-3w-0Gi"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="jym-3e-CwT"/>
                                 <exclude reference="Aij-Ux-1Vd"/>
+                                <exclude reference="jym-3e-CwT"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ifd-aE-tF8"/>
-                                <exclude reference="sIy-Rv-rvT"/>
-                                <exclude reference="6ZT-Sc-pcW"/>
-                                <exclude reference="QF8-Rz-580"/>
-                                <exclude reference="pcb-v9-U2G"/>
-                                <exclude reference="RLB-lg-vLy"/>
-                                <exclude reference="Y83-up-m3X"/>
-                                <exclude reference="dgO-sk-tWg"/>
+                                <exclude reference="X8N-b1-kKe"/>
+                                <exclude reference="YP5-UL-kdn"/>
+                                <exclude reference="iyh-xr-Hz0"/>
+                                <exclude reference="mzR-3w-0Gi"/>
+                                <exclude reference="2fS-dp-aX6"/>
+                                <exclude reference="EUl-oJ-IqX"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="jym-3e-CwT"/>
                                 <include reference="Aij-Ux-1Vd"/>
+                                <include reference="jym-3e-CwT"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ifd-aE-tF8"/>
-                                <include reference="sIy-Rv-rvT"/>
-                                <exclude reference="6ZT-Sc-pcW"/>
-                                <exclude reference="QF8-Rz-580"/>
-                                <exclude reference="pcb-v9-U2G"/>
-                                <exclude reference="RLB-lg-vLy"/>
-                                <include reference="Y83-up-m3X"/>
-                                <include reference="dgO-sk-tWg"/>
+                                <include reference="X8N-b1-kKe"/>
+                                <include reference="YP5-UL-kdn"/>
+                                <include reference="iyh-xr-Hz0"/>
+                                <include reference="mzR-3w-0Gi"/>
+                                <include reference="2fS-dp-aX6"/>
+                                <include reference="EUl-oJ-IqX"/>
                             </mask>
                         </variation>
                         <connections>
@@ -662,8 +664,8 @@
         <image name="CameraRotate.png" width="90" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fAY-hc-7LQ"/>
         <segue reference="bEs-O8-ltF"/>
+        <segue reference="D4v-jr-gLc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

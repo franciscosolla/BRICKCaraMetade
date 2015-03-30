@@ -60,7 +60,7 @@
     
     // ********************************
     
-    // Draws the divisor middle line.
+    // Draws the divisor right line.
     
     UIGraphicsBeginImageContext(CGSizeMake(3.0f, self.viewWithAllImageObjects.frame.size.height));
     
@@ -83,7 +83,7 @@
     
     // ********************************
     
-    // Draws the divisor middle line.
+    // Draws the divisor left line.
     
     UIGraphicsBeginImageContext(CGSizeMake(3.0f, self.viewWithAllImageObjects.frame.size.height));
     

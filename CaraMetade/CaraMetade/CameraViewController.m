@@ -33,8 +33,10 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void) viewDidAppear:(BOOL)animated
 {
+	[super viewDidAppear:animated];
+	
     self.session = [[AVCaptureSession alloc] init];
     [self.session setSessionPreset:AVCaptureSessionPresetPhoto];
 	NSArray *devices = [AVCaptureDevice devices];
