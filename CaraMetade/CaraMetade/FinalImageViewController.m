@@ -57,18 +57,9 @@
 
 - (IBAction)panRecognizer:(UIPanGestureRecognizer*)sender
 {
-    CGPoint translation = [sender translationInView:self.view];
-    
-    if (sender.state == UIGestureRecognizerStateEnded || sender.state == UIGestureRecognizerStateCancelled)
-    {
-        self.finalImageTranslation = CGPointMake(self.finalImageTranslation.x + translation.x,
-                                                 self.finalImageTranslation.y + translation.y);
-    }
-    else
-    {
-        self.finalImageView.transform = CGAffineTransformMakeTranslation(self.finalImageTranslation.x + translation.x,
-                                                                     self.finalImageTranslation.y + translation.y);
-    }
+    CGPoint translation =[sender translationInView:self.view];
+    self.finalImageView.center = CGPointMake(self.finalImageView.center.x+translation.x ,self.finalImageView.center.y+translation.y);
+    [sender setTranslation:CGPointZero inView:self.view];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
@@ -96,10 +87,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-#pragma mark - Zoom
-
-
-    
 
 @end
