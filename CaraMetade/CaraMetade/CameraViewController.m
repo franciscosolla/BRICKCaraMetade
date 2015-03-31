@@ -141,6 +141,50 @@
 	
 }
 
+- (IBAction)pickFromPhotoLibrary:(id)sender
+{
+    
+    UIImagePickerController *mediaUI = [[UIImagePickerController alloc] init];
+    mediaUI.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    // Displays saved pictures only
+    mediaUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
+    
+    // Hides the controls for moving & scaling pictures, or for
+    // trimming movies. To instead show the controls, use YES.
+    mediaUI.allowsEditing = YES;
+    
+    mediaUI.delegate = self;
+    
+    [self presentModalViewController: mediaUI animated: YES];
+}
+
+- (void) imagePickerController: (UIImagePickerController *) picker
+ didFinishPickingMediaWithInfo: (NSDictionary *) info {
+    
+    UIImage *originalImage, *editedImage, *imageToUse;
+    
+    // Handle a still image picked from a photo album
+        
+        editedImage = (UIImage *) [info objectForKey:
+                                   UIImagePickerControllerEditedImage];
+        originalImage = (UIImage *) [info objectForKey:
+                                     UIImagePickerControllerOriginalImage];
+        
+        if (editedImage) {
+            imageToUse = editedImage;
+        } else {
+            imageToUse = originalImage;
+        }
+        // Do something with imageToUse
+    
+    self.image = imageToUse;
+    
+    [[picker parentViewController] dismissViewControllerAnimated:YES completion:^{
+        [self performSegueWithIdentifier:@"ShowViewController" sender:self];
+    }];
+}
+
 /// Rotate the camera.
 - (IBAction)cameraRotate:(id)sender {
 	if (self.session.inputs[0] == self.backCamera)
