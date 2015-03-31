@@ -147,16 +147,15 @@
     UIImagePickerController *mediaUI = [[UIImagePickerController alloc] init];
     mediaUI.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
-    // Displays saved pictures only
-    mediaUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
-    
     // Hides the controls for moving & scaling pictures, or for
     // trimming movies. To instead show the controls, use YES.
     mediaUI.allowsEditing = YES;
     
     mediaUI.delegate = self;
     
-    [self presentViewController:mediaUI animated: YES completion:nil];
+    [self presentViewController:mediaUI animated: YES completion:^{
+        
+    }];
 }
 
 - (void) imagePickerController: (UIImagePickerController *) picker
@@ -180,8 +179,8 @@
     
     self.image = imageToUse;
     
-    [[picker parentViewController] dismissViewControllerAnimated:YES completion:^{
-        [self performSegueWithIdentifier:@"ShowViewController" sender:self];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self performSegueWithIdentifier:@"ShowImageView" sender:self];
     }];
 }
 

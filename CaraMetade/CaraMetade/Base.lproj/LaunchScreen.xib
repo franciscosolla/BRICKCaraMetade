@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -69,6 +69,10 @@
                     <exclude reference="aHr-ON-6az"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="A0Y-hi-zsx"/>
+                    <exclude reference="hl0-6l-xkd"/>
+                    <exclude reference="wpb-TP-ewy"/>
+                    <exclude reference="wzT-vP-uaS"/>
                     <exclude reference="0k9-00-kqx"/>
                     <exclude reference="Nez-U2-C8h"/>
                     <exclude reference="erz-FT-Zi1"/>
@@ -76,10 +80,6 @@
                     <exclude reference="YvB-7v-zh3"/>
                     <exclude reference="fOc-tf-E6x"/>
                     <exclude reference="hNz-Gy-RpE"/>
-                    <exclude reference="A0Y-hi-zsx"/>
-                    <exclude reference="hl0-6l-xkd"/>
-                    <exclude reference="wpb-TP-ewy"/>
-                    <exclude reference="wzT-vP-uaS"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -89,6 +89,10 @@
                     <include reference="aHr-ON-6az"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="A0Y-hi-zsx"/>
+                    <include reference="hl0-6l-xkd"/>
+                    <include reference="wpb-TP-ewy"/>
+                    <include reference="wzT-vP-uaS"/>
                     <include reference="0k9-00-kqx"/>
                     <include reference="Nez-U2-C8h"/>
                     <include reference="erz-FT-Zi1"/>
@@ -96,10 +100,6 @@
                     <include reference="YvB-7v-zh3"/>
                     <include reference="fOc-tf-E6x"/>
                     <include reference="hNz-Gy-RpE"/>
-                    <include reference="A0Y-hi-zsx"/>
-                    <include reference="hl0-6l-xkd"/>
-                    <include reference="wpb-TP-ewy"/>
-                    <include reference="wzT-vP-uaS"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="548" y="455"/>
