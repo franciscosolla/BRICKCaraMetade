@@ -137,18 +137,18 @@
                                             <exclude reference="343-MC-zaq"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="MlI-xV-Ga1"/>
-                                            <exclude reference="XKc-g3-Fmo"/>
-                                            <exclude reference="tAQ-uC-i3M"/>
-                                            <exclude reference="1qR-Tb-1an"/>
-                                            <exclude reference="CiG-8g-D1S"/>
-                                            <exclude reference="mth-uw-Ixw"/>
-                                            <exclude reference="74n-qe-6gu"/>
-                                            <exclude reference="E6D-60-bW6"/>
-                                            <exclude reference="mcH-90-vI1"/>
                                             <exclude reference="2d9-SZ-sUK"/>
                                             <exclude reference="3yV-nZ-Qpo"/>
                                             <exclude reference="syJ-8Q-8FL"/>
+                                            <exclude reference="MlI-xV-Ga1"/>
+                                            <exclude reference="XKc-g3-Fmo"/>
+                                            <exclude reference="tAQ-uC-i3M"/>
+                                            <exclude reference="74n-qe-6gu"/>
+                                            <exclude reference="E6D-60-bW6"/>
+                                            <exclude reference="mcH-90-vI1"/>
+                                            <exclude reference="1qR-Tb-1an"/>
+                                            <exclude reference="CiG-8g-D1S"/>
+                                            <exclude reference="mth-uw-Ixw"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -159,18 +159,18 @@
                                             <include reference="343-MC-zaq"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="MlI-xV-Ga1"/>
-                                            <include reference="XKc-g3-Fmo"/>
-                                            <include reference="tAQ-uC-i3M"/>
-                                            <include reference="1qR-Tb-1an"/>
-                                            <include reference="CiG-8g-D1S"/>
-                                            <include reference="mth-uw-Ixw"/>
-                                            <include reference="74n-qe-6gu"/>
-                                            <include reference="E6D-60-bW6"/>
-                                            <include reference="mcH-90-vI1"/>
                                             <include reference="2d9-SZ-sUK"/>
                                             <include reference="3yV-nZ-Qpo"/>
                                             <include reference="syJ-8Q-8FL"/>
+                                            <include reference="MlI-xV-Ga1"/>
+                                            <include reference="XKc-g3-Fmo"/>
+                                            <include reference="tAQ-uC-i3M"/>
+                                            <include reference="74n-qe-6gu"/>
+                                            <include reference="E6D-60-bW6"/>
+                                            <include reference="mcH-90-vI1"/>
+                                            <include reference="1qR-Tb-1an"/>
+                                            <include reference="CiG-8g-D1S"/>
+                                            <include reference="mth-uw-Ixw"/>
                                         </mask>
                                     </variation>
                                 </view>
@@ -273,33 +273,21 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKQ-Td-9M5" userLabel="ImageViewFrame">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="510"/>
-                                        </variation>
                                     </imageView>
                                     <slider opaque="NO" tag="1" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="g7z-e1-X1A" userLabel="RightCropper">
                                         <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="-2" y="240" width="604" height="31"/>
-                                        </variation>
                                         <connections>
                                             <action selector="rightCropperValueChanged:" destination="N6s-N6-f7R" eventType="valueChanged" id="VOE-L5-1ew"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bwm-e2-gjU" userLabel="LeftCropper">
                                         <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="-2" y="240" width="604" height="31"/>
-                                        </variation>
                                         <connections>
                                             <action selector="leftCropperValueChanged:" destination="N6s-N6-f7R" eventType="valueChanged" id="9Fx-Dj-wUu"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CUA-lC-lWn" userLabel="LineSetter">
                                         <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="-2" y="240" width="604" height="31"/>
-                                        </variation>
                                         <connections>
                                             <action selector="sliderLineValueChanged:" destination="N6s-N6-f7R" eventType="valueChanged" id="jaB-3I-u88"/>
                                         </connections>
@@ -344,8 +332,7 @@
                                         <exclude reference="xjz-jJ-FxR"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="20" width="600" height="510"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="gKQ-Td-9M5"/>
                                         <include reference="g7z-e1-X1A"/>
@@ -385,8 +372,7 @@
                                         <exclude reference="reF-ao-W9q"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="434" y="530" width="150" height="50"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="pzd-vm-Evb"/>
                                         <include reference="reF-ao-W9q"/>
@@ -416,8 +402,7 @@
                                         <exclude reference="yYI-PE-Jsy"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="530" width="150" height="50"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="Aaf-ei-N7D"/>
                                         <include reference="I0E-Vr-Th2"/>
@@ -514,15 +499,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uVu-11-6RM" userLabel="Right Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="288" width="568" height="253"/>
-                                </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H7J-ib-Chr" userLabel="Left Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="25" width="568" height="253"/>
-                                </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1v-AZ-aaw">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -530,9 +509,6 @@
                                 <state key="normal" title="Retake">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="44" y="555" width="71" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="retakeImage:" destination="n29-gb-hHb" eventType="touchUpInside" id="gKu-rW-hbq"/>
                                 </connections>
@@ -543,9 +519,6 @@
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="163" y="555" width="75" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="acceptImage:" destination="n29-gb-hHb" eventType="touchUpInside" id="wmA-hx-h24"/>
                                 </connections>
@@ -556,9 +529,6 @@
                                 <state key="normal" title="Edit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="301" y="555" width="54" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="editImage:" destination="n29-gb-hHb" eventType="touchUpInside" id="Wyg-hU-Sfn"/>
                                 </connections>
@@ -686,34 +656,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jym-3e-CwT">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <gestureRecognizers/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="399" placeholderIntrinsicHeight="800" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aij-Ux-1Vd">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="ObX-Fc-awF">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="59"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="90" id="R2s-fX-7Dp"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" backgroundImage="camera.png">
                                     <color key="titleColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="ObX-Fc-awF"/>
-                                        <exclude reference="R2s-fX-7Dp"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="541" width="90" height="59"/>
-                                    <mask key="constraints">
-                                        <include reference="ObX-Fc-awF"/>
-                                        <include reference="R2s-fX-7Dp"/>
-                                    </mask>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="741" width="90" height="59"/>
                                 </variation>
                                 <connections>
                                     <action selector="takeAnotherImage:" destination="zPY-Ep-DLg" eventType="touchUpInside" id="4ki-cS-VLV"/>
@@ -723,10 +674,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Aij-Ux-1Vd" firstAttribute="leading" secondItem="xB4-70-QAS" secondAttribute="leadingMargin" id="2fS-dp-aX6"/>
-                            <constraint firstItem="Ej8-vg-3Vm" firstAttribute="top" secondItem="Aij-Ux-1Vd" secondAttribute="bottom" id="EUl-oJ-IqX">
-                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
-                            </constraint>
                             <constraint firstItem="jym-3e-CwT" firstAttribute="width" secondItem="xB4-70-QAS" secondAttribute="width" id="X8N-b1-kKe"/>
                             <constraint firstItem="jym-3e-CwT" firstAttribute="height" secondItem="xB4-70-QAS" secondAttribute="height" id="YP5-UL-kdn"/>
                             <constraint firstAttribute="centerX" secondItem="jym-3e-CwT" secondAttribute="centerX" id="iyh-xr-Hz0"/>
@@ -738,8 +685,6 @@
                                 <exclude reference="Aij-Ux-1Vd"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="EUl-oJ-IqX"/>
-                                <exclude reference="2fS-dp-aX6"/>
                                 <exclude reference="X8N-b1-kKe"/>
                                 <exclude reference="YP5-UL-kdn"/>
                                 <exclude reference="iyh-xr-Hz0"/>
@@ -752,8 +697,6 @@
                                 <include reference="Aij-Ux-1Vd"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="EUl-oJ-IqX"/>
-                                <include reference="2fS-dp-aX6"/>
                                 <include reference="X8N-b1-kKe"/>
                                 <include reference="YP5-UL-kdn"/>
                                 <include reference="iyh-xr-Hz0"/>
