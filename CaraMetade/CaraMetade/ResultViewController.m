@@ -163,6 +163,7 @@
 	}
 }
 
+#pragma mark - Buttons
 
 - (IBAction)acceptImage:(id)sender
 {
