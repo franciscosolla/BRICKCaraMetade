@@ -114,10 +114,39 @@
                                                 <action selector="cameraRotate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2mc-Nu-BhY"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHz-Cq-FxV">
+                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="bHz-Cq-FxV" secondAttribute="height" multiplier="1:1" id="xd5-KI-BAX"/>
+                                            </constraints>
+                                            <state key="normal" image="albumButton.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="xd5-KI-BAX"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="xd5-KI-BAX"/>
+                                                </mask>
+                                            </variation>
+                                            <connections>
+                                                <action selector="pickFromPhotoLibrary:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="53c-Ok-Xgu"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="bHz-Cq-FxV" secondAttribute="centerY" id="03b-WB-jtR"/>
                                         <constraint firstAttribute="bottom" secondItem="wD2-eV-MhQ" secondAttribute="bottom" constant="5" id="1qR-Tb-1an"/>
                                         <constraint firstAttribute="trailing" secondItem="343-MC-zaq" secondAttribute="trailing" constant="20" id="2d9-SZ-sUK"/>
+                                        <constraint firstAttribute="bottom" secondItem="bHz-Cq-FxV" secondAttribute="bottom" constant="5" id="37Q-yK-PU3">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                        </constraint>
+                                        <constraint firstItem="bHz-Cq-FxV" firstAttribute="leading" secondItem="Mv2-PH-Ai9" secondAttribute="leading" id="3qb-wb-jJ8">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                        </constraint>
                                         <constraint firstAttribute="centerY" secondItem="343-MC-zaq" secondAttribute="centerY" id="3yV-nZ-Qpo"/>
                                         <constraint firstAttribute="bottom" secondItem="CB7-vV-nNw" secondAttribute="bottom" constant="5" id="74n-qe-6gu"/>
                                         <constraint firstItem="wD2-eV-MhQ" firstAttribute="top" secondItem="Mv2-PH-Ai9" secondAttribute="top" constant="5" id="CiG-8g-D1S"/>
@@ -135,20 +164,24 @@
                                             <exclude reference="kgF-3r-Ja4"/>
                                             <exclude reference="CB7-vV-nNw"/>
                                             <exclude reference="343-MC-zaq"/>
+                                            <exclude reference="bHz-Cq-FxV"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="2d9-SZ-sUK"/>
-                                            <exclude reference="3yV-nZ-Qpo"/>
-                                            <exclude reference="syJ-8Q-8FL"/>
+                                            <exclude reference="03b-WB-jtR"/>
+                                            <exclude reference="37Q-yK-PU3"/>
+                                            <exclude reference="3qb-wb-jJ8"/>
                                             <exclude reference="MlI-xV-Ga1"/>
                                             <exclude reference="XKc-g3-Fmo"/>
                                             <exclude reference="tAQ-uC-i3M"/>
-                                            <exclude reference="74n-qe-6gu"/>
-                                            <exclude reference="E6D-60-bW6"/>
-                                            <exclude reference="mcH-90-vI1"/>
                                             <exclude reference="1qR-Tb-1an"/>
                                             <exclude reference="CiG-8g-D1S"/>
                                             <exclude reference="mth-uw-Ixw"/>
+                                            <exclude reference="2d9-SZ-sUK"/>
+                                            <exclude reference="3yV-nZ-Qpo"/>
+                                            <exclude reference="syJ-8Q-8FL"/>
+                                            <exclude reference="74n-qe-6gu"/>
+                                            <exclude reference="E6D-60-bW6"/>
+                                            <exclude reference="mcH-90-vI1"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -157,20 +190,24 @@
                                             <include reference="kgF-3r-Ja4"/>
                                             <include reference="CB7-vV-nNw"/>
                                             <include reference="343-MC-zaq"/>
+                                            <include reference="bHz-Cq-FxV"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="2d9-SZ-sUK"/>
-                                            <include reference="3yV-nZ-Qpo"/>
-                                            <include reference="syJ-8Q-8FL"/>
+                                            <include reference="03b-WB-jtR"/>
+                                            <include reference="37Q-yK-PU3"/>
+                                            <include reference="3qb-wb-jJ8"/>
                                             <include reference="MlI-xV-Ga1"/>
                                             <include reference="XKc-g3-Fmo"/>
                                             <include reference="tAQ-uC-i3M"/>
-                                            <include reference="74n-qe-6gu"/>
-                                            <include reference="E6D-60-bW6"/>
-                                            <include reference="mcH-90-vI1"/>
                                             <include reference="1qR-Tb-1an"/>
                                             <include reference="CiG-8g-D1S"/>
                                             <include reference="mth-uw-Ixw"/>
+                                            <include reference="2d9-SZ-sUK"/>
+                                            <include reference="3yV-nZ-Qpo"/>
+                                            <include reference="syJ-8Q-8FL"/>
+                                            <include reference="74n-qe-6gu"/>
+                                            <include reference="E6D-60-bW6"/>
+                                            <include reference="mcH-90-vI1"/>
                                         </mask>
                                     </variation>
                                 </view>
@@ -724,18 +761,28 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jym-3e-CwT">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <gestureRecognizers/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="399" placeholderIntrinsicHeight="800" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aij-Ux-1Vd">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Aij-Ux-1Vd" secondAttribute="height" multiplier="97:77" id="IQP-pc-Lff"/>
+                                    <constraint firstAttribute="width" constant="97" id="fO2-RM-OG1"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" backgroundImage="camera.png">
+                                <state key="normal" image="Camerabutton.png">
                                     <color key="titleColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="399" height="800"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IQP-pc-Lff"/>
+                                        <exclude reference="fO2-RM-OG1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="IQP-pc-Lff"/>
+                                        <include reference="fO2-RM-OG1"/>
+                                    </mask>
                                 </variation>
                                 <connections>
                                     <action selector="takeAnotherImage:" destination="zPY-Ep-DLg" eventType="touchUpInside" id="4ki-cS-VLV"/>
@@ -745,6 +792,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Ej8-vg-3Vm" firstAttribute="top" secondItem="Aij-Ux-1Vd" secondAttribute="bottom" constant="10" id="8Je-S6-TYF"/>
+                            <constraint firstItem="Aij-Ux-1Vd" firstAttribute="leading" secondItem="xB4-70-QAS" secondAttribute="leadingMargin" id="GSn-VK-2fG"/>
                             <constraint firstItem="jym-3e-CwT" firstAttribute="width" secondItem="xB4-70-QAS" secondAttribute="width" id="X8N-b1-kKe"/>
                             <constraint firstItem="jym-3e-CwT" firstAttribute="height" secondItem="xB4-70-QAS" secondAttribute="height" id="YP5-UL-kdn"/>
                             <constraint firstAttribute="centerX" secondItem="jym-3e-CwT" secondAttribute="centerX" id="iyh-xr-Hz0"/>
@@ -760,6 +809,8 @@
                                 <exclude reference="YP5-UL-kdn"/>
                                 <exclude reference="iyh-xr-Hz0"/>
                                 <exclude reference="mzR-3w-0Gi"/>
+                                <exclude reference="GSn-VK-2fG"/>
+                                <exclude reference="8Je-S6-TYF"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -772,6 +823,8 @@
                                 <include reference="YP5-UL-kdn"/>
                                 <include reference="iyh-xr-Hz0"/>
                                 <include reference="mzR-3w-0Gi"/>
+                                <include reference="GSn-VK-2fG"/>
+                                <include reference="8Je-S6-TYF"/>
                             </mask>
                         </variation>
                         <connections>
@@ -807,12 +860,12 @@
         <image name="Capturebutton.png" width="182" height="181"/>
         <image name="OKbutton.png" width="146" height="93"/>
         <image name="Rotatebutton.png" width="175" height="181"/>
-        <image name="camera.png" width="580" height="383"/>
+        <image name="albumButton.png" width="130" height="135"/>
         <image name="yellowBack.jpg" width="1333" height="2000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fAY-hc-7LQ"/>
-        <segue reference="bEs-O8-ltF"/>
+        <segue reference="D4v-jr-gLc"/>
+        <segue reference="Bta-0x-fZl"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

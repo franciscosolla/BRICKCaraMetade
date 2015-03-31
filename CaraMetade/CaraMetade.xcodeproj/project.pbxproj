@@ -12,6 +12,7 @@
 		44D2DDF91AC3450B003828FF /* FinalImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D2DDF81AC3450B003828FF /* FinalImageViewController.m */; };
 		A0B744681ACB29C6008A42B1 /* yellowBack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0B744661ACB29C6008A42B1 /* yellowBack.jpg */; };
 		A0B744691ACB29C6008A42B1 /* ShadowBack.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B744671ACB29C6008A42B1 /* ShadowBack.png */; };
+		A0B7446B1ACB2F39008A42B1 /* albumButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B7446A1ACB2F39008A42B1 /* albumButton.png */; };
 		A0D1D7D11AC2F45A0043B484 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D1D7D01AC2F45A0043B484 /* ResultViewController.m */; };
 		A0DABF111ACB0FFE006E1AB5 /* Capturebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0DABF0D1ACB0FFE006E1AB5 /* Capturebutton.png */; };
 		A0DABF121ACB0FFE006E1AB5 /* LaunchBackgroung.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0DABF0E1ACB0FFE006E1AB5 /* LaunchBackgroung.jpg */; };
@@ -47,6 +48,7 @@
 		44D2DDF81AC3450B003828FF /* FinalImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinalImageViewController.m; sourceTree = "<group>"; };
 		A0B744661ACB29C6008A42B1 /* yellowBack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yellowBack.jpg; sourceTree = "<group>"; };
 		A0B744671ACB29C6008A42B1 /* ShadowBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShadowBack.png; sourceTree = "<group>"; };
+		A0B7446A1ACB2F39008A42B1 /* albumButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = albumButton.png; sourceTree = "<group>"; };
 		A0D1D7CF1AC2F45A0043B484 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		A0D1D7D01AC2F45A0043B484 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		A0DABF0D1ACB0FFE006E1AB5 /* Capturebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Capturebutton.png; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		A0FE4C841AC0A69700A74099 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0B7446A1ACB2F39008A42B1 /* albumButton.png */,
 				A0B744661ACB29C6008A42B1 /* yellowBack.jpg */,
 				A0B744671ACB29C6008A42B1 /* ShadowBack.png */,
 				A0DABF151ACB100D006E1AB5 /* AppLogo.png */,
@@ -257,6 +260,7 @@
 				A0FE4C951AC0A69700A74099 /* LaunchScreen.xib in Resources */,
 				A0DABF1A1ACB100D006E1AB5 /* Camerabutton.png in Resources */,
 				A0DABF121ACB0FFE006E1AB5 /* LaunchBackgroung.jpg in Resources */,
+				A0B7446B1ACB2F39008A42B1 /* albumButton.png in Resources */,
 				A0DABF191ACB100D006E1AB5 /* Backbutton.png in Resources */,
 				A0FE4C921AC0A69700A74099 /* Images.xcassets in Resources */,
 			);

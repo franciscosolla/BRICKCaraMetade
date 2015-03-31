@@ -156,7 +156,7 @@
     
     mediaUI.delegate = self;
     
-    [self presentModalViewController: mediaUI animated: YES];
+    [self presentViewController:mediaUI animated: YES completion:nil];
 }
 
 - (void) imagePickerController: (UIImagePickerController *) picker
