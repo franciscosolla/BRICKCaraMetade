@@ -10,7 +10,7 @@
 #import "ImageViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface CameraViewController ()
+@interface CameraViewController () 
 
 @property (weak, nonatomic) IBOutlet UIView *frameForCapture;
 
@@ -23,6 +23,8 @@
 @property (strong, nonatomic) AVCaptureInput *backCamera;
 
 @property (strong, nonatomic) UIImage *image;
+
+@property (weak, nonatomic) IBOutlet UIImageView *albumImage;
 
 @end
 
@@ -139,6 +141,37 @@
 		}
 	}];
 	
+}
+
+- (IBAction)pickFromPhotoLibrary:(id)sender
+{
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
+    imagePickerController.delegate = self;
+    imagePickerController.allowsEditing = YES;
+    imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentModalViewController:imagePickerController animated:YES];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+        didFinishPickingImage:(UIImage *)image
+                  editingInfo:(NSDictionary *)editingInfo
+{
+    
+    // Dismiss the image selection, hide the picker and
+    
+    //show the image view with the picked image
+    
+    self.image = image;
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [self performSegueWithIdentifier:@"ShowImageView" sender:nil];
+    }];
+    
+    
+    
+    //[self performSegueWithIdentifier:@"ShowImageView" sender:self];
+    
+    
 }
 
 /// Rotate the camera.
