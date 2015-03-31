@@ -20,6 +20,10 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>1408049736178035</string>
+	<key>FacebookDisplayName</key>
+	<string>Cara Metade</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -34,5 +38,9 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>URL Schemes</key>
+	<string>fb1408049736178035</string>
+	<key>URL Types</key>
+	<array/>
 </dict>
 </plist>

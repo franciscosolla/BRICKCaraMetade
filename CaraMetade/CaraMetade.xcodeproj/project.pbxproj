@@ -10,6 +10,9 @@
 		44D137321AC1D3F600A4ABA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D137311AC1D3F600A4ABA7 /* AVFoundation.framework */; };
 		44D137381AC1E7D500A4ABA7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D137371AC1E7D500A4ABA7 /* ImageViewController.m */; };
 		44D2DDF91AC3450B003828FF /* FinalImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D2DDF81AC3450B003828FF /* FinalImageViewController.m */; };
+		44E817731ACB368600831A79 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E817701ACB368600831A79 /* FBSDKCoreKit.framework */; };
+		44E817741ACB368600831A79 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E817711ACB368600831A79 /* FBSDKLoginKit.framework */; };
+		44E817751ACB368600831A79 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E817721ACB368600831A79 /* FBSDKShareKit.framework */; };
 		A0B744681ACB29C6008A42B1 /* yellowBack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0B744661ACB29C6008A42B1 /* yellowBack.jpg */; };
 		A0B744691ACB29C6008A42B1 /* ShadowBack.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B744671ACB29C6008A42B1 /* ShadowBack.png */; };
 		A0B7446B1ACB2F39008A42B1 /* albumButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B7446A1ACB2F39008A42B1 /* albumButton.png */; };
@@ -47,6 +50,9 @@
 		44D137371AC1E7D500A4ABA7 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		44D2DDF71AC3450B003828FF /* FinalImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinalImageViewController.h; sourceTree = "<group>"; };
 		44D2DDF81AC3450B003828FF /* FinalImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinalImageViewController.m; sourceTree = "<group>"; };
+		44E817701ACB368600831A79 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = CaraMetade/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		44E817711ACB368600831A79 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = CaraMetade/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		44E817721ACB368600831A79 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = CaraMetade/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		A0B744661ACB29C6008A42B1 /* yellowBack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yellowBack.jpg; sourceTree = "<group>"; };
 		A0B744671ACB29C6008A42B1 /* ShadowBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShadowBack.png; sourceTree = "<group>"; };
 		A0B7446A1ACB2F39008A42B1 /* albumButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = albumButton.png; sourceTree = "<group>"; };
@@ -80,6 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44E817731ACB368600831A79 /* FBSDKCoreKit.framework in Frameworks */,
+				44E817741ACB368600831A79 /* FBSDKLoginKit.framework in Frameworks */,
+				44E817751ACB368600831A79 /* FBSDKShareKit.framework in Frameworks */,
 				44D137321AC1D3F600A4ABA7 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +106,9 @@
 		A0FE4C781AC0A69700A74099 = {
 			isa = PBXGroup;
 			children = (
+				44E817701ACB368600831A79 /* FBSDKCoreKit.framework */,
+				44E817711ACB368600831A79 /* FBSDKLoginKit.framework */,
+				44E817721ACB368600831A79 /* FBSDKShareKit.framework */,
 				44D137311AC1D3F600A4ABA7 /* AVFoundation.framework */,
 				A0FE4C831AC0A69700A74099 /* CaraMetade */,
 				A0FE4C9D1AC0A69800A74099 /* CaraMetadeTests */,
@@ -220,11 +232,11 @@
 				TargetAttributes = {
 					A0FE4C801AC0A69700A74099 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = JNA96F28J7;
+						DevelopmentTeam = 8A2XM926A4;
 					};
 					A0FE4C991AC0A69800A74099 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = JNA96F28J7;
+						DevelopmentTeam = 8A2XM926A4;
 						TestTargetID = A0FE4C801AC0A69700A74099;
 					};
 				};
@@ -413,6 +425,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CaraMetade",
+				);
 				INFOPLIST_FILE = CaraMetade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -428,6 +444,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CaraMetade",
+				);
 				INFOPLIST_FILE = CaraMetade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
