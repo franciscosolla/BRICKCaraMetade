@@ -891,10 +891,6 @@
         <image name="yellowBack.jpg" width="1333" height="2000"/>
     </resources>
     <inferredMetricsTieBreakers>
-<<<<<<< Updated upstream
-        <segue reference="fAY-hc-7LQ"/>
-=======
->>>>>>> Stashed changes
         <segue reference="bEs-O8-ltF"/>
         <segue reference="D4v-jr-gLc"/>
     </inferredMetricsTieBreakers>
