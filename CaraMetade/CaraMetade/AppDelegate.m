@@ -18,8 +18,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
-    return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                    didFinishLaunchingWithOptions:launchOptions];
+	
+	// Wait on launch screen.
+	NSCondition *time = [NSCondition new];
+	[time waitUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
+	
+	// Facebook API.
+	return [[FBSDKApplicationDelegate sharedInstance] application:application
+								didFinishLaunchingWithOptions:launchOptions];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
