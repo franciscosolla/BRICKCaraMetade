@@ -232,11 +232,10 @@
 				TargetAttributes = {
 					A0FE4C801AC0A69700A74099 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 8A2XM926A4;
 					};
 					A0FE4C991AC0A69800A74099 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 8A2XM926A4;
+						DevelopmentTeam = JNA96F28J7;
 						TestTargetID = A0FE4C801AC0A69700A74099;
 					};
 				};

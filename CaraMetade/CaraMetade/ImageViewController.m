@@ -32,6 +32,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	
+	// Set the view and imageview backgrounds to cler.
+	self.viewWithAllImageObjects.backgroundColor = [UIColor clearColor];
+	self.imageView.backgroundColor = [UIColor clearColor];
+	
+	// Set the initial rotation.
     self.imageViewRotation = 0;
     
     // Loads the image on the ImageView..
