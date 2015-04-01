@@ -69,6 +69,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)share:(id)sender
+{
+    NSArray *objectsToShare = [NSArray arrayWithObjects:self.finalImage, nil];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+    
+    activityVC.u
+    
+    NSArray *excludeActivities = @[UIActivityTypeSaveToCameraRoll];
+    
+    activityVC.excludedActivityTypes = excludeActivities;
+    
+    [self presentViewController:activityVC animated:YES completion:nil];
+}
+
 /*
 #pragma mark - Navigation
 
