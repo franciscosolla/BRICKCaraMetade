@@ -169,8 +169,7 @@
 
 #pragma mark - Library
 
-- (void) imagePickerController: (UIImagePickerController *) picker
- didFinishPickingMediaWithInfo: (NSDictionary *) info {
+- (void) imagePickerController: (UIImagePickerController *)picker didFinishPickingMediaWithInfo: (NSDictionary *)info {
     
     UIImage *originalImage, *editedImage, *imageToUse;
     
@@ -188,7 +187,7 @@
         }
         // Do something with imageToUse
     
-    self.image = imageToUse;
+    self.image = [UIImage imageWithCGImage:imageToUse.CGImage scale:1.0 orientation:UIImageOrientationUp];
     
     [self dismissViewControllerAnimated:YES completion:^{
 		ImageViewController * destination = [self.storyboard instantiateViewControllerWithIdentifier:@"ImageViewController"];
