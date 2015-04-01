@@ -17,6 +17,8 @@
 
 @property (nonatomic) CGPoint finalImageTranslation;
 
+@property (weak, nonatomic) IBOutlet UIView *finalImageContainer;
+
 @end
 
 @implementation FinalImageViewController
@@ -63,8 +65,10 @@
 - (IBAction)panRecognizer:(UIPanGestureRecognizer*)sender
 {
     CGPoint translation = [sender translationInView:self.view];
+    
     self.finalImageView.center = CGPointMake(self.finalImageView.center.x+translation.x ,self.finalImageView.center.y+translation.y);
     [sender setTranslation:CGPointZero inView:self.view];
+    
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{

@@ -793,7 +793,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowBack.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tZ4-dU-9r2">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <view clipsSubviews="YES" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="sEl-vp-XxN">
+                            <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="sEl-vp-XxN">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jym-3e-CwT">
@@ -972,6 +972,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="finalImageContainer" destination="sEl-vp-XxN" id="4mz-k8-mDa"/>
                         <outlet property="finalImageView" destination="jym-3e-CwT" id="4as-VZ-i4e"/>
                     </connections>
                 </viewController>
