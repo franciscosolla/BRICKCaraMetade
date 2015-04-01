@@ -31,16 +31,7 @@
     self.finalImageTranslation = CGPointMake(0, 0);
 }
 
-#pragma mark - Segue
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-	if ([segue.identifier isEqualToString:@"CameraView"])
-	{
-		CameraViewController *destination = segue.destinationViewController;
-		destination.frontCameraActive = self.frontCamera;
-	}
-}
+#pragma mark - Gestures
 
 - (IBAction)pinchRecognizer:(UIPinchGestureRecognizer*)sender
 {
@@ -70,7 +61,7 @@
 
 - (IBAction)takeAnotherImage:(id)sender
 {
-    [self performSegueWithIdentifier:@"CameraView" sender:self];
+	[self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

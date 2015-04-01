@@ -113,7 +113,7 @@
     
 }
 
-#pragma mark - Divisor adn crop lines
+#pragma mark - Divisor and crop lines
 
 - (IBAction)leftCropperValueChanged:(id)sender
 {
@@ -181,34 +181,22 @@
     //image doesn`t really rotate, just it`s vizualization, study the code in the url: http://stackoverflow.com/questions/10544887/rotating-a-cgimage to fix it
 }
 
-#pragma mark - Segue
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-	if ([segue.identifier isEqualToString:@"ResultView"])
-	{
-		ResultViewController *destination = segue.destinationViewController;
-		destination.face = self.image;
-		destination.sliderStatus = self.sliderLine.value;
-		destination.frontCamera = self.frontCamera;
-        destination.cropperStatus = self.rightCropper.value - self.sliderLine.value;
-	}
-	else if ([segue.identifier isEqualToString:@"RetakePhoto"])
-	{
-		CameraViewController *destination = segue.destinationViewController;
-		destination.frontCameraActive = self.frontCamera;
-	}
-}
-
 #pragma mark - Retake and Ready Buttons
 
 - (IBAction)readyButton:(id)sender {
 //	self.image = [self rotatedImageFromImageView:self.imageView];
-	[self performSegueWithIdentifier:@"ResultView" sender:self];
+	
+	ResultViewController *destination = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
+	destination.face = self.image;
+	destination.sliderStatus = self.sliderLine.value;
+	destination.frontCamera = self.frontCamera;
+	destination.cropperStatus = self.rightCropper.value - self.sliderLine.value;
+	
+	[self.navigationController pushViewController:destination animated:YES];
 }
 
 - (IBAction)retakeButton:(id)sender {
-	[self performSegueWithIdentifier:@"RetakePhoto" sender:self];
+	[self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark - Rotation functions

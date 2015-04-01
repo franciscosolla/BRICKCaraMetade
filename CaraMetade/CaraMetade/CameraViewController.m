@@ -72,12 +72,13 @@
     [previewLayer setFrame:frame];
     
     [rootLayer insertSublayer:previewLayer atIndex:0];
-    
-    self.stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
-    NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys:AVVideoCodecJPEG, AVVideoCodecKey, nil];
-    [self.stillImageOutput setOutputSettings:outputSettings];
-    
-    [self.session addOutput:self.stillImageOutput];
+	
+	self.stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
+	NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys:AVVideoCodecJPEG, AVVideoCodecKey, nil];
+	[self.stillImageOutput setOutputSettings:outputSettings];
+	
+	if ([self.session canAddOutput:self.stillImageOutput])
+		[self.session addOutput:self.stillImageOutput];
         
     [self.session startRunning];
 }
@@ -85,20 +86,6 @@
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Segue
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-	if ([segue.identifier isEqualToString:@"ShowImageView"])
-	{
-		ImageViewController * destination = segue.destinationViewController;
-		destination.image = self.image;
-		destination.frontCamera = self.frontCameraActive;
-        destination.sliderStatus = 0.5;
-        destination.cropperStatus = 0.5;
-	}
 }
 
 #pragma mark - Camera Buttons
@@ -134,8 +121,16 @@
 		{
 			NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSamplerBuffer];
 			self.image = [[UIImage alloc] initWithData:imageData];
-            
-			[self performSegueWithIdentifier:@"ShowImageView" sender:self];
+			
+			ImageViewController * destination = [self.storyboard instantiateViewControllerWithIdentifier:@"ImageViewController"];
+			destination.image = self.image;
+			destination.frontCamera = self.frontCameraActive;
+			destination.sliderStatus = 0.5;
+			destination.cropperStatus = 0.5;
+			
+			[self.session stopRunning];
+			
+			[self.navigationController pushViewController:destination animated:YES];
 		}
 	}];
 	
@@ -153,9 +148,7 @@
     
     mediaUI.delegate = self;
     
-    [self presentViewController:mediaUI animated: YES completion:^{
-        
-    }];
+    [self.navigationController pushViewController:mediaUI animated:YES];
 }
 
 - (void) imagePickerController: (UIImagePickerController *) picker
@@ -180,7 +173,13 @@
     self.image = imageToUse;
     
     [self dismissViewControllerAnimated:YES completion:^{
-        [self performSegueWithIdentifier:@"ShowImageView" sender:self];
+		ImageViewController * destination = [self.storyboard instantiateViewControllerWithIdentifier:@"ImageViewController"];
+		destination.image = self.image;
+		destination.frontCamera = self.frontCameraActive;
+		destination.sliderStatus = 0.5;
+		destination.cropperStatus = 0.5;
+		
+		[self.navigationController pushViewController:destination animated:YES];
     }];
 }
 
