@@ -27,36 +27,70 @@
 	// Loads the image ad splits in half and displays in right and left view.
 	
     CGImageRef leftImage, rightImage;
-    
-    if (self.sliderStatus >= 0.5)
-    {
-        leftImage = CGImageCreateWithImageInRect(self.face.CGImage,
-                                                 CGRectMake(0,
-                                                            0,
-                                                            self.face.size.height,
-                                                            self.face.size.width * self.cropperStatus));
-        
-        rightImage = CGImageCreateWithImageInRect(self.face.CGImage,
-                                                  CGRectMake(0,
-                                                             (self.cropperStatus * self.face.size.width),
-                                                             self.face.size.height,
-                                                             self.face.size.width * self.cropperStatus));
-    }
-    else
-    {
-        leftImage = CGImageCreateWithImageInRect(self.face.CGImage,
-                                                 CGRectMake(0,
-                                                            self.face.size.width - (2 * self.cropperStatus * self.face.size.width),
-                                                            self.face.size.height,
-                                                            self.face.size.width * self.cropperStatus));
-        
-        rightImage = CGImageCreateWithImageInRect(self.face.CGImage,
-                                                  CGRectMake(0,
-                                                             self.face.size.width - (self.cropperStatus * self.face.size.width),
-                                                             self.face.size.height,
-                                                             self.face.size.width * self.cropperStatus));
-    }
-    
+	
+	if (self.fromLibrary)
+	{
+		if (self.sliderStatus >= 0.5)
+		{
+			leftImage = CGImageCreateWithImageInRect(self.face.CGImage,
+													 CGRectMake(0,
+																0,
+																self.face.size.width * self.cropperStatus,
+																self.face.size.height));
+			
+			rightImage = CGImageCreateWithImageInRect(self.face.CGImage,
+													  CGRectMake((self.cropperStatus * self.face.size.width),
+																 0,
+																 self.face.size.width * self.cropperStatus,
+																 self.face.size.height));
+		}
+		else
+		{
+			leftImage = CGImageCreateWithImageInRect(self.face.CGImage,
+													 CGRectMake(self.face.size.width - (2 * self.cropperStatus * self.face.size.width),
+																0,
+																self.face.size.width * self.cropperStatus,
+																self.face.size.height));
+			
+			rightImage = CGImageCreateWithImageInRect(self.face.CGImage,
+													  CGRectMake(self.face.size.width - (self.cropperStatus * self.face.size.width),
+																 0,
+																 self.face.size.width * self.cropperStatus,
+																 self.face.size.height));
+		}
+	}
+	else
+	{
+		if (self.sliderStatus >= 0.5)
+		{
+			leftImage = CGImageCreateWithImageInRect(self.face.CGImage,
+													 CGRectMake(0,
+																0,
+																self.face.size.height,
+																self.face.size.width * self.cropperStatus));
+			
+			rightImage = CGImageCreateWithImageInRect(self.face.CGImage,
+													  CGRectMake(0,
+																 (self.cropperStatus * self.face.size.width),
+																 self.face.size.height,
+																 self.face.size.width * self.cropperStatus));
+		}
+		else
+		{
+			leftImage = CGImageCreateWithImageInRect(self.face.CGImage,
+													 CGRectMake(0,
+																self.face.size.width - (2 * self.cropperStatus * self.face.size.width),
+																self.face.size.height,
+																self.face.size.width * self.cropperStatus));
+			
+			rightImage = CGImageCreateWithImageInRect(self.face.CGImage,
+													  CGRectMake(0,
+																 self.face.size.width - (self.cropperStatus * self.face.size.width),
+																 self.face.size.height,
+																 self.face.size.width * self.cropperStatus));
+		}
+	}
+	
     
     self.leftSideImage.image = [UIImage imageWithCGImage:leftImage scale:1 orientation:self.face.imageOrientation];
 	self.rightSideImage.image = [UIImage imageWithCGImage:rightImage scale:1 orientation:self.face.imageOrientation];

@@ -125,6 +125,7 @@
 			destination.image = self.image;
 			destination.sliderStatus = 0.5;
 			destination.cropperStatus = 0.5;
+			destination.fromLibrary = NO;
 			
 			[self.session stopRunning];
 			
@@ -194,6 +195,7 @@
 		destination.image = self.image;
 		destination.sliderStatus = 0.5;
 		destination.cropperStatus = 0.5;
+		destination.fromLibrary = YES;
 		
 		[self.session stopRunning];
 		

@@ -17,4 +17,6 @@
 
 @property (nonatomic) double cropperStatus;
 
+@property (nonatomic) BOOL fromLibrary;
+
 @end

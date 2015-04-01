@@ -10,5 +10,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "-[ResultViewController viewDidLoad]:ResultViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.face.imageOrientation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

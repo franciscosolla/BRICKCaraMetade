@@ -16,6 +16,8 @@
 
 @property (nonatomic) double cropperStatus;
 
+@property (nonatomic) BOOL fromLibrary;
+
 @property (strong, nonatomic) UIImage *finalImage;
 
 @end

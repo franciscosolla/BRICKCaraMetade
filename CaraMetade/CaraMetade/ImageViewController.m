@@ -190,6 +190,7 @@
 	destination.face = self.image;
 	destination.sliderStatus = self.sliderLine.value;
 	destination.cropperStatus = self.rightCropper.value - self.sliderLine.value;
+	destination.fromLibrary = self.fromLibrary;
 	
 	[self.navigationController pushViewController:destination animated:YES];
 }
