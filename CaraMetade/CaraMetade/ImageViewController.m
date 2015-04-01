@@ -171,15 +171,15 @@
 
 #pragma mark - Rotation gesture
 
-- (IBAction)rotationRecognizer:(UIRotationGestureRecognizer*)sender
-{
-    if (sender.state == UIGestureRecognizerStateEnded || sender.state == UIGestureRecognizerStateCancelled)
-        self.imageViewRotation += sender.rotation;
-    else
-        self.imageView.transform = CGAffineTransformMakeRotation(self.imageViewRotation + sender.rotation);
-	
-    //image doesn`t really rotate, just it`s vizualization, study the code in the url: http://stackoverflow.com/questions/10544887/rotating-a-cgimage to fix it
-}
+//- (IBAction)rotationRecognizer:(UIRotationGestureRecognizer*)sender
+//{
+//    if (sender.state == UIGestureRecognizerStateEnded || sender.state == UIGestureRecognizerStateCancelled)
+//        self.imageViewRotation += sender.rotation;
+//    else
+//        self.imageView.transform = CGAffineTransformMakeRotation(self.imageViewRotation + sender.rotation);
+//	
+//    //image doesn`t really rotate, just it`s vizualization, study the code in the url: http://stackoverflow.com/questions/10544887/rotating-a-cgimage to fix it
+//}
 
 #pragma mark - Retake and Ready Buttons
 
