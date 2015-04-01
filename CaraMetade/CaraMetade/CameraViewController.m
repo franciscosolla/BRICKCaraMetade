@@ -31,54 +31,52 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void) viewDidAppear:(BOOL)animated
-{
-	[super viewDidAppear:animated];
-	
-    self.session = [[AVCaptureSession alloc] init];
-    [self.session setSessionPreset:AVCaptureSessionPresetPhoto];
+	// Initialize AVCaptureSeesion and other objects needed.
+	self.session = [[AVCaptureSession alloc] init];
+	[self.session setSessionPreset:AVCaptureSessionPresetPhoto];
 	NSArray *devices = [AVCaptureDevice devices];
 	AVCaptureDevice *front;
 	AVCaptureDevice *back;
 	
 	for (AVCaptureDevice *device in devices)
 		if ([device hasMediaType:AVMediaTypeVideo])
-			{
+		{
 			if ([device position] == AVCaptureDevicePositionBack)
 				back = device;
 			else if ([device position] == AVCaptureDevicePositionFront)
 				front = device;
-			}
-    
-    NSError *error;
+		}
+	
+	NSError *error;
 	
 	self.backCamera = [AVCaptureDeviceInput deviceInputWithDevice:back error:&error];
 	self.frontCamera = [AVCaptureDeviceInput deviceInputWithDevice:front error:&error];
-    
-    if ([self.session canAddInput:self.backCamera] && self.frontCameraActive == NO)
-        [self.session addInput:self.backCamera];
-	else if ([self.session canAddInput:self.backCamera])
-		[self.session addInput:self.frontCamera];
-
-	
-    AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
-    [previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
-    CALayer *rootLayer = [[self frameForCapture] layer];
-    [rootLayer setMasksToBounds:YES];
-    CGRect frame = self.view.frame;
-    
-    [previewLayer setFrame:frame];
-    
-    [rootLayer insertSublayer:previewLayer atIndex:0];
 	
 	self.stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
 	NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys:AVVideoCodecJPEG, AVVideoCodecKey, nil];
 	[self.stillImageOutput setOutputSettings:outputSettings];
 	
-	if ([self.session canAddOutput:self.stillImageOutput])
-		[self.session addOutput:self.stillImageOutput];
+	AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
+	[previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
+	CALayer *rootLayer = [[self frameForCapture] layer];
+	[rootLayer setMasksToBounds:YES];
+	CGRect frame = self.view.frame;
+	
+	[previewLayer setFrame:frame];
+	
+	[rootLayer insertSublayer:previewLayer atIndex:0];
+	
+	[self.session addOutput:self.stillImageOutput];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+    
+    if ([self.session canAddInput:self.backCamera] && self.frontCameraActive == NO)
+        [self.session addInput:self.backCamera];
+	else if ([self.session canAddInput:self.backCamera])
+		[self.session addInput:self.frontCamera];
         
     [self.session startRunning];
 }
@@ -136,6 +134,24 @@
 	
 }
 
+/// Rotate the camera.
+- (IBAction)cameraRotate:(id)sender {
+	if (self.session.inputs[0] == self.backCamera)
+	{
+		[self.session removeInput:self.backCamera];
+		[self.session addInput:self.frontCamera];
+		self.frontCameraActive = YES;
+	}
+	else
+	{
+		[self.session removeInput:self.frontCamera];
+		[self.session addInput:self.backCamera];
+		self.frontCameraActive = NO;
+	}
+}
+
+
+
 - (IBAction)pickFromPhotoLibrary:(id)sender
 {
     
@@ -148,8 +164,10 @@
     
     mediaUI.delegate = self;
     
-    [self.navigationController pushViewController:mediaUI animated:YES];
+    [self presentViewController:mediaUI animated:YES completion:nil];
 }
+
+#pragma mark - Library
 
 - (void) imagePickerController: (UIImagePickerController *) picker
  didFinishPickingMediaWithInfo: (NSDictionary *) info {
@@ -181,22 +199,6 @@
 		
 		[self.navigationController pushViewController:destination animated:YES];
     }];
-}
-
-/// Rotate the camera.
-- (IBAction)cameraRotate:(id)sender {
-	if (self.session.inputs[0] == self.backCamera)
-	{
-		[self.session removeInput:self.backCamera];
-		[self.session addInput:self.frontCamera];
-		self.frontCameraActive = YES;
-	}
-	else
-	{
-		[self.session removeInput:self.frontCamera];
-		[self.session addInput:self.backCamera];
-		self.frontCameraActive = NO;
-	}
 }
 
 @end
