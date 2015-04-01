@@ -24,6 +24,8 @@
 
 @property (strong, nonatomic) UIImage *image;
 
+@property (weak, nonatomic) IBOutlet UIImageView *referenceLine;
+
 @end
 
 @implementation CameraViewController
@@ -68,12 +70,36 @@
 	[rootLayer insertSublayer:previewLayer atIndex:0];
 	
 	[self.session addOutput:self.stillImageOutput];
+	
+	UIGraphicsBeginImageContext(CGSizeMake(3.0f, self.frameForCapture.frame.size.height));
+	
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	
+	CGContextSetRGBStrokeColor(context, 0, 0, 0, 0.5);
+	CGContextSetLineWidth(context, 4.0f);
+	CGFloat dash[] = {10.0f , 5.0f};
+	CGContextSetLineDash(context, 0, dash , 2);
+	
+	CGRect rect = CGRectMake(0, 0, 3.0f, self.frameForCapture.frame.size.height);
+	
+	CGContextMoveToPoint(context, rect.origin.x, rect.origin.y);
+	
+	CGContextAddLineToPoint(context, rect.size.width, rect.size.height);
+	
+	CGContextStrokePath(context);
+	
+	UIImage *line = UIGraphicsGetImageFromCurrentImageContext();
+	
+	UIGraphicsEndImageContext();
+	
+	self.referenceLine.image = line;
+	
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
 	[super viewDidAppear:animated];
-    
+	
     if ([self.session canAddInput:self.backCamera] && self.frontCameraActive == NO)
         [self.session addInput:self.backCamera];
 	else if ([self.session canAddInput:self.backCamera])
@@ -166,6 +192,12 @@
     mediaUI.delegate = self;
     
     [self presentViewController:mediaUI animated:YES completion:nil];
+}
+
+#pragma mark - Double Tap
+
+- (IBAction)doubleTap:(id)sender {
+	[self cameraRotate:nil];
 }
 
 #pragma mark - Library

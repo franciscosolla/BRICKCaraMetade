@@ -75,8 +75,6 @@
     
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
     
-    activityVC.u
-    
     NSArray *excludeActivities = @[UIActivityTypeSaveToCameraRoll];
     
     activityVC.excludedActivityTypes = excludeActivities;
