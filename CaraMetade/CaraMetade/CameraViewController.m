@@ -32,6 +32,7 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	// Initialize AVCaptureSeesion and other objects needed.
+	self.frontCameraActive = YES;
 	self.session = [[AVCaptureSession alloc] init];
 	[self.session setSessionPreset:AVCaptureSessionPresetPhoto];
 	NSArray *devices = [AVCaptureDevice devices];
