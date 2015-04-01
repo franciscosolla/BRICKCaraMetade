@@ -35,20 +35,34 @@
 
 - (IBAction)pinchRecognizer:(UIPinchGestureRecognizer*)sender
 {
+    double scale;
+    
     if (sender.state == UIGestureRecognizerStateEnded || sender.state == UIGestureRecognizerStateCancelled)
     {
         self.finalImageScale *= sender.scale;
     }
     else
     {
-        self.finalImageView.transform = CGAffineTransformMakeScale(self.finalImageScale * sender.scale,
-                                                                         self.finalImageScale * sender.scale);
+        scale = self.finalImageScale * sender.scale;
+        
+        if (scale > 3.0)
+        {
+            sender.scale = 3.0/self.finalImageScale;
+            scale = self.finalImageScale * sender.scale;
+        }
+        else if (scale < 0.3)
+        {
+            sender.scale = 0.3/self.finalImageScale;
+            scale = self.finalImageScale * sender.scale;
+        }
+        
+        self.finalImageView.transform = CGAffineTransformMakeScale(scale, scale);
     }
 }
 
 - (IBAction)panRecognizer:(UIPanGestureRecognizer*)sender
 {
-    CGPoint translation =[sender translationInView:self.view];
+    CGPoint translation = [sender translationInView:self.view];
     self.finalImageView.center = CGPointMake(self.finalImageView.center.x+translation.x ,self.finalImageView.center.y+translation.y);
     [sender setTranslation:CGPointZero inView:self.view];
 }
