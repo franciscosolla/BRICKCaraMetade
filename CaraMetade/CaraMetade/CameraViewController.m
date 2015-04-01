@@ -122,7 +122,6 @@
 			
 			ImageViewController * destination = [self.storyboard instantiateViewControllerWithIdentifier:@"ImageViewController"];
 			destination.image = self.image;
-			destination.frontCamera = self.frontCameraActive;
 			destination.sliderStatus = 0.5;
 			destination.cropperStatus = 0.5;
 			
@@ -192,9 +191,10 @@
     [self dismissViewControllerAnimated:YES completion:^{
 		ImageViewController * destination = [self.storyboard instantiateViewControllerWithIdentifier:@"ImageViewController"];
 		destination.image = self.image;
-		destination.frontCamera = self.frontCameraActive;
 		destination.sliderStatus = 0.5;
 		destination.cropperStatus = 0.5;
+		
+		[self.session stopRunning];
 		
 		[self.navigationController pushViewController:destination animated:YES];
     }];

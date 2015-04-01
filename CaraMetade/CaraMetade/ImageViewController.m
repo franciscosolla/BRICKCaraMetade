@@ -189,7 +189,6 @@
 	ResultViewController *destination = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
 	destination.face = self.image;
 	destination.sliderStatus = self.sliderLine.value;
-	destination.frontCamera = self.frontCamera;
 	destination.cropperStatus = self.rightCropper.value - self.sliderLine.value;
 	
 	[self.navigationController pushViewController:destination animated:YES];
@@ -228,7 +227,7 @@
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
 	CGAffineTransform transform = CGAffineTransformIdentity;
-//	transform = CGAffineTransformTranslate(transform, boundingRect.size.width/2, boundingRect.size.height/2);
+	transform = CGAffineTransformTranslate(transform, boundingRect.size.width/2, boundingRect.size.height/2);
 	transform = CGAffineTransformRotate(transform, self.imageViewRotation);
 	transform = CGAffineTransformScale(transform, 1.0, -1.0);
 	
@@ -244,6 +243,7 @@
 	UIGraphicsEndImageContext();
 	return rotatedImage;
 }
+
 /*
  #pragma mark - Navigation
  
