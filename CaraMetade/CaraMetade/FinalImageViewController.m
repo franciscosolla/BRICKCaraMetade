@@ -19,6 +19,8 @@
 
 @property (nonatomic) CGSize finalImageProportion;
 
+@property (nonatomic) bool doubleTapZoom;
+
 @end
 
 @implementation FinalImageViewController
@@ -44,6 +46,7 @@
 - (IBAction)pinchRecognizer:(UIPinchGestureRecognizer*)sender
 {
     double scale;
+    self.doubleTapZoom = NO;
     
     if (sender.state == UIGestureRecognizerStateEnded || sender.state == UIGestureRecognizerStateCancelled)
     {
@@ -129,6 +132,26 @@
         self.finalImageView.center = CGPointMake(self.finalImageView.center.x, self.finalImageContainer.center.y);
     
     [sender setTranslation:CGPointZero inView:self.view];
+}
+
+- (IBAction)tapRecognizer:(UITapGestureRecognizer*)sender
+{
+    if (self.doubleTapZoom)
+    {
+        self.finalImageView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        self.finalImageView.center = CGPointMake(self.finalImageContainer.center.x, self.finalImageContainer.center.y);
+        
+        self.doubleTapZoom = NO;
+    }
+    else
+    {
+        CGPoint touch = [sender locationInView:nil];
+        
+        self.finalImageView.transform = CGAffineTransformMakeScale(3.0, 3.0);
+        self.finalImageView.center = CGPointMake(touch.x, touch.y);
+        
+        self.doubleTapZoom = YES;
+    }
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
