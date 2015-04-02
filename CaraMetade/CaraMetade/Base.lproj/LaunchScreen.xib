@@ -96,6 +96,10 @@
                     <exclude reference="aHr-ON-6az"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="A0Y-hi-zsx"/>
+                    <exclude reference="hl0-6l-xkd"/>
+                    <exclude reference="wpb-TP-ewy"/>
+                    <exclude reference="wzT-vP-uaS"/>
                     <exclude reference="07Z-J7-PrH"/>
                     <exclude reference="Cic-OC-Cd1"/>
                     <exclude reference="nob-8i-KGs"/>
@@ -106,10 +110,6 @@
                     <exclude reference="YvB-7v-zh3"/>
                     <exclude reference="fOc-tf-E6x"/>
                     <exclude reference="hNz-Gy-RpE"/>
-                    <exclude reference="A0Y-hi-zsx"/>
-                    <exclude reference="hl0-6l-xkd"/>
-                    <exclude reference="wpb-TP-ewy"/>
-                    <exclude reference="wzT-vP-uaS"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -120,6 +120,10 @@
                     <include reference="aHr-ON-6az"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="A0Y-hi-zsx"/>
+                    <include reference="hl0-6l-xkd"/>
+                    <include reference="wpb-TP-ewy"/>
+                    <include reference="wzT-vP-uaS"/>
                     <include reference="07Z-J7-PrH"/>
                     <include reference="Cic-OC-Cd1"/>
                     <include reference="nob-8i-KGs"/>
@@ -130,10 +134,6 @@
                     <include reference="YvB-7v-zh3"/>
                     <include reference="fOc-tf-E6x"/>
                     <include reference="hNz-Gy-RpE"/>
-                    <include reference="A0Y-hi-zsx"/>
-                    <include reference="hl0-6l-xkd"/>
-                    <include reference="wpb-TP-ewy"/>
-                    <include reference="wzT-vP-uaS"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="548" y="455"/>

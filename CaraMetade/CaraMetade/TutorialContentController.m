@@ -22,6 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	
+	// Set text and image.
 	self.tutorialLabel.text = self.tutorialLabelText;
 	self.tutorialLabel.numberOfLines = 0;
 	self.tutorialImageView.image = [UIImage imageNamed:self.tutorialImageFilename];

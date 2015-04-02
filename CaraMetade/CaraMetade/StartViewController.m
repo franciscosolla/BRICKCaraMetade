@@ -10,6 +10,8 @@
 
 @interface StartViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *finishButton;
+
 @end
 
 @implementation StartViewController
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+	
+	// Finish Button text.
+	
+	[self.finishButton setTitle:NSLocalizedString(@"finishButton", nil) forState:UIControlStateNormal];
 	
 	// Page View Controller initialization
 	

@@ -16,6 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="UhW-dd-buL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qwd-xd-DBI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgl-sO-nmT">
@@ -46,7 +47,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UhW-dd-buL" firstAttribute="top" secondItem="hgl-sO-nmT" secondAttribute="bottom" constant="10" id="gZx-oz-GxA">
-                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="hgl-sO-nmT" secondAttribute="trailing" constant="20" id="pwm-zI-9Tc"/>
                             <constraint firstItem="hgl-sO-nmT" firstAttribute="leading" secondItem="qwd-xd-DBI" secondAttribute="leadingMargin" constant="20" id="r9L-Io-d6J"/>
@@ -56,9 +57,9 @@
                                 <exclude reference="hgl-sO-nmT"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="gZx-oz-GxA"/>
                                 <exclude reference="pwm-zI-9Tc"/>
                                 <exclude reference="r9L-Io-d6J"/>
-                                <exclude reference="gZx-oz-GxA"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -66,12 +67,15 @@
                                 <include reference="hgl-sO-nmT"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="gZx-oz-GxA"/>
                                 <include reference="pwm-zI-9Tc"/>
                                 <include reference="r9L-Io-d6J"/>
-                                <include reference="gZx-oz-GxA"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="finishButton" destination="hgl-sO-nmT" id="CMN-Ut-DEU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Spu-2N-3Zw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,6 +101,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h8T-Sq-nX2">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJc-F7-xFS">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
@@ -118,9 +125,6 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h8T-Sq-nX2">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -134,8 +138,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="YJc-F7-xFS"/>
                                 <exclude reference="h8T-Sq-nX2"/>
+                                <exclude reference="YJc-F7-xFS"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="WMz-Qc-4t1"/>
@@ -149,8 +153,8 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="YJc-F7-xFS"/>
                                 <include reference="h8T-Sq-nX2"/>
+                                <include reference="YJc-F7-xFS"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="WMz-Qc-4t1"/>
