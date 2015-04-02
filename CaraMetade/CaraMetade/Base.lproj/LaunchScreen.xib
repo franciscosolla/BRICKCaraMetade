@@ -72,23 +72,28 @@
                         </mask>
                     </variation>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="80" text="Cara Metade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQr-l9-eB1">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cara Metade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="nQr-l9-eB1">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="T2O-j3-lvh"/>
+                        <constraint firstAttribute="width" constant="280" id="VDc-qo-y2O"/>
+                        <constraint firstAttribute="width" secondItem="nQr-l9-eB1" secondAttribute="height" multiplier="7:2" id="csn-EG-N6v"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="40"/>
+                    <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="50"/>
                     <color key="textColor" red="0.99215686274509807" green="0.76078431372549016" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="T2O-j3-lvh"/>
+                            <exclude reference="VDc-qo-y2O"/>
+                            <exclude reference="csn-EG-N6v"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
-                        <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="50"/>
                         <mask key="constraints">
                             <include reference="T2O-j3-lvh"/>
+                            <include reference="VDc-qo-y2O"/>
+                            <include reference="csn-EG-N6v"/>
                         </mask>
                     </variation>
                 </label>
