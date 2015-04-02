@@ -19,6 +19,26 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
 	
+	// Choosing initial view.
+	
+	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+	
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	
+	UIViewController *viewController;
+	
+	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"FirstStart"] == nil)
+	{
+		[[NSUserDefaults standardUserDefaults] setObject:@YES forKey:@"FirstStart"];
+		
+		viewController = [storyboard instantiateViewControllerWithIdentifier:@"StartViewController"];
+	}
+	else
+		viewController = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
+
+	self.window.rootViewController = viewController;
+	[self.window makeKeyAndVisible];
+	
 	// Wait on launch screen.
 	NSCondition *time = [NSCondition new];
 	[time waitUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
@@ -30,8 +50,7 @@
 	pageControl.backgroundColor = [UIColor whiteColor];
 	
 	// Facebook API.
-	return [[FBSDKApplicationDelegate sharedInstance] application:application
-								didFinishLaunchingWithOptions:launchOptions];
+	return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

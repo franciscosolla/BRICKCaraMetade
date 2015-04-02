@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  CaraMetade
+
+  Created by Lucas M. Juviniano on 02/04/15.
+  Copyright (c) 2015 Lucas M. Juviniano. All rights reserved.
+*/
+
+"page1" = "拍摄照片或选择一个从您的相册。";
+
+"page2" = "对齐行的除数与您的脸。";
+
+"page3" = "批准的结果或返回并将该行编辑。";
+
+"page4" = "可视化的结果。";
+
+"finishButton" = "Finish";

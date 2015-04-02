@@ -17,4 +17,6 @@
 
 @property (strong, nonatomic) NSArray *tutorialImageFilenames;
 
+@property BOOL fromNavigation;
+
 @end

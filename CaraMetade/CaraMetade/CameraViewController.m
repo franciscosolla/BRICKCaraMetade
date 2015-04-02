@@ -8,6 +8,7 @@
 
 #import "CameraViewController.h"
 #import "ImageViewController.h"
+#import "StartViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <CoreImage/CoreImage.h>
 #import <QuartzCore/QuartzCore.h>
@@ -180,7 +181,14 @@
 	}
 }
 
-
+- (IBAction)tutorialButton:(id)sender {
+	StartViewController *destination = [self.storyboard instantiateViewControllerWithIdentifier:@"StartViewController"];
+	destination.fromNavigation = YES;
+	
+	[self.session stopRunning];
+	
+	[self.navigationController pushViewController:destination animated:YES];
+}
 
 - (IBAction)pickFromPhotoLibrary:(id)sender
 {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XAH-t1-sTY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -10,7 +10,7 @@
         <!--StartViewController-->
         <scene sceneID="lBs-g6-Mj4">
             <objects>
-                <viewController id="XAH-t1-sTY" userLabel="StartViewController" customClass="StartViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartViewController" id="XAH-t1-sTY" userLabel="StartViewController" customClass="StartViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nk3-l2-yOi"/>
                         <viewControllerLayoutGuide type="bottom" id="UhW-dd-buL"/>
@@ -47,7 +47,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UhW-dd-buL" firstAttribute="top" secondItem="hgl-sO-nmT" secondAttribute="bottom" constant="10" id="gZx-oz-GxA">
-                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="hgl-sO-nmT" secondAttribute="trailing" constant="20" id="pwm-zI-9Tc"/>
                             <constraint firstItem="hgl-sO-nmT" firstAttribute="leading" secondItem="qwd-xd-DBI" secondAttribute="leadingMargin" constant="20" id="r9L-Io-d6J"/>
@@ -415,6 +415,33 @@
                                     </mask>
                                 </variation>
                             </visualEffectView>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO2-JJ-gBo">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="lHZ-of-w2h"/>
+                                    <constraint firstAttribute="height" constant="60" id="yRP-Od-T9r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <state key="normal" title="?">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lHZ-of-w2h"/>
+                                        <exclude reference="yRP-Od-T9r"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="lHZ-of-w2h"/>
+                                        <include reference="yRP-Od-T9r"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="tutorialButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2T7-cu-cQy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -429,6 +456,10 @@
                             <constraint firstAttribute="centerX" secondItem="Rtb-LM-hPy" secondAttribute="centerX" id="KNv-JI-E8Z"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="7AU-NX-qtA" secondAttribute="bottom" id="OUj-c0-FTO"/>
                             <constraint firstItem="Rtb-LM-hPy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Q3b-kv-i2T"/>
+                            <constraint firstItem="XO2-JJ-gBo" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="VUk-QU-f7A">
+                                <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                            </constraint>
+                            <constraint firstItem="XO2-JJ-gBo" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Vit-Oe-w6K"/>
                             <constraint firstItem="7AU-NX-qtA" firstAttribute="top" secondItem="Rtb-LM-hPy" secondAttribute="bottom" id="eTQ-Tm-0hb"/>
                             <constraint firstItem="z9r-a2-otQ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="hVc-GK-fxW"/>
                             <constraint firstItem="Rtb-LM-hPy" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="jOR-qU-Rsn"/>
@@ -440,22 +471,25 @@
                                 <exclude reference="Rtb-LM-hPy"/>
                                 <exclude reference="7AU-NX-qtA"/>
                                 <exclude reference="z9r-a2-otQ"/>
+                                <exclude reference="XO2-JJ-gBo"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="OUj-c0-FTO"/>
-                                <exclude reference="FoG-hp-qzR"/>
-                                <exclude reference="Gf7-49-4tV"/>
-                                <exclude reference="eTQ-Tm-0hb"/>
-                                <exclude reference="KNv-JI-E8Z"/>
-                                <exclude reference="Q3b-kv-i2T"/>
-                                <exclude reference="jOR-qU-Rsn"/>
-                                <exclude reference="39N-af-BU8"/>
-                                <exclude reference="7Ab-se-ZXC"/>
-                                <exclude reference="hVc-GK-fxW"/>
                                 <exclude reference="1eT-Ha-10d"/>
                                 <exclude reference="8kt-bH-dAu"/>
                                 <exclude reference="Dtb-wp-x3F"/>
                                 <exclude reference="xQX-HM-lJA"/>
+                                <exclude reference="39N-af-BU8"/>
+                                <exclude reference="7Ab-se-ZXC"/>
+                                <exclude reference="hVc-GK-fxW"/>
+                                <exclude reference="KNv-JI-E8Z"/>
+                                <exclude reference="Q3b-kv-i2T"/>
+                                <exclude reference="jOR-qU-Rsn"/>
+                                <exclude reference="VUk-QU-f7A"/>
+                                <exclude reference="Vit-Oe-w6K"/>
+                                <exclude reference="FoG-hp-qzR"/>
+                                <exclude reference="Gf7-49-4tV"/>
+                                <exclude reference="eTQ-Tm-0hb"/>
+                                <exclude reference="OUj-c0-FTO"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -464,22 +498,25 @@
                                 <include reference="Rtb-LM-hPy"/>
                                 <include reference="7AU-NX-qtA"/>
                                 <include reference="z9r-a2-otQ"/>
+                                <include reference="XO2-JJ-gBo"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="OUj-c0-FTO"/>
-                                <include reference="FoG-hp-qzR"/>
-                                <include reference="Gf7-49-4tV"/>
-                                <include reference="eTQ-Tm-0hb"/>
-                                <include reference="KNv-JI-E8Z"/>
-                                <include reference="Q3b-kv-i2T"/>
-                                <include reference="jOR-qU-Rsn"/>
-                                <include reference="39N-af-BU8"/>
-                                <include reference="7Ab-se-ZXC"/>
-                                <include reference="hVc-GK-fxW"/>
                                 <include reference="1eT-Ha-10d"/>
                                 <include reference="8kt-bH-dAu"/>
                                 <include reference="Dtb-wp-x3F"/>
                                 <include reference="xQX-HM-lJA"/>
+                                <include reference="39N-af-BU8"/>
+                                <include reference="7Ab-se-ZXC"/>
+                                <include reference="hVc-GK-fxW"/>
+                                <include reference="KNv-JI-E8Z"/>
+                                <include reference="Q3b-kv-i2T"/>
+                                <include reference="jOR-qU-Rsn"/>
+                                <include reference="VUk-QU-f7A"/>
+                                <include reference="Vit-Oe-w6K"/>
+                                <include reference="FoG-hp-qzR"/>
+                                <include reference="Gf7-49-4tV"/>
+                                <include reference="eTQ-Tm-0hb"/>
+                                <include reference="OUj-c0-FTO"/>
                             </mask>
                         </variation>
                         <connections>
@@ -1164,7 +1201,7 @@
         <!--Navigation Controller-->
         <scene sceneID="GKo-Ab-RBW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xfp-fx-k12" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="xfp-fx-k12" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="ZWB-Ae-noc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

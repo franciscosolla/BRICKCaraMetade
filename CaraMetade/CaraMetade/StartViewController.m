@@ -100,7 +100,10 @@
 }
 
 - (IBAction)finishButton:(id)sender {
-	[self performSegueWithIdentifier:@"StartApp" sender:nil];
+	if (self.fromNavigation)
+		[self.navigationController popToRootViewControllerAnimated:YES];
+	else
+		[self performSegueWithIdentifier:@"StartApp" sender:nil];
 }
 
 - (void)didReceiveMemoryWarning {
