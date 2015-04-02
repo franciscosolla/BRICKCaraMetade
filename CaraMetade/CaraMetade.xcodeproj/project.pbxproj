@@ -10,16 +10,14 @@
 		44D137321AC1D3F600A4ABA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D137311AC1D3F600A4ABA7 /* AVFoundation.framework */; };
 		44D137381AC1E7D500A4ABA7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D137371AC1E7D500A4ABA7 /* ImageViewController.m */; };
 		44D2DDF91AC3450B003828FF /* FinalImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D2DDF81AC3450B003828FF /* FinalImageViewController.m */; };
-		44D38CFB1ACDD53200FE06FE /* flashoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D38CF91ACDD53200FE06FE /* flashoff.png */; };
-		44D38CFC1ACDD53200FE06FE /* flashon.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D38CFA1ACDD53200FE06FE /* flashon.png */; };
-		44D38CFF1ACDD6F400FE06FE /* flashoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D38CFD1ACDD6F400FE06FE /* flashoff.png */; };
-		44D38D001ACDD6F400FE06FE /* flashon.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D38CFE1ACDD6F400FE06FE /* flashon.png */; };
 		A0B744681ACB29C6008A42B1 /* yellowBack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0B744661ACB29C6008A42B1 /* yellowBack.jpg */; };
 		A0B744691ACB29C6008A42B1 /* ShadowBack.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B744671ACB29C6008A42B1 /* ShadowBack.png */; };
 		A0B7446B1ACB2F39008A42B1 /* albumButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B7446A1ACB2F39008A42B1 /* albumButton.png */; };
 		A0B7446D1ACB3583008A42B1 /* sharebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B7446C1ACB3583008A42B1 /* sharebutton.png */; };
 		A0B79F8E1ACDC3D2000BA9BF /* Calibri Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0B79F8D1ACDC3D2000BA9BF /* Calibri Bold.ttf */; };
 		A0B79F971ACDCEF5000BA9BF /* page4.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B79F961ACDCEF5000BA9BF /* page4.png */; };
+		A0B79FA41ACDDB4B000BA9BF /* flashoff.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B79FA21ACDDB4B000BA9BF /* flashoff.png */; };
+		A0B79FA51ACDDB4B000BA9BF /* flashon.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B79FA31ACDDB4B000BA9BF /* flashon.png */; };
 		A0D1D7D11AC2F45A0043B484 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D1D7D01AC2F45A0043B484 /* ResultViewController.m */; };
 		A0D208E41ACD87DF00C7DFE2 /* TutorialContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D208E31ACD87DF00C7DFE2 /* TutorialContentController.m */; };
 		A0D209031ACD989700C7DFE2 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D209021ACD989700C7DFE2 /* StartViewController.m */; };
@@ -59,16 +57,14 @@
 		44D137371AC1E7D500A4ABA7 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		44D2DDF71AC3450B003828FF /* FinalImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinalImageViewController.h; sourceTree = "<group>"; };
 		44D2DDF81AC3450B003828FF /* FinalImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinalImageViewController.m; sourceTree = "<group>"; };
-		44D38CF91ACDD53200FE06FE /* flashoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flashoff.png; path = CaraMetade/flashoff.png; sourceTree = "<group>"; };
-		44D38CFA1ACDD53200FE06FE /* flashon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flashon.png; path = CaraMetade/flashon.png; sourceTree = "<group>"; };
-		44D38CFD1ACDD6F400FE06FE /* flashoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashoff.png; sourceTree = "<group>"; };
-		44D38CFE1ACDD6F400FE06FE /* flashon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashon.png; sourceTree = "<group>"; };
 		A0B744661ACB29C6008A42B1 /* yellowBack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yellowBack.jpg; sourceTree = "<group>"; };
 		A0B744671ACB29C6008A42B1 /* ShadowBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShadowBack.png; sourceTree = "<group>"; };
 		A0B7446A1ACB2F39008A42B1 /* albumButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = albumButton.png; sourceTree = "<group>"; };
 		A0B7446C1ACB3583008A42B1 /* sharebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sharebutton.png; sourceTree = "<group>"; };
 		A0B79F8D1ACDC3D2000BA9BF /* Calibri Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Bold.ttf"; sourceTree = "<group>"; };
 		A0B79F961ACDCEF5000BA9BF /* page4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page4.png; sourceTree = "<group>"; };
+		A0B79FA21ACDDB4B000BA9BF /* flashoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashoff.png; sourceTree = "<group>"; };
+		A0B79FA31ACDDB4B000BA9BF /* flashon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashon.png; sourceTree = "<group>"; };
 		A0D1D7CF1AC2F45A0043B484 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		A0D1D7D01AC2F45A0043B484 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		A0D208E21ACD87DF00C7DFE2 /* TutorialContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialContentController.h; sourceTree = "<group>"; };
@@ -136,8 +132,6 @@
 		A0FE4C781AC0A69700A74099 = {
 			isa = PBXGroup;
 			children = (
-				44D38CF91ACDD53200FE06FE /* flashoff.png */,
-				44D38CFA1ACDD53200FE06FE /* flashon.png */,
 				44D137311AC1D3F600A4ABA7 /* AVFoundation.framework */,
 				A0FE4C831AC0A69700A74099 /* CaraMetade */,
 				A0FE4C9D1AC0A69800A74099 /* CaraMetadeTests */,
@@ -183,8 +177,8 @@
 		A0FE4C841AC0A69700A74099 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				44D38CFD1ACDD6F400FE06FE /* flashoff.png */,
-				44D38CFE1ACDD6F400FE06FE /* flashon.png */,
+				A0B79FA21ACDDB4B000BA9BF /* flashoff.png */,
+				A0B79FA31ACDDB4B000BA9BF /* flashon.png */,
 				A0B79F961ACDCEF5000BA9BF /* page4.png */,
 				A0B79F8D1ACDC3D2000BA9BF /* Calibri Bold.ttf */,
 				A0D2092D1ACDC0EB00C7DFE2 /* AppLogo.png */,
@@ -276,7 +270,7 @@
 					};
 					A0FE4C991AC0A69800A74099 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 8A2XM926A4;
+						DevelopmentTeam = JNA96F28J7;
 						TestTargetID = A0FE4C801AC0A69700A74099;
 					};
 				};
@@ -313,10 +307,10 @@
 				A0DABF141ACB0FFE006E1AB5 /* Rotatebutton.png in Resources */,
 				A0DABF111ACB0FFE006E1AB5 /* Capturebutton.png in Resources */,
 				A0DABF131ACB0FFE006E1AB5 /* OKbutton.png in Resources */,
-				44D38CFB1ACDD53200FE06FE /* flashoff.png in Resources */,
+				A0B79FA41ACDDB4B000BA9BF /* flashoff.png in Resources */,
 				A0FE4C901AC0A69700A74099 /* Main.storyboard in Resources */,
 				A0B79F971ACDCEF5000BA9BF /* page4.png in Resources */,
-				44D38CFC1ACDD53200FE06FE /* flashon.png in Resources */,
+				A0B79FA51ACDDB4B000BA9BF /* flashon.png in Resources */,
 				A0B744681ACB29C6008A42B1 /* yellowBack.jpg in Resources */,
 				A0FE4C951AC0A69700A74099 /* LaunchScreen.xib in Resources */,
 				A0D209151ACDA5F700C7DFE2 /* page2.png in Resources */,
@@ -326,8 +320,6 @@
 				A0B7446B1ACB2F39008A42B1 /* albumButton.png in Resources */,
 				A0B7446D1ACB3583008A42B1 /* sharebutton.png in Resources */,
 				A0D209161ACDA5F700C7DFE2 /* page3.png in Resources */,
-				44D38D001ACDD6F400FE06FE /* flashon.png in Resources */,
-				44D38CFF1ACDD6F400FE06FE /* flashoff.png in Resources */,
 				A0D2092E1ACDC0EB00C7DFE2 /* AppLogo.png in Resources */,
 				A0D2091F1ACDAB5A00C7DFE2 /* Localizable.strings in Resources */,
 				A0DABF191ACB100D006E1AB5 /* Backbutton.png in Resources */,

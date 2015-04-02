@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -435,7 +435,7 @@
                                     <action selector="tutorialButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2T7-cu-cQy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="234" placeholderIntrinsicHeight="282" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lug-0n-cd4">
+                            <button opaque="NO" alpha="0.5" contentMode="scaleAspectFit" placeholderIntrinsicWidth="234" placeholderIntrinsicHeight="282" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lug-0n-cd4">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="28" id="Qft-IV-B52"/>
@@ -502,16 +502,7 @@
                                 <exclude reference="Rtb-LM-hPy"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1eT-Ha-10d"/>
-                                <exclude reference="8kt-bH-dAu"/>
-                                <exclude reference="Dtb-wp-x3F"/>
-                                <exclude reference="xQX-HM-lJA"/>
-                                <exclude reference="39N-af-BU8"/>
-                                <exclude reference="7Ab-se-ZXC"/>
-                                <exclude reference="hVc-GK-fxW"/>
-                                <exclude reference="KNv-JI-E8Z"/>
-                                <exclude reference="Q3b-kv-i2T"/>
-                                <exclude reference="jOR-qU-Rsn"/>
+                                <exclude reference="OUj-c0-FTO"/>
                                 <exclude reference="GPB-EX-c4M"/>
                                 <exclude reference="ixr-oY-BcV"/>
                                 <exclude reference="VUk-QU-f7A"/>
@@ -519,7 +510,16 @@
                                 <exclude reference="FoG-hp-qzR"/>
                                 <exclude reference="Gf7-49-4tV"/>
                                 <exclude reference="eTQ-Tm-0hb"/>
-                                <exclude reference="OUj-c0-FTO"/>
+                                <exclude reference="KNv-JI-E8Z"/>
+                                <exclude reference="Q3b-kv-i2T"/>
+                                <exclude reference="jOR-qU-Rsn"/>
+                                <exclude reference="39N-af-BU8"/>
+                                <exclude reference="7Ab-se-ZXC"/>
+                                <exclude reference="hVc-GK-fxW"/>
+                                <exclude reference="1eT-Ha-10d"/>
+                                <exclude reference="8kt-bH-dAu"/>
+                                <exclude reference="Dtb-wp-x3F"/>
+                                <exclude reference="xQX-HM-lJA"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -532,16 +532,7 @@
                                 <include reference="Rtb-LM-hPy"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="1eT-Ha-10d"/>
-                                <include reference="8kt-bH-dAu"/>
-                                <include reference="Dtb-wp-x3F"/>
-                                <include reference="xQX-HM-lJA"/>
-                                <include reference="39N-af-BU8"/>
-                                <include reference="7Ab-se-ZXC"/>
-                                <include reference="hVc-GK-fxW"/>
-                                <include reference="KNv-JI-E8Z"/>
-                                <include reference="Q3b-kv-i2T"/>
-                                <include reference="jOR-qU-Rsn"/>
+                                <include reference="OUj-c0-FTO"/>
                                 <include reference="GPB-EX-c4M"/>
                                 <include reference="ixr-oY-BcV"/>
                                 <include reference="VUk-QU-f7A"/>
@@ -549,7 +540,16 @@
                                 <include reference="FoG-hp-qzR"/>
                                 <include reference="Gf7-49-4tV"/>
                                 <include reference="eTQ-Tm-0hb"/>
-                                <include reference="OUj-c0-FTO"/>
+                                <include reference="KNv-JI-E8Z"/>
+                                <include reference="Q3b-kv-i2T"/>
+                                <include reference="jOR-qU-Rsn"/>
+                                <include reference="39N-af-BU8"/>
+                                <include reference="7Ab-se-ZXC"/>
+                                <include reference="hVc-GK-fxW"/>
+                                <include reference="1eT-Ha-10d"/>
+                                <include reference="8kt-bH-dAu"/>
+                                <include reference="Dtb-wp-x3F"/>
+                                <include reference="xQX-HM-lJA"/>
                             </mask>
                         </variation>
                         <connections>
