@@ -4,6 +4,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Calibri Bold.ttf">
+            <string>Calibri-Bold</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -67,6 +72,26 @@
                         </mask>
                     </variation>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="80" text="Cara Metade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQr-l9-eB1">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="T2O-j3-lvh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="40"/>
+                    <color key="textColor" red="0.99215686274509807" green="0.76078431372549016" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="T2O-j3-lvh"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="50"/>
+                        <mask key="constraints">
+                            <include reference="T2O-j3-lvh"/>
+                        </mask>
+                    </variation>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -74,8 +99,11 @@
                 <constraint firstItem="hKQ-IU-tCF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="0k9-00-kqx">
                     <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                 </constraint>
+                <constraint firstItem="nQr-l9-eB1" firstAttribute="top" secondItem="aHr-ON-6az" secondAttribute="bottom" constant="30" id="2NG-F4-alO"/>
+                <constraint firstAttribute="trailing" secondItem="nQr-l9-eB1" secondAttribute="trailing" constant="60" id="7pL-VC-smT"/>
                 <constraint firstItem="aHr-ON-6az" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="60" id="A0Y-hi-zsx"/>
                 <constraint firstItem="cWZ-q6-vcd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Cic-OC-Cd1"/>
+                <constraint firstItem="nQr-l9-eB1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="60" id="H5M-Z7-du0"/>
                 <constraint firstAttribute="trailing" secondItem="hKQ-IU-tCF" secondAttribute="trailing" constant="10" id="Nez-U2-C8h"/>
                 <constraint firstAttribute="trailing" secondItem="iWv-NP-cUE" secondAttribute="trailing" id="YvB-7v-zh3"/>
                 <constraint firstItem="hKQ-IU-tCF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="erz-FT-Zi1"/>
@@ -94,12 +122,9 @@
                     <exclude reference="cWZ-q6-vcd"/>
                     <exclude reference="hKQ-IU-tCF"/>
                     <exclude reference="aHr-ON-6az"/>
+                    <exclude reference="nQr-l9-eB1"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="A0Y-hi-zsx"/>
-                    <exclude reference="hl0-6l-xkd"/>
-                    <exclude reference="wpb-TP-ewy"/>
-                    <exclude reference="wzT-vP-uaS"/>
                     <exclude reference="07Z-J7-PrH"/>
                     <exclude reference="Cic-OC-Cd1"/>
                     <exclude reference="nob-8i-KGs"/>
@@ -110,6 +135,13 @@
                     <exclude reference="YvB-7v-zh3"/>
                     <exclude reference="fOc-tf-E6x"/>
                     <exclude reference="hNz-Gy-RpE"/>
+                    <exclude reference="A0Y-hi-zsx"/>
+                    <exclude reference="hl0-6l-xkd"/>
+                    <exclude reference="wpb-TP-ewy"/>
+                    <exclude reference="wzT-vP-uaS"/>
+                    <exclude reference="2NG-F4-alO"/>
+                    <exclude reference="7pL-VC-smT"/>
+                    <exclude reference="H5M-Z7-du0"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -118,12 +150,9 @@
                     <include reference="cWZ-q6-vcd"/>
                     <include reference="hKQ-IU-tCF"/>
                     <include reference="aHr-ON-6az"/>
+                    <include reference="nQr-l9-eB1"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="A0Y-hi-zsx"/>
-                    <include reference="hl0-6l-xkd"/>
-                    <include reference="wpb-TP-ewy"/>
-                    <include reference="wzT-vP-uaS"/>
                     <include reference="07Z-J7-PrH"/>
                     <include reference="Cic-OC-Cd1"/>
                     <include reference="nob-8i-KGs"/>
@@ -134,13 +163,20 @@
                     <include reference="YvB-7v-zh3"/>
                     <include reference="fOc-tf-E6x"/>
                     <include reference="hNz-Gy-RpE"/>
+                    <include reference="A0Y-hi-zsx"/>
+                    <include reference="hl0-6l-xkd"/>
+                    <include reference="wpb-TP-ewy"/>
+                    <include reference="wzT-vP-uaS"/>
+                    <include reference="2NG-F4-alO"/>
+                    <include reference="7pL-VC-smT"/>
+                    <include reference="H5M-Z7-du0"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
     <resources>
-        <image name="AppLogo.png" width="1175" height="1154"/>
+        <image name="AppLogo.png" width="746" height="791"/>
         <image name="LaunchBackgroung.jpg" width="774" height="1306"/>
         <image name="ShadowBack.png" width="1363" height="1896"/>
     </resources>

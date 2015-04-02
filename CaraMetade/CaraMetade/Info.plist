@@ -40,5 +40,9 @@
 	<string>fb1408049736178035</string>
 	<key>URL Types</key>
 	<array/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Calibri Bold.ttf</string>
+	</array>
 </dict>
 </plist>
