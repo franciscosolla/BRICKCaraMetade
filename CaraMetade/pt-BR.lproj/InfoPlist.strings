@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  CaraMetade
+
+  Created by Lucas M. Juviniano on 02/04/15.
+  Copyright (c) 2015 Lucas M. Juviniano. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "DuasCaras";
+"CFBundleName" = "DuasCaras";
