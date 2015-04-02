@@ -24,6 +24,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ztk-y3-J35"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pK3-H2-xoJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h8T-Sq-nX2">
@@ -65,13 +66,13 @@
                                 <exclude reference="YJc-F7-xFS"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="WMz-Qc-4t1"/>
+                                <exclude reference="flq-1s-fAU"/>
+                                <exclude reference="nMb-WA-pdI"/>
                                 <exclude reference="0tC-N6-DWG"/>
                                 <exclude reference="4og-TR-4Id"/>
                                 <exclude reference="KrQ-1D-Weh"/>
                                 <exclude reference="OWO-XI-Uzg"/>
-                                <exclude reference="WMz-Qc-4t1"/>
-                                <exclude reference="flq-1s-fAU"/>
-                                <exclude reference="nMb-WA-pdI"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -80,13 +81,13 @@
                                 <include reference="YJc-F7-xFS"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="WMz-Qc-4t1"/>
+                                <include reference="flq-1s-fAU"/>
+                                <include reference="nMb-WA-pdI"/>
                                 <include reference="0tC-N6-DWG"/>
                                 <include reference="4og-TR-4Id"/>
                                 <include reference="KrQ-1D-Weh"/>
                                 <include reference="OWO-XI-Uzg"/>
-                                <include reference="WMz-Qc-4t1"/>
-                                <include reference="flq-1s-fAU"/>
-                                <include reference="nMb-WA-pdI"/>
                             </mask>
                         </variation>
                     </view>

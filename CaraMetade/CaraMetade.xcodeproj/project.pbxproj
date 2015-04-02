@@ -19,7 +19,6 @@
 		A0B7446D1ACB3583008A42B1 /* sharebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B7446C1ACB3583008A42B1 /* sharebutton.png */; };
 		A0D1D7D11AC2F45A0043B484 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D1D7D01AC2F45A0043B484 /* ResultViewController.m */; };
 		A0D208E41ACD87DF00C7DFE2 /* TutorialContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D208E31ACD87DF00C7DFE2 /* TutorialContentController.m */; };
-		A0D208EA1ACD889B00C7DFE2 /* PageViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D208E91ACD889B00C7DFE2 /* PageViewDataSource.m */; };
 		A0D208EF1ACD8B3000C7DFE2 /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D208EB1ACD8B3000C7DFE2 /* page1.png */; };
 		A0D208F01ACD8B3000C7DFE2 /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D208EC1ACD8B3000C7DFE2 /* page2.png */; };
 		A0D208F11ACD8B3000C7DFE2 /* page3.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D208ED1ACD8B3000C7DFE2 /* page3.png */; };
@@ -68,8 +67,6 @@
 		A0D1D7D01AC2F45A0043B484 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		A0D208E21ACD87DF00C7DFE2 /* TutorialContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialContentController.h; sourceTree = "<group>"; };
 		A0D208E31ACD87DF00C7DFE2 /* TutorialContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialContentController.m; sourceTree = "<group>"; };
-		A0D208E81ACD889B00C7DFE2 /* PageViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageViewDataSource.h; path = ../PageViewDataSource.h; sourceTree = "<group>"; };
-		A0D208E91ACD889B00C7DFE2 /* PageViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageViewDataSource.m; path = ../PageViewDataSource.m; sourceTree = "<group>"; };
 		A0D208EB1ACD8B3000C7DFE2 /* page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1.png; sourceTree = "<group>"; };
 		A0D208EC1ACD8B3000C7DFE2 /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
 		A0D208ED1ACD8B3000C7DFE2 /* page3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page3.png; sourceTree = "<group>"; };
@@ -144,8 +141,6 @@
 		A0FE4C831AC0A69700A74099 /* CaraMetade */ = {
 			isa = PBXGroup;
 			children = (
-				A0D208E81ACD889B00C7DFE2 /* PageViewDataSource.h */,
-				A0D208E91ACD889B00C7DFE2 /* PageViewDataSource.m */,
 				A0D208F31ACD8B9100C7DFE2 /* Localizable.strings */,
 				A0FE4C881AC0A69700A74099 /* AppDelegate.h */,
 				A0FE4C891AC0A69700A74099 /* AppDelegate.m */,
@@ -327,7 +322,6 @@
 			files = (
 				A0FE4C8D1AC0A69700A74099 /* CameraViewController.m in Sources */,
 				A0D208E41ACD87DF00C7DFE2 /* TutorialContentController.m in Sources */,
-				A0D208EA1ACD889B00C7DFE2 /* PageViewDataSource.m in Sources */,
 				44D2DDF91AC3450B003828FF /* FinalImageViewController.m in Sources */,
 				A0FE4C8A1AC0A69700A74099 /* AppDelegate.m in Sources */,
 				44D137381AC1E7D500A4ABA7 /* ImageViewController.m in Sources */,
