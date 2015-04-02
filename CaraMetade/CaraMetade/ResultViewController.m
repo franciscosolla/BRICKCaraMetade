@@ -146,34 +146,17 @@
 	
 	// build the FINAL image
 	
-	float width, height;
-	
-	if (self.rightSideImage.image.size.width > self.leftSideImage.image.size.width)
-		width = self.rightSideImage.image.size.width;
-	else
-		width = self.leftSideImage.image.size.width;
-	
-	height = self.rightSideImage.image.size.height + self.leftSideImage.image.size.height;
-	
-	CGSize size = CGSizeMake(width, height);
+	CGSize size = CGSizeMake(self.rightSideImage.image.size.width+self.leftSideImage.image.size.width, self.leftSideImage.image.size.height);
 	UIGraphicsBeginImageContext(size);
 	
-	if (self.leftSideImage.image.size.width >= self.rightSideImage.image.size.width)
-	{
-		CGPoint pointImg1 = CGPointMake(0,0);
-		[self.leftSideImage.image drawAtPoint:pointImg1];
-		
-		CGPoint pointImg2 = CGPointMake((self.leftSideImage.image.size.width-self.rightSideImage.image.size.width)/2,self.leftSideImage.image.size.height);
-		[self.rightSideImage.image drawAtPoint:pointImg2];
-	}
-	else
-	{
-		CGPoint pointImg1 = CGPointMake((self.rightSideImage.image.size.width-self.leftSideImage.image.size.width)/2,0);
-		[self.leftSideImage.image drawAtPoint:pointImg1];
-		
-		CGPoint pointImg2 = CGPointMake(0,self.leftSideImage.image.size.height);
-		[self.rightSideImage.image drawAtPoint:pointImg2];
-	}
+    
+        CGPoint pointImg1 = CGPointMake(0,0);
+        [self.rightSideImage.image drawAtPoint:pointImg1];
+        
+        CGPoint pointImg2 = CGPointMake(self.rightSideImage.image.size.width,0);
+        [self.leftSideImage.image drawAtPoint:pointImg2];
+        
+    
 	
 	UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
