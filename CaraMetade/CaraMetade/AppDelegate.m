@@ -23,6 +23,12 @@
 	NSCondition *time = [NSCondition new];
 	[time waitUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
 	
+	// Page View indicator
+	UIPageControl *pageControl = [UIPageControl appearance];
+	pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+	pageControl.currentPageIndicatorTintColor = [UIColor yellowColor];
+	pageControl.backgroundColor = [UIColor whiteColor];
+	
 	// Facebook API.
 	return [[FBSDKApplicationDelegate sharedInstance] application:application
 								didFinishLaunchingWithOptions:launchOptions];

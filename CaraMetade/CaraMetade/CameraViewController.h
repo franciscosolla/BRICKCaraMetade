@@ -8,17 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
-#import "TutorialContentController.h"
 
-@interface CameraViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPageViewControllerDataSource>
+@interface CameraViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic) BOOL frontCameraActive;
-
-@property (strong, nonatomic) UIPageViewController *tutorialPageController;
-
-@property (strong, nonatomic) NSArray *tutorialTexts;
-
-@property (strong, nonatomic) NSArray *tutorialImageFilenames;
 
 @end
 
