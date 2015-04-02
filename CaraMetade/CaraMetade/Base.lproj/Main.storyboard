@@ -192,13 +192,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rtb-LM-hPy">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="jyP-OC-2RA" appends="YES" id="Z6m-Sw-x0c"/>
-                                </connections>
-                            </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="7AU-NX-qtA">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Mv2-PH-Ai9">
@@ -442,28 +435,38 @@
                                     <action selector="tutorialButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2T7-cu-cQy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lug-0n-cd4">
+                            <button opaque="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="234" placeholderIntrinsicHeight="282" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lug-0n-cd4">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Lug-0n-cd4" secondAttribute="height" multiplier="37:30" id="LnT-3i-BKm"/>
+                                    <constraint firstAttribute="width" constant="28" id="Qft-IV-B52"/>
+                                    <constraint firstAttribute="width" secondItem="Lug-0n-cd4" secondAttribute="height" multiplier="14:17" id="Sbt-yx-66e"/>
                                 </constraints>
-                                <state key="normal" title="Flash">
+                                <state key="normal" title="Flash" image="flashoff.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="LnT-3i-BKm"/>
+                                        <exclude reference="Qft-IV-B52"/>
+                                        <exclude reference="Sbt-yx-66e"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="LnT-3i-BKm"/>
+                                        <include reference="Qft-IV-B52"/>
+                                        <include reference="Sbt-yx-66e"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <action selector="turnFlashMode:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rJq-km-F1o"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rtb-LM-hPy">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jyP-OC-2RA" appends="YES" id="Z6m-Sw-x0c"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -472,9 +475,9 @@
                             <constraint firstItem="z9r-a2-otQ" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="39N-af-BU8"/>
                             <constraint firstAttribute="centerX" secondItem="z9r-a2-otQ" secondAttribute="centerX" id="7Ab-se-ZXC"/>
                             <constraint firstAttribute="height" secondItem="YiZ-M0-q8h" secondAttribute="height" id="8kt-bH-dAu"/>
-                            <constraint firstItem="Lug-0n-cd4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="24" id="Btx-MK-27D"/>
                             <constraint firstAttribute="centerX" secondItem="YiZ-M0-q8h" secondAttribute="centerX" id="Dtb-wp-x3F"/>
                             <constraint firstAttribute="centerX" secondItem="7AU-NX-qtA" secondAttribute="centerX" id="FoG-hp-qzR"/>
+                            <constraint firstItem="Lug-0n-cd4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="GPB-EX-c4M"/>
                             <constraint firstAttribute="width" secondItem="7AU-NX-qtA" secondAttribute="width" id="Gf7-49-4tV"/>
                             <constraint firstAttribute="centerX" secondItem="Rtb-LM-hPy" secondAttribute="centerX" id="KNv-JI-E8Z"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="7AU-NX-qtA" secondAttribute="bottom" id="OUj-c0-FTO"/>
@@ -485,18 +488,18 @@
                             <constraint firstItem="XO2-JJ-gBo" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Vit-Oe-w6K"/>
                             <constraint firstItem="7AU-NX-qtA" firstAttribute="top" secondItem="Rtb-LM-hPy" secondAttribute="bottom" id="eTQ-Tm-0hb"/>
                             <constraint firstItem="z9r-a2-otQ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="hVc-GK-fxW"/>
-                            <constraint firstItem="Lug-0n-cd4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="iPz-VF-pcE"/>
+                            <constraint firstItem="Lug-0n-cd4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="13" id="ixr-oY-BcV"/>
                             <constraint firstItem="Rtb-LM-hPy" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="jOR-qU-Rsn"/>
                             <constraint firstAttribute="width" secondItem="YiZ-M0-q8h" secondAttribute="width" id="xQX-HM-lJA"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="YiZ-M0-q8h"/>
-                                <exclude reference="Rtb-LM-hPy"/>
                                 <exclude reference="7AU-NX-qtA"/>
                                 <exclude reference="z9r-a2-otQ"/>
                                 <exclude reference="XO2-JJ-gBo"/>
                                 <exclude reference="Lug-0n-cd4"/>
+                                <exclude reference="Rtb-LM-hPy"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="1eT-Ha-10d"/>
@@ -509,8 +512,8 @@
                                 <exclude reference="KNv-JI-E8Z"/>
                                 <exclude reference="Q3b-kv-i2T"/>
                                 <exclude reference="jOR-qU-Rsn"/>
-                                <exclude reference="Btx-MK-27D"/>
-                                <exclude reference="iPz-VF-pcE"/>
+                                <exclude reference="GPB-EX-c4M"/>
+                                <exclude reference="ixr-oY-BcV"/>
                                 <exclude reference="VUk-QU-f7A"/>
                                 <exclude reference="Vit-Oe-w6K"/>
                                 <exclude reference="FoG-hp-qzR"/>
@@ -522,11 +525,11 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="YiZ-M0-q8h"/>
-                                <include reference="Rtb-LM-hPy"/>
                                 <include reference="7AU-NX-qtA"/>
                                 <include reference="z9r-a2-otQ"/>
                                 <include reference="XO2-JJ-gBo"/>
                                 <include reference="Lug-0n-cd4"/>
+                                <include reference="Rtb-LM-hPy"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="1eT-Ha-10d"/>
@@ -539,8 +542,8 @@
                                 <include reference="KNv-JI-E8Z"/>
                                 <include reference="Q3b-kv-i2T"/>
                                 <include reference="jOR-qU-Rsn"/>
-                                <include reference="Btx-MK-27D"/>
-                                <include reference="iPz-VF-pcE"/>
+                                <include reference="GPB-EX-c4M"/>
+                                <include reference="ixr-oY-BcV"/>
                                 <include reference="VUk-QU-f7A"/>
                                 <include reference="Vit-Oe-w6K"/>
                                 <include reference="FoG-hp-qzR"/>
@@ -1255,6 +1258,7 @@
         <image name="OKbutton.png" width="146" height="93"/>
         <image name="Rotatebutton.png" width="175" height="181"/>
         <image name="albumButton.png" width="130" height="135"/>
+        <image name="flashoff.png" width="190" height="282"/>
         <image name="sharebutton.png" width="107" height="147"/>
         <image name="yellowBack.jpg" width="1333" height="2000"/>
     </resources>

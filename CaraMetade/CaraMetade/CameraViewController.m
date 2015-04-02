@@ -60,9 +60,15 @@
 				front = device;
             
             if ([device flashMode] == AVCaptureFlashModeOn)
+            {
                 self.flash = YES;
+                [self.flashButoon setImage:[UIImage imageNamed:@"flashon.png"] forState:UIControlStateNormal];
+            }
             else
+            {
                 self.flash = NO;
+                [self.flashButoon setImage:[UIImage imageNamed:@"flashoff.png"] forState:UIControlStateNormal];
+            }
 		}
 	
 	NSError *error;
@@ -193,6 +199,7 @@
                 [device setFlashMode:AVCaptureFlashModeOff];
                 [device unlockForConfiguration];
                 self.flash = NO;
+                [self.flashButoon setImage:[UIImage imageNamed:@"flashoff.png"] forState:UIControlStateNormal];
             }
             else
             {
@@ -201,6 +208,7 @@
                 [device setFlashMode:AVCaptureFlashModeOn];
                 [device unlockForConfiguration];
                 self.flash = YES;
+                [self.flashButoon setImage:[UIImage imageNamed:@"flashon.png"] forState:UIControlStateNormal];
             }
             
         }
