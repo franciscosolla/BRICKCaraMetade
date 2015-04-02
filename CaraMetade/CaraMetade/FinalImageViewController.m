@@ -72,9 +72,12 @@
     
     UIPanGestureRecognizer *refresh =  [[UIPanGestureRecognizer alloc] init];
     
-    [refresh setTranslation:CGPointMake(0, 0) inView:self.view];
-    
     [self panRecognizer: refresh];
+    
+    if (self.finalImageScale > 1.0)
+        self.doubleTapZoom = YES;
+    else
+        self.doubleTapZoom = NO;
 }
 
 - (IBAction)panRecognizer:(UIPanGestureRecognizer*)sender
@@ -145,17 +148,63 @@
     }
     else
     {
-        CGPoint touch = [sender locationInView:nil];
+        CGPoint touch = [sender locationInView:self.finalImageContainer];
+        
+        CGPoint translation = CGPointMake(3*(self.finalImageView.center.x-touch.x),
+                                          3*(self.finalImageView.center.y-touch.y));
         
         self.finalImageView.transform = CGAffineTransformMakeScale(3.0, 3.0);
+        self.finalImageScale = 3.0;
         
-        UIPanGestureRecognizer *refresh = [[UIPanGestureRecognizer alloc] init];
+        double halfWidth, halfHeight;
         
-        [refresh setTranslation:CGPointMake(self.finalImageView.center.x >= touch.x ? self.finalImageView.center.x-touch.x : touch.x-self.finalImageView.center.x,
-                                           self.finalImageView.center.y >= touch.y ? self.finalImageView.center.y-touch.y : touch.y-self.finalImageView.center.y)
-                 inView:self.finalImageContainer];
+        if (self.finalImageProportion.width == 1.0)
+        {
+            halfWidth = self.finalImageView.frame.size.width/2;
+            halfHeight = self.finalImageView.frame.size.height*(1.0-self.finalImageProportion.height)/2;
+        }
+        else
+        {
+            halfWidth = self.finalImageView.frame.size.width*(1.0-self.finalImageProportion.width)/2;
+            halfHeight = self.finalImageView.frame.size.height/2;
+        }
         
-        [self panRecognizer:refresh];
+        if (2*halfWidth > self.finalImageContainer.bounds.size.width)
+        {
+            if (self.finalImageView.center.x+translation.x+halfWidth < self.finalImageContainer.bounds.size.width)
+            {
+                self.finalImageView.center = CGPointMake(self.finalImageContainer.bounds.size.width-halfWidth ,self.finalImageView.center.y);
+            }
+            else if (self.finalImageView.center.x+translation.x-halfWidth > 0)
+            {
+                self.finalImageView.center = CGPointMake(halfWidth ,self.finalImageView.center.y);
+            }
+            else
+            {
+                self.finalImageView.center = CGPointMake(self.finalImageView.center.x+translation.x ,self.finalImageView.center.y);
+            }
+            
+        }
+        else
+            self.finalImageView.center = CGPointMake(self.finalImageContainer.center.x ,self.finalImageView.center.y);
+        
+        if (2*halfHeight > self.finalImageContainer.bounds.size.height)
+        {
+            if (self.finalImageView.center.y+translation.y+halfHeight < self.finalImageContainer.bounds.size.height)
+            {
+                self.finalImageView.center = CGPointMake(self.finalImageView.center.x, self.finalImageContainer.bounds.size.height-halfHeight);
+            }
+            else if (self.finalImageView.center.y+translation.y-halfHeight > 0)
+            {
+                self.finalImageView.center = CGPointMake(self.finalImageView.center.x, halfHeight);
+            }
+            else
+            {
+                self.finalImageView.center = CGPointMake(self.finalImageView.center.x, self.finalImageView.center.y+translation.y);
+            }
+        }
+        else
+            self.finalImageView.center = CGPointMake(self.finalImageView.center.x, self.finalImageContainer.center.y);
         
         self.doubleTapZoom = YES;
     }
