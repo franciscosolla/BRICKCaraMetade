@@ -15,22 +15,28 @@
 
 @property (nonatomic) double finalImageScale;
 
-@property (nonatomic) CGPoint finalImageTranslation;
-
 @property (weak, nonatomic) IBOutlet UIView *finalImageContainer;
+
+@property (nonatomic) CGSize finalImageProportion;
 
 @end
 
 @implementation FinalImageViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.finalImageView.image = self.finalImage;
 	UIImageWriteToSavedPhotosAlbum(self.finalImage, nil, nil, nil);
     
     self.finalImageScale = 1.0;
-    self.finalImageTranslation = CGPointMake(0, 0);
+    self.finalImageView.center = self.finalImageContainer.center;
+    
+    if (self.finalImage.size.width > self.finalImage.size.height)
+        self.finalImageProportion = CGSizeMake(1.0, self.finalImage.size.height/self.finalImage.size.width);
+    else
+        self.finalImageProportion = CGSizeMake(self.finalImage.size.width/self.finalImage.size.height, 1.0);
 }
 
 #pragma mark - Gestures
@@ -52,23 +58,77 @@
             sender.scale = 3.0/self.finalImageScale;
             scale = self.finalImageScale * sender.scale;
         }
-        else if (scale < 0.3)
+        else if (scale < 1.0)
         {
-            sender.scale = 0.3/self.finalImageScale;
+            sender.scale = 1.0/self.finalImageScale;
             scale = self.finalImageScale * sender.scale;
         }
         
         self.finalImageView.transform = CGAffineTransformMakeScale(scale, scale);
     }
+    
+    UIPanGestureRecognizer *refresh =  [[UIPanGestureRecognizer alloc] init];
+    
+    [refresh setTranslation:CGPointMake(0, 0) inView:self.view];
+    
+    [self panRecognizer: refresh];
 }
 
 - (IBAction)panRecognizer:(UIPanGestureRecognizer*)sender
 {
     CGPoint translation = [sender translationInView:self.view];
     
-    self.finalImageView.center = CGPointMake(self.finalImageView.center.x+translation.x ,self.finalImageView.center.y+translation.y);
-    [sender setTranslation:CGPointZero inView:self.view];
+    double halfWidth, halfHeight;
     
+    if (self.finalImageProportion.width == 1.0)
+    {
+        halfWidth = self.finalImageView.frame.size.width/2;
+        halfHeight = self.finalImageView.frame.size.height*(1.0-self.finalImageProportion.height)/2;
+    }
+    else
+    {
+        halfWidth = self.finalImageView.frame.size.width*(1.0-self.finalImageProportion.width)/2;
+        halfHeight = self.finalImageView.frame.size.height/2;
+    }
+    
+    if (2*halfWidth > self.finalImageContainer.bounds.size.width)
+    {
+        if (self.finalImageView.center.x+translation.x+halfWidth < self.finalImageContainer.bounds.size.width)
+        {
+            self.finalImageView.center = CGPointMake(self.finalImageContainer.bounds.size.width-halfWidth ,self.finalImageView.center.y);
+        }
+        else if (self.finalImageView.center.x+translation.x-halfWidth > 0)
+        {
+            self.finalImageView.center = CGPointMake(halfWidth ,self.finalImageView.center.y);
+        }
+        else
+        {
+            self.finalImageView.center = CGPointMake(self.finalImageView.center.x+translation.x ,self.finalImageView.center.y);
+        }
+        
+    }
+    else
+        self.finalImageView.center = CGPointMake(self.finalImageContainer.center.x ,self.finalImageView.center.y);
+    
+    if (2*halfHeight > self.finalImageContainer.bounds.size.height)
+    {
+        if (self.finalImageView.center.y+translation.y+halfHeight < self.finalImageContainer.bounds.size.height)
+        {
+            self.finalImageView.center = CGPointMake(self.finalImageView.center.x, self.finalImageContainer.bounds.size.height-halfHeight);
+        }
+        else if (self.finalImageView.center.y+translation.y-halfHeight > 0)
+        {
+            self.finalImageView.center = CGPointMake(self.finalImageView.center.x, halfHeight);
+        }
+        else
+        {
+            self.finalImageView.center = CGPointMake(self.finalImageView.center.x, self.finalImageView.center.y+translation.y);
+        }
+    }
+    else
+        self.finalImageView.center = CGPointMake(self.finalImageView.center.x, self.finalImageContainer.center.y);
+    
+    [sender setTranslation:CGPointZero inView:self.view];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
