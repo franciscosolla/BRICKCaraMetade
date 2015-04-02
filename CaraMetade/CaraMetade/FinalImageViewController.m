@@ -148,7 +148,14 @@
         CGPoint touch = [sender locationInView:nil];
         
         self.finalImageView.transform = CGAffineTransformMakeScale(3.0, 3.0);
-        self.finalImageView.center = CGPointMake(touch.x, touch.y);
+        
+        UIPanGestureRecognizer *refresh = [[UIPanGestureRecognizer alloc] init];
+        
+        [refresh setTranslation:CGPointMake(self.finalImageView.center.x >= touch.x ? self.finalImageView.center.x-touch.x : touch.x-self.finalImageView.center.x,
+                                           self.finalImageView.center.y >= touch.y ? self.finalImageView.center.y-touch.y : touch.y-self.finalImageView.center.y)
+                 inView:self.finalImageContainer];
+        
+        [self panRecognizer:refresh];
         
         self.doubleTapZoom = YES;
     }
