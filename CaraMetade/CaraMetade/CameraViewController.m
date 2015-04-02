@@ -29,6 +29,12 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *referenceLine;
 
+@property (strong, nonatomic) NSArray *devices;
+
+@property (nonatomic) bool flash;
+
+@property (weak, nonatomic) IBOutlet UIButton *flashButoon;
+
 @end
 
 @implementation CameraViewController
@@ -41,17 +47,22 @@
 	self.frontCameraActive = YES;
 	self.session = [[AVCaptureSession alloc] init];
 	[self.session setSessionPreset:AVCaptureSessionPresetPhoto];
-	NSArray *devices = [AVCaptureDevice devices];
+	self.devices = [AVCaptureDevice devices];
 	AVCaptureDevice *front;
 	AVCaptureDevice *back;
 	
-	for (AVCaptureDevice *device in devices)
+	for (AVCaptureDevice *device in self.devices)
 		if ([device hasMediaType:AVMediaTypeVideo])
 		{
 			if ([device position] == AVCaptureDevicePositionBack)
 				back = device;
 			else if ([device position] == AVCaptureDevicePositionFront)
 				front = device;
+            
+            if ([device flashMode] == AVCaptureFlashModeOn)
+                self.flash = YES;
+            else
+                self.flash = NO;
 		}
 	
 	NSError *error;
@@ -97,7 +108,6 @@
 	UIGraphicsEndImageContext();
 	
 	self.referenceLine.image = line;
-	
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -105,9 +115,15 @@
 	[super viewDidAppear:animated];
 	
     if ([self.session canAddInput:self.backCamera] && self.frontCameraActive == NO)
+    {
         [self.session addInput:self.backCamera];
+        self.flashButoon.hidden = NO;
+    }
 	else if ([self.session canAddInput:self.backCamera])
-		[self.session addInput:self.frontCamera];
+    {
+        [self.session addInput:self.frontCamera];
+        self.flashButoon.hidden = YES;
+    }
         
 	[self.session startRunning];
 }
@@ -165,6 +181,31 @@
 	
 }
 
+- (IBAction)turnFlashMode:(id)sender
+{
+    for (AVCaptureDevice *device in self.devices)
+        if ([device hasTorch] && [device hasFlash])
+        {
+            if (self.flash)
+            {
+                [device lockForConfiguration:NULL];
+                [device setTorchMode:AVCaptureTorchModeOff];
+                [device setFlashMode:AVCaptureFlashModeOff];
+                [device unlockForConfiguration];
+                self.flash = NO;
+            }
+            else
+            {
+                [device lockForConfiguration:NULL];
+                [device setTorchMode:AVCaptureTorchModeOn];
+                [device setFlashMode:AVCaptureFlashModeOn];
+                [device unlockForConfiguration];
+                self.flash = YES;
+            }
+            
+        }
+}
+
 /// Rotate the camera.
 - (IBAction)cameraRotate:(id)sender {
 	if (self.session.inputs[0] == self.backCamera)
@@ -172,12 +213,14 @@
 		[self.session removeInput:self.backCamera];
 		[self.session addInput:self.frontCamera];
 		self.frontCameraActive = YES;
+        self.flashButoon.hidden = YES;
 	}
 	else
 	{
 		[self.session removeInput:self.frontCamera];
 		[self.session addInput:self.backCamera];
 		self.frontCameraActive = NO;
+        self.flashButoon.hidden = NO;
 	}
 }
 
