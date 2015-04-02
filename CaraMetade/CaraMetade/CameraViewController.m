@@ -9,6 +9,8 @@
 #import "CameraViewController.h"
 #import "ImageViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <CoreImage/CoreImage.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface CameraViewController ()
 
@@ -233,6 +235,103 @@
 		
 		[self.navigationController pushViewController:destination animated:YES];
     }];
+}
+
+#pragma mark - Face Detection
+
+-(void)faceDetector
+{
+    // Load the picture for face detection
+    UIImageView* image = [[UIImageView alloc] initWithImage:
+                          [UIImage imageNamed:@"faceDetection.jpg"]];
+    
+    // Draw the face detection image
+    [self.view addSubview:image];
+    
+    // Execute the method used to markFaces in background
+    [self performSelectorInBackground:@selector(markFaces:) withObject:image];
+    
+    [image setTransform:CGAffineTransformMakeScale(1, -1)];
+    
+    [self.view setTransform:CGAffineTransformMakeScale(1, -1)];
+    
+    [self faceDetector];
+}
+
+-(void)markFaces:(UIImageView *)facePicture
+{
+    // draw a CI image with the previously loaded face detection picture
+    CIImage* image = [CIImage imageWithCGImage:facePicture.image.CGImage];
+    CIDetector* detector = [CIDetector detectorOfType:CIDetectorTypeFace context:nil options:[NSDictionary dictionaryWithObject:CIDetectorAccuracyHigh forKey:CIDetectorAccuracyHigh]];
+    NSArray* features = [detector featuresInImage:image];
+    for (CIFaceFeature* faceFeature in features) {
+        
+        CGFloat faceWidth = faceFeature.bounds.size.width;
+        
+        UIView* faceView = [[UIView alloc] initWithFrame:faceFeature.bounds];
+        
+        faceView.layer.borderWidth = 1;
+        faceView.layer.borderColor = [[UIColor redColor] CGColor];
+        
+        [self.view addSubview:faceView];
+        
+        if(faceFeature.hasLeftEyePosition)
+        {
+            
+            UIView* leftEyeView = [[UIView alloc] initWithFrame:CGRectMake(faceFeature.leftEyePosition.x-faceWidth*0.15, faceFeature.leftEyePosition.y-faceWidth*0.15, faceWidth*0.3, faceWidth*0.3)];
+            
+            [leftEyeView setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.3]];
+            
+            [leftEyeView setCenter:faceFeature.leftEyePosition];
+            
+            leftEyeView.layer.cornerRadius = faceWidth*0.15;
+            
+            [self.view addSubview:leftEyeView];
+        }
+        
+        if(faceFeature.hasRightEyePosition)
+        {
+            UIView* leftEye = [[UIView alloc] initWithFrame:CGRectMake(faceFeature.rightEyePosition.x-faceWidth*0.15, faceFeature.rightEyePosition.y-faceWidth*0.15, faceWidth*0.3, faceWidth*0.3)];
+            
+            [leftEye setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.3]];
+            
+            [leftEye setCenter:faceFeature.rightEyePosition];
+            
+            leftEye.layer.cornerRadius = faceWidth*0.15;
+            
+            [self.view addSubview:leftEye];
+        }
+        
+        if(faceFeature.hasLeftEyePosition)
+        {
+            // create a UIView with a size based on the width of the face
+            UIView* leftEyeView = [[UIView alloc] initWithFrame:CGRectMake(faceFeature.leftEyePosition.x-faceWidth*0.15, faceFeature.leftEyePosition.y-faceWidth*0.15, faceWidth*0.3, faceWidth*0.3)];
+            // change the background color of the eye view
+            [leftEyeView setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.3]];
+            // set the position of the leftEyeView based on the face
+            [leftEyeView setCenter:faceFeature.leftEyePosition];
+            // round the corners
+            leftEyeView.layer.cornerRadius = faceWidth*0.15;
+            // add the view to the window
+            [self.view addSubview:leftEyeView];
+        }
+        
+        if(faceFeature.hasRightEyePosition)
+        {
+            
+            UIView* leftEye = [[UIView alloc] initWithFrame:CGRectMake(faceFeature.rightEyePosition.x-faceWidth*0.15, faceFeature.rightEyePosition.y-faceWidth*0.15, faceWidth*0.3, faceWidth*0.3)];
+            
+            [leftEye setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.3]];
+            
+            [leftEye setCenter:faceFeature.rightEyePosition];
+            
+            leftEye.layer.cornerRadius = faceWidth*0.15;
+            
+            [self.view addSubview:leftEye];
+        }
+        
+    }
+    
 }
 
 @end
