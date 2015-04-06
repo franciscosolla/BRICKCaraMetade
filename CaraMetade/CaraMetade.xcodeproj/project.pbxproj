@@ -27,6 +27,9 @@
 		A0D209161ACDA5F700C7DFE2 /* page3.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D209121ACDA5F700C7DFE2 /* page3.png */; };
 		A0D2091F1ACDAB5A00C7DFE2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0D2091D1ACDAB5A00C7DFE2 /* Localizable.strings */; };
 		A0D2092E1ACDC0EB00C7DFE2 /* AppLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D2092D1ACDC0EB00C7DFE2 /* AppLogo.png */; };
+		A0D42A2E1AD2EDB9000062D0 /* BlackBack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0D42A2D1AD2EDB9000062D0 /* BlackBack.jpg */; };
+		A0D42A301AD2EF3E000062D0 /* yellowsharebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D42A2F1AD2EF3E000062D0 /* yellowsharebutton.png */; };
+		A0D42A321AD2EF73000062D0 /* yellowCamerabutton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D42A311AD2EF73000062D0 /* yellowCamerabutton.png */; };
 		A0DABF111ACB0FFE006E1AB5 /* Capturebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0DABF0D1ACB0FFE006E1AB5 /* Capturebutton.png */; };
 		A0DABF121ACB0FFE006E1AB5 /* LaunchBackgroung.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0DABF0E1ACB0FFE006E1AB5 /* LaunchBackgroung.jpg */; };
 		A0DABF131ACB0FFE006E1AB5 /* OKbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0DABF0F1ACB0FFE006E1AB5 /* OKbutton.png */; };
@@ -95,6 +98,9 @@
 		A0D2092D1ACDC0EB00C7DFE2 /* AppLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppLogo.png; sourceTree = "<group>"; };
 		A0D209301ACDC11C00C7DFE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A0D209321ACDC12300C7DFE2 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		A0D42A2D1AD2EDB9000062D0 /* BlackBack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BlackBack.jpg; sourceTree = "<group>"; };
+		A0D42A2F1AD2EF3E000062D0 /* yellowsharebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowsharebutton.png; sourceTree = "<group>"; };
+		A0D42A311AD2EF73000062D0 /* yellowCamerabutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowCamerabutton.png; sourceTree = "<group>"; };
 		A0DABF0D1ACB0FFE006E1AB5 /* Capturebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Capturebutton.png; sourceTree = "<group>"; };
 		A0DABF0E1ACB0FFE006E1AB5 /* LaunchBackgroung.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LaunchBackgroung.jpg; sourceTree = "<group>"; };
 		A0DABF0F1ACB0FFE006E1AB5 /* OKbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OKbutton.png; sourceTree = "<group>"; };
@@ -183,6 +189,9 @@
 		A0FE4C841AC0A69700A74099 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0D42A311AD2EF73000062D0 /* yellowCamerabutton.png */,
+				A0D42A2F1AD2EF3E000062D0 /* yellowsharebutton.png */,
+				A0D42A2D1AD2EDB9000062D0 /* BlackBack.jpg */,
 				A0B79FA21ACDDB4B000BA9BF /* flashoff.png */,
 				A0B79FA31ACDDB4B000BA9BF /* flashon.png */,
 				A0B79F961ACDCEF5000BA9BF /* page4.png */,
@@ -277,7 +286,7 @@
 					};
 					A0FE4C991AC0A69800A74099 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 8A2XM926A4;
+						DevelopmentTeam = JNA96F28J7;
 						TestTargetID = A0FE4C801AC0A69700A74099;
 					};
 				};
@@ -314,6 +323,7 @@
 				A0DABF141ACB0FFE006E1AB5 /* Rotatebutton.png in Resources */,
 				A0DABF111ACB0FFE006E1AB5 /* Capturebutton.png in Resources */,
 				A0DABF131ACB0FFE006E1AB5 /* OKbutton.png in Resources */,
+				A0D42A301AD2EF3E000062D0 /* yellowsharebutton.png in Resources */,
 				A0B79FA41ACDDB4B000BA9BF /* flashoff.png in Resources */,
 				A0FE4C901AC0A69700A74099 /* Main.storyboard in Resources */,
 				A0B79F971ACDCEF5000BA9BF /* page4.png in Resources */,
@@ -325,9 +335,11 @@
 				A0DABF1A1ACB100D006E1AB5 /* Camerabutton.png in Resources */,
 				A0DABF121ACB0FFE006E1AB5 /* LaunchBackgroung.jpg in Resources */,
 				A0D209141ACDA5F700C7DFE2 /* page1.png in Resources */,
+				A0D42A321AD2EF73000062D0 /* yellowCamerabutton.png in Resources */,
 				A0B7446B1ACB2F39008A42B1 /* albumButton.png in Resources */,
 				A0B7446D1ACB3583008A42B1 /* sharebutton.png in Resources */,
 				A0D209161ACDA5F700C7DFE2 /* page3.png in Resources */,
+				A0D42A2E1AD2EDB9000062D0 /* BlackBack.jpg in Resources */,
 				A0D2092E1ACDC0EB00C7DFE2 /* AppLogo.png in Resources */,
 				A0D2091F1ACDAB5A00C7DFE2 /* Localizable.strings in Resources */,
 				A0DABF191ACB100D006E1AB5 /* Backbutton.png in Resources */,
