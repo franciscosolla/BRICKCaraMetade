@@ -285,9 +285,7 @@
 	StartViewController *destination = [self.storyboard instantiateViewControllerWithIdentifier:@"StartViewController"];
 	destination.fromNavigation = YES;
 	
-	[self.session stopRunning];
-	
-	[self.navigationController pushViewController:destination animated:YES];
+	[self presentViewController:destination animated:YES completion:nil];
 }
 
 - (IBAction)pickFromPhotoLibrary:(id)sender

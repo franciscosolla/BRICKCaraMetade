@@ -19,7 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-	
 	// Finish Button text.
 	
 	[self.finishButton setTitle:NSLocalizedString(@"finishButton", nil) forState:UIControlStateNormal];
@@ -42,7 +41,33 @@
 	[self addChildViewController:_tutorialPageController];
 	[self.view addSubview:_tutorialPageController.view];
 	[self.tutorialPageController didMoveToParentViewController:self];
+}
+
+#pragma mark - Pop gesture on/off
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
 	
+	if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+		self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+		self.navigationController.interactivePopGestureRecognizer.delegate = self;
+	}
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+	
+	if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+		self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+		self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+	}
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+	return NO;
 }
 
 #pragma mark - Tutorial Page View Methods
@@ -53,6 +78,12 @@
 	
 	if ((index == 0) || (index == NSNotFound)) {
 		return nil;
+	}
+	
+	if (index == [self.tutorialTexts count] - 2) {
+		[UIView animateWithDuration:1.0f animations:^{
+			self.finishButton.alpha = 0;
+		}];
 	}
 	
 	index--;
@@ -69,6 +100,9 @@
 	
 	index++;
 	if (index == [self.tutorialTexts count]) {
+		[UIView animateWithDuration:1.0f animations:^{
+			self.finishButton.alpha = 1.0f;
+		}];
 		return nil;
 	}
 	return [self viewControllerAtIndex:index];
@@ -99,9 +133,11 @@
 	return 0;
 }
 
+#pragma mark - Finish Button
+
 - (IBAction)finishButton:(id)sender {
 	if (self.fromNavigation)
-		[self.navigationController popToRootViewControllerAnimated:YES];
+		[self dismissViewControllerAnimated:YES completion:nil];
 	else
 		[self performSegueWithIdentifier:@"StartApp" sender:nil];
 }

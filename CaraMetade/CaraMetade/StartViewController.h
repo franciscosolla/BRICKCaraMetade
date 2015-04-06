@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TutorialContentController.h"
 
-@interface StartViewController : UIViewController <UIPageViewControllerDataSource>
+@interface StartViewController : UIViewController <UIPageViewControllerDataSource, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *tutorialPageController;
 
