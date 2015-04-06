@@ -43,33 +43,6 @@
 	[self.tutorialPageController didMoveToParentViewController:self];
 }
 
-#pragma mark - Pop gesture on/off
-
-- (void)viewDidAppear:(BOOL)animated
-{
-	[super viewDidAppear:animated];
-	
-	if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-		self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-		self.navigationController.interactivePopGestureRecognizer.delegate = self;
-	}
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-	
-	if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-		self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-		self.navigationController.interactivePopGestureRecognizer.delegate = nil;
-	}
-}
-
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
-{
-	return NO;
-}
-
 #pragma mark - Tutorial Page View Methods
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
