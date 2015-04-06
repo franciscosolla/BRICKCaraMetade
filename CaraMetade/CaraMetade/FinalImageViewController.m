@@ -17,8 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *finalImageContainer;
 
-@property (nonatomic) CGSize finalImageProportion;
-
 @property (nonatomic) bool doubleTapZoom;
 
 @end
@@ -34,11 +32,6 @@
     
     self.finalImageScale = 1.0;
     self.finalImageView.center = self.finalImageContainer.center;
-    
-    if (self.finalImage.size.width > self.finalImage.size.height)
-        self.finalImageProportion = CGSizeMake(1.0, self.finalImage.size.height/self.finalImage.size.width);
-    else
-        self.finalImageProportion = CGSizeMake(self.finalImage.size.width/self.finalImage.size.height, 1.0);
 }
 
 #pragma mark - Gestures
@@ -86,15 +79,15 @@
     
     double halfWidth, halfHeight;
     
-    if (self.finalImageProportion.width == 1.0)
+    if (self.finalImage.size.width > self.finalImage.size.height)
     {
-        halfWidth = self.finalImageView.frame.size.width/2;
-        halfHeight = self.finalImageView.frame.size.height*(1.0-self.finalImageProportion.height)/2;
+        halfWidth = self.finalImageView.frame.size.width*0.5;
+        halfHeight = (self.finalImageView.frame.size.width*self.finalImage.size.height/self.finalImage.size.width)*0.5;
     }
     else
     {
-        halfWidth = self.finalImageView.frame.size.width*(1.0-self.finalImageProportion.width)/2;
-        halfHeight = self.finalImageView.frame.size.height/2;
+        halfWidth = (self.finalImageView.frame.size.height*self.finalImage.size.width/self.finalImage.size.height)*0.5;
+        halfHeight = self.finalImageView.frame.size.height*0.5;
     }
     
     if (2*halfWidth > self.finalImageContainer.bounds.size.width)
@@ -158,15 +151,15 @@
         
         double halfWidth, halfHeight;
         
-        if (self.finalImageProportion.width == 1.0)
+        if (self.finalImage.size.width > self.finalImage.size.height)
         {
-            halfWidth = self.finalImageView.frame.size.width/2;
-            halfHeight = self.finalImageView.frame.size.height*(1.0-self.finalImageProportion.height)/2;
+            halfWidth = self.finalImageView.frame.size.width*0.5;
+            halfHeight = (self.finalImageView.frame.size.width*self.finalImage.size.height/self.finalImage.size.width)*0.5;
         }
         else
         {
-            halfWidth = self.finalImageView.frame.size.width*(1.0-self.finalImageProportion.width)/2;
-            halfHeight = self.finalImageView.frame.size.height/2;
+            halfWidth = (self.finalImageView.frame.size.height*self.finalImage.size.width/self.finalImage.size.height)*0.5;
+            halfHeight = self.finalImageView.frame.size.height*0.5;
         }
         
         if (2*halfWidth > self.finalImageContainer.bounds.size.width)
