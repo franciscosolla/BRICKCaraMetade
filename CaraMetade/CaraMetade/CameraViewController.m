@@ -123,12 +123,10 @@
     if ([self.session canAddInput:self.backCamera] && self.frontCameraActive == NO)
     {
         [self.session addInput:self.backCamera];
-        self.flashButoon.hidden = NO;
     }
 	else if ([self.session canAddInput:self.backCamera])
     {
         [self.session addInput:self.frontCamera];
-        self.flashButoon.hidden = YES;
     }
         
 	[self.session startRunning];
@@ -144,7 +142,33 @@
 /// Takes a photo.
 - (IBAction)takePhotto:(id)sender
 {
-	AVCaptureConnection *videoConnection = nil;
+    UIImageView *whiteView = nil;
+    
+    if (self.frontCameraActive && self.flash)
+    {
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        
+        CGContextSetRGBFillColor(UIGraphicsGetCurrentContext(), 1.0, 1.0, 1.0, 1.0);
+        CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 1.0, 1.0, 1.0, 0.0);
+        
+        CGRect whiteSquare = CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height);
+        CGContextFillRect(UIGraphicsGetCurrentContext(), whiteSquare);
+        
+        UIImage *whiteSquareImage = UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIGraphicsEndImageContext();
+        
+        whiteView = [[UIImageView alloc] initWithImage:whiteSquareImage];
+        
+        [self.view addSubview:whiteView];
+        
+        [CATransaction flush];
+        
+        NSCondition *time = [NSCondition new];
+        [time waitUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.2]];
+    }
+    
+    AVCaptureConnection *videoConnection = nil;
 	
 	for (AVCaptureConnection *connection in self.stillImageOutput.connections)
 	{
@@ -184,34 +208,57 @@
 			[self.navigationController pushViewController:destination animated:YES];
 		}
 	}];
+    
+    if (whiteView)
+    {
+        NSCondition *time = [NSCondition new];
+        [time waitUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.2]];
+        [whiteView removeFromSuperview];
+    }
 	
 }
 
 - (IBAction)turnFlashMode:(id)sender
 {
-    for (AVCaptureDevice *device in self.devices)
-        if ([device hasTorch] && [device hasFlash])
+    if (self.frontCameraActive)
+    {
+        if (self.flash)
         {
-            if (self.flash)
-            {
-                [device lockForConfiguration:NULL];
-                [device setTorchMode:AVCaptureTorchModeOff];
-                [device setFlashMode:AVCaptureFlashModeOff];
-                [device unlockForConfiguration];
-                self.flash = NO;
-                [self.flashButoon setImage:[UIImage imageNamed:@"flashoff.png"] forState:UIControlStateNormal];
-            }
-            else
-            {
-                [device lockForConfiguration:NULL];
-                [device setTorchMode:AVCaptureTorchModeOn];
-                [device setFlashMode:AVCaptureFlashModeOn];
-                [device unlockForConfiguration];
-                self.flash = YES;
-                [self.flashButoon setImage:[UIImage imageNamed:@"flashon.png"] forState:UIControlStateNormal];
-            }
-            
+            self.flash = NO;
+            [self.flashButoon setImage:[UIImage imageNamed:@"flashoff.png"] forState:UIControlStateNormal];
         }
+        else
+        {
+            self.flash = YES;
+            [self.flashButoon setImage:[UIImage imageNamed:@"flashon.png"] forState:UIControlStateNormal];
+        }
+    }
+    else
+    {
+        for (AVCaptureDevice *device in self.devices)
+            if ([device hasTorch] && [device hasFlash])
+            {
+                if (self.flash)
+                {
+                    [device lockForConfiguration:NULL];
+                    [device setTorchMode:AVCaptureTorchModeOff];
+                    [device setFlashMode:AVCaptureFlashModeOff];
+                    [device unlockForConfiguration];
+                    self.flash = NO;
+                    [self.flashButoon setImage:[UIImage imageNamed:@"flashoff.png"] forState:UIControlStateNormal];
+                }
+                else
+                {
+                    [device lockForConfiguration:NULL];
+                    [device setTorchMode:AVCaptureTorchModeOn];
+                    [device setFlashMode:AVCaptureFlashModeOn];
+                    [device unlockForConfiguration];
+                    self.flash = YES;
+                    [self.flashButoon setImage:[UIImage imageNamed:@"flashon.png"] forState:UIControlStateNormal];
+                }
+                
+            }
+    }
 }
 
 /// Rotate the camera.
@@ -221,14 +268,16 @@
 		[self.session removeInput:self.backCamera];
 		[self.session addInput:self.frontCamera];
 		self.frontCameraActive = YES;
-        self.flashButoon.hidden = YES;
+        self.flash = NO;
+        [self.flashButoon setImage:[UIImage imageNamed:@"flashoff.png"] forState:UIControlStateNormal];
 	}
 	else
 	{
 		[self.session removeInput:self.frontCamera];
 		[self.session addInput:self.backCamera];
 		self.frontCameraActive = NO;
-        self.flashButoon.hidden = NO;
+        self.flash = NO;
+        [self.flashButoon setImage:[UIImage imageNamed:@"flashoff.png"] forState:UIControlStateNormal];
 	}
 }
 
