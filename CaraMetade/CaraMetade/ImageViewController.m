@@ -22,7 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UISlider *leftCropper;
 
-@property (nonatomic) double imageViewRotation;
+@property (nonatomic) CGFloat imageViewRotation;
 
 @end
 
@@ -171,21 +171,34 @@
 
 #pragma mark - Rotation gesture
 
-//- (IBAction)rotationRecognizer:(UIRotationGestureRecognizer*)sender
-//{
-//    if (sender.state == UIGestureRecognizerStateEnded || sender.state == UIGestureRecognizerStateCancelled)
-//        self.imageViewRotation += sender.rotation;
-//    else
-//        self.imageView.transform = CGAffineTransformMakeRotation(self.imageViewRotation + sender.rotation);
-//	
-//    //image doesn`t really rotate, just it`s vizualization, study the code in the url: http://stackoverflow.com/questions/10544887/rotating-a-cgimage to fix it
-//}
+- (IBAction)rotationRecognizer:(UIRotationGestureRecognizer*)sender
+{
+	if (self.imageViewRotation + sender.rotation <= 0.3f && self.imageViewRotation + sender.rotation >= -0.3f)
+	{
+		if (sender.state == UIGestureRecognizerStateEnded || sender.state == UIGestureRecognizerStateCancelled)
+			self.imageViewRotation += sender.rotation;
+		else
+			self.imageView.transform = CGAffineTransformMakeRotation(self.imageViewRotation + sender.rotation);
+	}
+	else if (sender.state == UIGestureRecognizerStateEnded || sender.state == UIGestureRecognizerStateCancelled)
+	{
+		if (sender.rotation > 0.3f)
+			self.imageViewRotation = 0.3f;
+		else if (sender.rotation < -0.3f)
+			self.imageViewRotation = -0.3f;
+	}
+}
 
 #pragma mark - Retake and Ready Buttons
 
+/// Rotates and sends the rotated image to the ResultView.
 - (IBAction)readyButton:(id)sender {
-//	self.image = [self rotatedImageFromImageView:self.imageView];
+	// Rotates the image.
 	
+	self.image = [self rotatedImageFromImageView:self.imageView rotation:self.imageViewRotation];
+	
+	// Sends the image tp the REsult View.
+ 
 	ResultViewController *destination = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
 	destination.face = self.image;
 	destination.sliderStatus = self.sliderLine.value;
@@ -201,48 +214,31 @@
 
 #pragma mark - Rotation functions
 
-// http://stackoverflow.com/questions/2856556/creating-a-uiimage-from-a-rotated-uiimageview/2897625#2897625
-
-- (CGRect) getBoundingRectAfterRotation: (CGRect) rectangle byAngle: (CGFloat) angleOfRotation {
-	// Calculate the width and height of the bounding rectangle using basic trig
-	CGFloat newWidth = rectangle.size.width * fabs(cosf(angleOfRotation)) + rectangle.size.height * fabs(sinf(angleOfRotation));
-	CGFloat newHeight = rectangle.size.height * fabs(cosf(angleOfRotation)) + rectangle.size.width * fabs(sinf(angleOfRotation));
-	
-	// Calculate the position of the origin
-	CGFloat newX = rectangle.origin.x + ((rectangle.size.width - newWidth) / 2);
-	CGFloat newY = rectangle.origin.y + ((rectangle.size.height - newHeight) / 2);
-	
-	// Return the rectangle
-	return CGRectMake(newX, newY, newWidth, newHeight);
-}
-
-- (UIImage *) rotatedImageFromImageView: (UIImageView *) imageView
+/// Rotates the image and crops the result for the image to remain rectangular.
+- (UIImage *) rotatedImageFromImageView:(UIImageView *)imageView rotation:(CGFloat)angle
 {
-	UIImage *rotatedImage;
 	
-	// Get image width, height of the bounding rectangle
-	CGRect boundingRect = [self getBoundingRectAfterRotation:imageView.bounds byAngle:self.imageViewRotation];
+	UIImage *image = imageView.image;
 	
-	// Create a graphics context the size of the bounding rectangle
-	UIGraphicsBeginImageContext(boundingRect.size);
+	UIImage *auxImage;
+	
+	CGSize rotatedsize = CGSizeMake((fabs(cosf(angle))*image.size.width)-((fabs(sinf(angle))*image.size.height)),
+									((fabs(cosf(angle))*image.size.height)-(fabs(sinf(angle))*image.size.width)));
+	
+	UIGraphicsBeginImageContext(rotatedsize);
+	
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
-	CGAffineTransform transform = CGAffineTransformIdentity;
-	transform = CGAffineTransformTranslate(transform, boundingRect.size.width/2, boundingRect.size.height/2);
-	transform = CGAffineTransformRotate(transform, self.imageViewRotation);
-	transform = CGAffineTransformScale(transform, 1.0, -1.0);
+	CGContextTranslateCTM(context, rotatedsize.width/2, rotatedsize.height/2);
+	CGContextRotateCTM(context, angle);
 	
-	CGContextConcatCTM(context, transform);
+	[image drawAtPoint:CGPointMake(-image.size.width/2, -image.size.height/2)];
 	
-	// Draw the image into the context
-	CGContextDrawImage(context, CGRectMake(-imageView.image.size.width/2, -imageView.image.size.height/2, imageView.image.size.width, imageView.image.size.height), imageView.image.CGImage);
+	auxImage = UIGraphicsGetImageFromCurrentImageContext();
 	
-	// Get an image from the context
-	rotatedImage = [UIImage imageWithCGImage: CGBitmapContextCreateImage(context)];
-	
-	// Clean up
 	UIGraphicsEndImageContext();
-	return rotatedImage;
+	
+	return [UIImage imageWithCGImage:auxImage.CGImage scale:1.0 orientation:UIImageOrientationUp];
 }
 
 /*

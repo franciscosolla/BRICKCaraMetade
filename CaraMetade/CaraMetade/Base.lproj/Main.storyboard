@@ -56,9 +56,9 @@
                                 <exclude reference="hgl-sO-nmT"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="gZx-oz-GxA"/>
                                 <exclude reference="pwm-zI-9Tc"/>
                                 <exclude reference="r9L-Io-d6J"/>
-                                <exclude reference="gZx-oz-GxA"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -66,9 +66,9 @@
                                 <include reference="hgl-sO-nmT"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="gZx-oz-GxA"/>
                                 <include reference="pwm-zI-9Tc"/>
                                 <include reference="r9L-Io-d6J"/>
-                                <include reference="gZx-oz-GxA"/>
                             </mask>
                         </variation>
                     </view>
@@ -149,10 +149,6 @@
                                 <exclude reference="YJc-F7-xFS"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="f3G-1b-C0R"/>
-                                <exclude reference="fyS-Wr-Zgi"/>
-                                <exclude reference="sB1-rE-yeA"/>
-                                <exclude reference="sYG-iV-8A9"/>
                                 <exclude reference="WMz-Qc-4t1"/>
                                 <exclude reference="flq-1s-fAU"/>
                                 <exclude reference="nMb-WA-pdI"/>
@@ -160,6 +156,10 @@
                                 <exclude reference="dmX-ht-keu"/>
                                 <exclude reference="m5F-Z4-41H"/>
                                 <exclude reference="mZL-sK-rCN"/>
+                                <exclude reference="f3G-1b-C0R"/>
+                                <exclude reference="fyS-Wr-Zgi"/>
+                                <exclude reference="sB1-rE-yeA"/>
+                                <exclude reference="sYG-iV-8A9"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -169,10 +169,6 @@
                                 <include reference="YJc-F7-xFS"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="f3G-1b-C0R"/>
-                                <include reference="fyS-Wr-Zgi"/>
-                                <include reference="sB1-rE-yeA"/>
-                                <include reference="sYG-iV-8A9"/>
                                 <include reference="WMz-Qc-4t1"/>
                                 <include reference="flq-1s-fAU"/>
                                 <include reference="nMb-WA-pdI"/>
@@ -180,6 +176,10 @@
                                 <include reference="dmX-ht-keu"/>
                                 <include reference="m5F-Z4-41H"/>
                                 <include reference="mZL-sK-rCN"/>
+                                <include reference="f3G-1b-C0R"/>
+                                <include reference="fyS-Wr-Zgi"/>
+                                <include reference="sB1-rE-yeA"/>
+                                <include reference="sYG-iV-8A9"/>
                             </mask>
                         </variation>
                     </view>
@@ -609,6 +609,10 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKQ-Td-9M5" userLabel="ImageViewFrame">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="3OD-BY-zIu" appends="YES" id="tkH-U6-Vjo"/>
+                                        </connections>
                                     </imageView>
                                     <slider opaque="NO" tag="1" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="g7z-e1-X1A" userLabel="RightCropper">
                                         <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
@@ -630,6 +634,7 @@
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="CUA-lC-lWn" secondAttribute="centerY" id="0Aq-gy-6Mo"/>
                                     <constraint firstAttribute="centerX" secondItem="g7z-e1-X1A" secondAttribute="centerX" id="537-MI-9Fe"/>
@@ -691,6 +696,9 @@
                                         <include reference="xjz-jJ-FxR"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3OD-BY-zIu" appends="YES" id="1BY-kL-TMd"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4K0-gk-WMx" userLabel="Camera">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -820,6 +828,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dns-pc-Y5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <rotationGestureRecognizer id="3OD-BY-zIu">
+                    <connections>
+                        <action selector="rotationRecognizer:" destination="N6s-N6-f7R" id="5f0-Pm-9Q1"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2388" y="428.25"/>
         </scene>

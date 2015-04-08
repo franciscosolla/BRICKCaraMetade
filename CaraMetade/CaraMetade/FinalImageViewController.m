@@ -207,7 +207,7 @@
     return YES;
 }
 
-#pragma mark - Back Button
+#pragma mark - Back and Share Buttons
 
 - (IBAction)takeAnotherImage:(id)sender
 {

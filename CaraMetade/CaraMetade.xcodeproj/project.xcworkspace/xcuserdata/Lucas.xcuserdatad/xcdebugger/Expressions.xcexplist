@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[StartViewController pageViewController:viewControllerBeforeViewController:]:StartViewController.m">
+         contextName = "-[ImageViewController readyButton:]:ImageViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "[self.tutorialTexts count] - 2">
+               value = "self.imageViewRotation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -23,6 +23,14 @@
          <PersistentStrings>
             <PersistentString
                value = "self.face.imageOrientation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[StartViewController pageViewController:viewControllerBeforeViewController:]:StartViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self.tutorialTexts count] - 2">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
