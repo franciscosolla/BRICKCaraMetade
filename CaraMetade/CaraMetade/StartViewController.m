@@ -54,9 +54,9 @@
 	}
 	
 	if (index == [self.tutorialTexts count] - 2) {
-		[UIView animateWithDuration:1.0f animations:^{
+		[UIView animateWithDuration:0.5f delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
 			self.finishButton.alpha = 0;
-		}];
+		} completion:nil];
 	}
 	
 	index--;
@@ -73,9 +73,9 @@
 	
 	index++;
 	if (index == [self.tutorialTexts count]) {
-		[UIView animateWithDuration:1.0f animations:^{
+		[UIView animateWithDuration:0.5f delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
 			self.finishButton.alpha = 1.0f;
-		}];
+		} completion:nil];
 		return nil;
 	}
 	return [self viewControllerAtIndex:index];
