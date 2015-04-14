@@ -36,9 +36,9 @@
 	self.viewWithAllImageObjects.backgroundColor = [UIColor clearColor];
 	self.imageView.backgroundColor = [UIColor clearColor];
 	
-	// Set the initial rotation.
+	// Set the initial rotation and scale.
     self.imageViewRotation = 0;
-    
+	
     // Loads the image on the ImageView..
 	self.imageView.image = self.image;
     
@@ -178,7 +178,11 @@
 		if (sender.state == UIGestureRecognizerStateEnded || sender.state == UIGestureRecognizerStateCancelled)
 			self.imageViewRotation += sender.rotation;
 		else
+		{
+			float scale = [self scaleForRotation:self.imageViewRotation + sender.rotation];
 			self.imageView.transform = CGAffineTransformMakeRotation(self.imageViewRotation + sender.rotation);
+			self.imageView.transform = CGAffineTransformScale(self.imageView.transform, scale, scale);
+		}
 	}
 	else if (sender.state == UIGestureRecognizerStateEnded || sender.state == UIGestureRecognizerStateCancelled)
 	{
@@ -239,6 +243,14 @@
 	UIGraphicsEndImageContext();
 	
 	return [UIImage imageWithCGImage:auxImage.CGImage scale:1.0 orientation:UIImageOrientationUp];
+}
+
+/// Return the scale float for the image rotation.
+- (float) scaleForRotation:(CGFloat) angle
+{
+	float widthAfterCrop = (fabs(cosf(angle))*self.imageView.image.size.width)-(fabs(sinf(angle))*self.imageView.image.size.height);
+	
+	return self.imageView.image.size.width / widthAfterCrop;
 }
 
 /*

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>05265621-6480-42F2-AE08-869F08F8F7FC</string>
 	<key>IDESourceControlProjectName</key>
-	<string>CaraMetade</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>C3D03426B969A2A74A73AD83D08A27C3FD41AD36</key>
 		<string>https://github.com/franciscosolla/BRICKCaraMetade.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>CaraMetade/CaraMetade.xcodeproj</string>
+	<string>CaraMetade/CaraMetade.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C3D03426B969A2A74A73AD83D08A27C3FD41AD36</key>

@@ -36,6 +36,7 @@
 		A0DABF141ACB0FFE006E1AB5 /* Rotatebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0DABF101ACB0FFE006E1AB5 /* Rotatebutton.png */; };
 		A0DABF191ACB100D006E1AB5 /* Backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0DABF161ACB100D006E1AB5 /* Backbutton.png */; };
 		A0DABF1A1ACB100D006E1AB5 /* Camerabutton.png in Resources */ = {isa = PBXBuildFile; fileRef = A0DABF171ACB100D006E1AB5 /* Camerabutton.png */; };
+		A0E7C35D1ADC9A6600BC00E9 /* AppWaterMark.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E7C35C1ADC9A6600BC00E9 /* AppWaterMark.png */; };
 		A0FE4C871AC0A69700A74099 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4C861AC0A69700A74099 /* main.m */; };
 		A0FE4C8A1AC0A69700A74099 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4C891AC0A69700A74099 /* AppDelegate.m */; };
 		A0FE4C8D1AC0A69700A74099 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FE4C8C1AC0A69700A74099 /* CameraViewController.m */; };
@@ -107,6 +108,7 @@
 		A0DABF101ACB0FFE006E1AB5 /* Rotatebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rotatebutton.png; sourceTree = "<group>"; };
 		A0DABF161ACB100D006E1AB5 /* Backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Backbutton.png; sourceTree = "<group>"; };
 		A0DABF171ACB100D006E1AB5 /* Camerabutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camerabutton.png; sourceTree = "<group>"; };
+		A0E7C35C1ADC9A6600BC00E9 /* AppWaterMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppWaterMark.png; sourceTree = "<group>"; };
 		A0FE4C811AC0A69700A74099 /* CaraMetade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaraMetade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FE4C851AC0A69700A74099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0FE4C861AC0A69700A74099 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		A0FE4C841AC0A69700A74099 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0E7C35C1ADC9A6600BC00E9 /* AppWaterMark.png */,
 				A0D42A311AD2EF73000062D0 /* yellowCamerabutton.png */,
 				A0D42A2F1AD2EF3E000062D0 /* yellowsharebutton.png */,
 				A0D42A2D1AD2EDB9000062D0 /* BlackBack.jpg */,
@@ -343,6 +346,7 @@
 				A0D2092E1ACDC0EB00C7DFE2 /* AppLogo.png in Resources */,
 				A0D2091F1ACDAB5A00C7DFE2 /* Localizable.strings in Resources */,
 				A0DABF191ACB100D006E1AB5 /* Backbutton.png in Resources */,
+				A0E7C35D1ADC9A6600BC00E9 /* AppWaterMark.png in Resources */,
 				A0FE4C921AC0A69700A74099 /* Images.xcassets in Resources */,
 				A0B79F8E1ACDC3D2000BA9BF /* Calibri Bold.ttf in Resources */,
 			);

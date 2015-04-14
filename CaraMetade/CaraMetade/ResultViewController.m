@@ -116,8 +116,14 @@
         
         CGPoint pointImg2 = CGPointMake(self.rightSideImage.image.size.width,0);
         [self.leftSideImage.image drawAtPoint:pointImg2];
-        
-    
+	
+	// Watermark
+	UIImage *watermark = [UIImage imageNamed:@"AppWaterMark.png"];
+	CGRect rectWtrMrk = CGRectMake((self.rightSideImage.image.size.width) - (self.rightSideImage.image.size.width/10),
+									self.rightSideImage.image.size.height - (self.rightSideImage.image.size.width/5),
+									(self.rightSideImage.image.size.width/5),
+									(self.rightSideImage.image.size.width/5));
+	[watermark drawInRect:rectWtrMrk blendMode:kCGBlendModeNormal alpha:0.75f];
 	
 	UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
